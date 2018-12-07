@@ -94,6 +94,7 @@ nav
 	height: 375px;
 	float: left;
 }
+
 section
 {
 	width: 1500px;
@@ -133,11 +134,11 @@ button :hover
 	
 #block_1
 {
-	width: 1000px;
-	height: 500px;
+	width: 500px;
+	height: auto;
 	float: left;
 	background-color: rgba(220,220,220, 0.95);
-	border_radius: 20px;
+	border-radius: 20px;
 	padding: 20px;
 }
 p
@@ -149,12 +150,13 @@ p
 
 #link
 {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	font-size: 24px;
 	font-style: italic;
-	color: #000;
 }
 
+a
+{
+	text-decoration: none;
+}
 h1
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
