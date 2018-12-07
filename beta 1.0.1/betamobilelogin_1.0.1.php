@@ -14,16 +14,18 @@
         <section id="loginsection">
         	<div id="loginsectionborder">
                 <div id="logoncredentialsdiv">
+                <form action="betamobile_1.0.1.php" method="get">
                     <p id="logoncredentialsp">Användarnamn:</p>
-                    <input id="inputlogin" type="text" id="logoncredentialsfillin">
+                    <input type="text" name="username" id="logoncredentialsfillin">
                 </div>
                 <div id="logoncredentialsdiv">
                     <p id="logoncredentialsp">Lösenord:</p>
-                    <input id="inputlogin" type="text" id="logoncredentialsfillin">
+                    <input type="text" name="password" id="logoncredentialsfillin">
                 </div>
                 <div id="logonbuttondiv">
-               	 	<button id="presstologin"><p id="logoncredentialsp">Logga in</p></button>
+                	<input type="submit" value="Logga in" id="presstologin">
                 </div>
+                </form>
             </div>
         </section>
     </div>
