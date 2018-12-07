@@ -13,8 +13,8 @@
         </header>
         <aside>
         	<nav>
-            	<a href="index.html"><button><p id="link">Hem</p></button></a>
-                <a href="#"><button><p id="link">Kurser/klassrum</p></button></a>
+            	<a href="betacomp_1.php"><button><p id="link">Hem</p></button></a>
+                <a href="betacomp_2.php"><button><p id="link">Kurser/klassrum</p></button></a>
                 <a href="#"><button><p id="link">Länksamling</p></button></a>
                 <a href="#"><button><p id="link">Inlämningar</p></button></a>
                 <a href="#"><button><p id="link">Konto</p></button></a>
