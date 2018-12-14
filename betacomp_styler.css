@@ -172,3 +172,9 @@ h2
 	font-style: italic;
 	color: #000;
 }
+
+textarea
+{
+	width: 700px;
+	height: 400px;
+}
