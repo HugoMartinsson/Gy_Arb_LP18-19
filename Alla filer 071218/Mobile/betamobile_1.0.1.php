@@ -1,3 +1,7 @@
+<?php 
+session_start();
+require("db.php");
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -6,7 +10,43 @@
 <link rel="stylesheet" href="betamobilecss_1.0.1.css" type="text/css">
 </head>
 <body>
-	<div id="wrapper">
+<?php
+	/*$username = "root";
+	$password = "";
+	$servername = "localhost";
+	$dbname = "eclass";
+	$conn = new MySQLi($servername, $username, $password, $dbname);*/
+	
+	$username = $_GET['username'];
+	$password = $_GET['password'];
+	$_SESSION['currentuser'] = $username;
+	echo $_SESSION['currentuser'];
+	
+	$sql = "SELECT Password FROM users WHERE Username = :username";
+	$stmt = $dbh->prepare($sql);
+	$stmt->bindParam(":username", $username);
+	$stmt->execute();
+	$result = $stmt->fetchAll();
+	
+	/*$result = $conn->query($sql);*/
+	//$row = $result -> fetch_assoc();
+?>
+	<?php 
+	foreach($result as $row)
+	{
+	if($row->Password != $password) : ?>
+    	<form action="betamobilelogin_1.0.1.php" method="get">
+        	<p>Felaktigt användarnamn eller lösenord</p>
+        	<p>Klicka på knappen för att komma tillbaka till inloggningen</p>
+        	<input type="submit" value="Till Inloggning">
+       	</form>
+	<?php endif; ?>
+<?php
+	if($row->Password == $password)
+	{
+		echo "Welcome $username";
+		?>
+        <div id="wrapper">
     	<header>
         	<h1 id="headerlogoh1">"LOGGA"</h1>
         </header>
@@ -15,7 +55,7 @@
                 <button onclick="myFunction()" class="dropbtn"></button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="dropdowncontent">Hem</a>
-                        <a href="dropdowncontent">Kurser/Klassrum</a>
+                        <a href="news_script.php">Kurser/Klassrum</a>
                         <a href="dropdowncontent">Länksamlingar</a>
                         <a href="dropdowncontent">Inlämningar</a>
                         <a href="dropdowncontent">Mitt Konto</a>
@@ -53,5 +93,11 @@
   }
 }
 	</script>
+    <?php
+	}
+	}
+?>
+
+	
 </body>
 </html>
