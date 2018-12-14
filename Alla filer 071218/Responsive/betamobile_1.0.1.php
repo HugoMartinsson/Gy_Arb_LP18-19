@@ -89,7 +89,8 @@ require("db.php");*/
         openDropdown.classList.remove('show');
       }
     }
-  }
-}
+  	}
+	}
+	</script>
 </body>
 </html>
