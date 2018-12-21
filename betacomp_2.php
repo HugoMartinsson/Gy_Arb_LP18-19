@@ -32,6 +32,14 @@
                 <a href=""><p>Exempel</p></a><br>
                 <a href=""><p>Exempel</p></a><br>
             </div>
+            <div id="block_course_add">
+            	<form action="" method="get">
+                	<input type="text" name="name" placeholder="Kursnamn">
+                    <input type="text" name="teacher" placeholder="Lärare">
+                    <input type="submit" value="Lägg till kurs">
+                </form>
+                
+            </div>
         </section>
     </div>
 </body>

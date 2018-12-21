@@ -131,8 +131,19 @@ button :hover
 	margin-bottom: 50px;
 	padding: 20px;
 }
+
+#block_news_add
+{
+	width: 700px;
+	height: auto;
+	float: left;
+	background-color: rgba(220,220,220, 0.95);
+	border-radius: 20px;
+	margin-bottom: 50px;
+	padding: 20px;
+}
 	
-#block_1
+#block_course_add
 {
 	width: 500px;
 	height: auto;
@@ -141,6 +152,17 @@ button :hover
 	border-radius: 20px;
 	padding: 20px;
 }
+
+#block_resources
+{
+	width: 908px;
+	height: auto;
+	float: left;
+	background-color: rgba(220,220,220, 0.95);
+	border-radius: 20px;
+	padding: 20px;
+}
+
 p
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -151,6 +173,11 @@ p
 #link
 {
 	font-style: italic;
+}
+
+#info
+{
+	font-size: 10px;
 }
 
 a
@@ -173,8 +200,19 @@ h2
 	color: #000;
 }
 
+input[type=text]
+{
+	width: 100px;
+	background-color: rgba(169,169,169);
+	text-align: center;
+	border-radius: 5px;
+}
+
 textarea
 {
 	width: 700px;
 	height: 400px;
+	background-color: rgba(169,169,169);
+	border-radius: 10px;
 }
+

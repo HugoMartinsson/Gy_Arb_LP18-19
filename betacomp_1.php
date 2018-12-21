@@ -29,11 +29,10 @@
             	<h2>Nyhet 2</h2><br>
                 <p>Spicy jalapeno bacon ipsum dolor amet sunt dolor beef sint, jerky anim lorem ullamco flank. Tail cow ut t-bone pastrami laboris nulla tri-tip anim salami cillum venison rump ut. Corned beef consequat beef ribs pork pig rump voluptate brisket tri-tip porchetta cupidatat sunt spare ribs et. Tenderloin et minim, veniam voluptate eu jerky occaecat irure flank sed laborum kevin esse meatball. Spicy jalapeno bacon ipsum dolor amet sunt dolor beef sint, jerky anim lorem ullamco flank. Tail cow ut t-bone pastrami laboris nulla tri-tip anim salami cillum venison rump ut. Corned beef consequat beef ribs pork pig rump voluptate brisket tri-tip porchetta cupidatat sunt spare ribs et. Tenderloin et minim, veniam voluptate eu jerky occaecat irure flank sed laborum kevin esse meatball. Spicy jalapeno bacon ipsum dolor amet sunt dolor beef sint, jerky anim lorem ullamco flank. Tail cow ut t-bone pastrami laboris nulla tri-tip anim salami cillum venison rump ut. Corned beef consequat beef ribs pork pig rump voluptate brisket tri-tip porchetta cupidatat sunt spare ribs et. Tenderloin et minim, veniam voluptate eu jerky occaecat irure flank sed laborum kevin esse meatball. Spicy jalapeno bacon ipsum dolor amet sunt dolor beef sint, jerky anim lorem ullamco flank. Tail cow ut t-bone pastrami laboris nulla tri-tip anim salami cillum venison rump ut. Corned beef consequat beef ribs pork pig rump voluptate brisket tri-tip porchetta cupidatat sunt spare ribs et. Tenderloin et minim, veniam voluptate eu jerky occaecat irure flank sed laborum kevin esse meatball.</p>
             </div>
-            <div id="block">
+            <div id="block_news_add">
                 <form action="" method="get">
                     <input type="text" name="headline" placeholder="Rubrik"><br>
-                    <textarea type="text" name="text" placeholder="Text">
-                    </textarea><br>
+                    <textarea type="text" name="text" placeholder="Innehåll"></textarea><br>
                     <input type="submit" value="Publicera">
                 </form>
                 
