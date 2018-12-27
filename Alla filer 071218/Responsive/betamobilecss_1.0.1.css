@@ -61,15 +61,6 @@ table {
 		margin-left:auto;
 		margin-right:auto;
 	}
-	#wrapperlogin{
-		background-image:url(img_betaphone_1.0.1/background_login_1.0.1.jpg);
-		background-repeat:no-repeat;
-		width:480px;
-		height:100vh;
-		position:relative;
-		margin-left:auto;
-		margin-right:auto;
-	}
 	header{
 		width:100%;
 		height:70px;
@@ -81,45 +72,50 @@ table {
 	nav{
 		width:100%;
 		height:35px;
+		padding-bottom:5px;
 		float:left;
 	}
-	#navincourse{
-		width:480px;
-		height:50px;
-		float:left;
-		background-color:#CCC;
-	}
-	#divlinkincourse{
-		width:160px;
-		height:50px;
-		text-align:center;
-		float:left;
-	}
-	#sectionstart{
+	section{
 		width:480px;
 		height:auto;
+		margin-left:5px;
 		float:left;
 	}
-	#sectioncourse{
-		width:480px;
-		height:auto;
-		float:left;
+	#headerlogoh1{
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:24px;
+		font-weight:bold;
+		color:#FFF;
 	}
-	#loginsection{
+	#date{
+		
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:14px;
+		color:#000;
+	}
+	
+	
+	
+	
+
+	#wrapperlogin{
+		background-image:url(img_betaphone_1.0.1/background_login_1.0.1.jpg);
+		background-repeat:no-repeat;
 		width:480px;
-		height:screen;
-		float:left;
+		height:100vh;
+		position:relative;
+		margin-left:auto;
+		margin-right:auto;
 	}
 	#loginsectionborder{
 		width:300px;
-		height:150px;
+		height:130px;
 		padding-top:50px;
 		padding-bottom:50px;
 		margin-left:auto;
 		margin-right:auto;
 		border-radius:15px;
 		background-color:rgba(255, 255, 255, 0.4);
-		
 	}
 	#logoncredentialsdiv{
 		width:250px;
@@ -131,32 +127,9 @@ table {
 	#logonbuttondiv{
 		width:250px;
 		height:30px;
-		padding-top:20px;
 		margin-left:auto;
 		margin-right:auto;
 		text-align:center;
-	}
-	#news
-	{
-		width:440px;
-		height:auto;
-		position:relative;
-		padding:20px;
-	}	
-	
-	
-	#headerlogoh1{
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:24px;
-		font-weight:bold;
-		color:#333;
-	}
-	#newsh1{
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:18px;
-		font-weight:bold;
-		color:#333;
-		margin-bottom:10px;
 	}
 	#logoncredentialsfillin{
 		width:120px;
@@ -175,18 +148,71 @@ table {
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 14px;
 	}
-	#newsp{
+	#logininput{
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:16px;
+		font-weight:bold;
+		margin-top:5px;
+		color:#333;
+	}
+	input{
+		border-radius:10px;
 		font-family:Tahoma, Geneva, sans-serif;
 		font-size:14px;
-		color:#000;
+		font-weight:normal;
 	}
-	#date{
 		
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:14px;
-		color:#000;
-	}
 	
+	
+	
+	
+	#news
+	{
+		width:475px;
+		height:auto;
+		position:relative;
+		padding-bottom:10px;
+	}
+	#newsh1{
+		font-family:"Times New Roman", Times, serif;
+		font-size:20px;
+		font-weight:bold;
+		color:#FFF;
+		padding-bottom:10px;
+	}
+	#newsp{
+		font-family:"Times New Roman", Times, serif;
+		font-size:18px;
+		color:#FFF;
+	}
+	#navincourse{
+		width:475px;
+		height:45px;
+		padding-bottom:10px;
+		float:left;
+	}
+	#navincourse a{
+		width:155px;
+		height:30px;
+		padding-top:15px;
+		border:1px solid;
+		border-color:#FFF;
+		border-radius:10px;
+		text-align:center;
+		background-color:rgba(169,169,169,0.9);
+		color: white;
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:18px;
+		text-decoration: none;
+		float:left;
+	}
+	#navincourse a:hover{ background-color: rgb(128,128,128); }
+	
+	
+	
+	
+	
+
 
 
 
@@ -228,23 +254,52 @@ table {
 		text-decoration: none;
 		display: block;
 	}
-	.dropdown a:hover {background-color: rgb(128,128,128);}
+	#dropdown a:hover {background-color: rgb(128,128,128);}
 	.show {display: block;}
-	#logininput{
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:16px;
-		font-weight:bold;
-		color:#333;
-	}
-	input{
-		border-radius:10px;
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:14px;
-		font-weight:normal;
-	}
 }
 @media screen and (min-width: 481px)
 {
+	#wrapper{
+		background-image:url(img_betaphone_1.0.1/testimagefull.jpg);
+		width:1900px;
+		height:100vh;
+		margin-left:auto;
+		margin-right:auto;
+		position:relative;
+	}
+	header{
+		width:1900px;
+		height: 100px;
+		padding-top: 20px;
+		float: left;
+		text-align:center;
+	}
+	nav{
+		width:300px;
+		hieght:auto;
+		padding-bottom:10px;
+		float:left;
+	}
+	section{
+		width:1500px;
+		height: auto;
+		float: left;
+		position:relative;
+		margin-left:50px;
+		margin-right:50px;
+	}
+	#headerlogoh1{
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:36px;
+		font-weight:bold;
+		color:#FFF;
+	}
+	
+	
+	
+	
+	
+	
 	#wrapperlogin{
 		background-image:url(img_betaphone_1.0.1/backgroundimage_logoncomp.jpg);
 		width: 700px;
@@ -253,24 +308,9 @@ table {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	header{
-		width: 700px;
-		height: 80px;
-		padding-top: 20px;
-		float: left;
-		text-align:center;
-	}
-	#loginsection{
-		width: 700px;
-		height: 400px;
-		position:relative;
-		margin-left:auto;
-		margin-right:auto;
-		float: left;
-	}
 	#loginsectionborder{
 		width: 500px;
-		height: 303px;
+		height: 220px;
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
@@ -280,11 +320,10 @@ table {
 	#logoncredentialsdiv{
 		width:250px;
 		height:30px;
-		padding-top:20px;
 		margin-left:auto;
 		margin-right:auto;
 		text-align:center;
-		padding-top:50px;
+		padding-top:20px;
 		padding-bottom:20px;
 	}
 	#logonbuttondiv{
@@ -307,14 +346,7 @@ table {
 		font-size: 20px;
 		font-weight: bold;
 		color: #333;
-	}
-	#headerlogoh1{
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:36px;
-		font-weight:bold;
-		color:#333;
-	}
-	#logininput{
+	}	#logininput{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 20px;
 		font-weight: bold;
@@ -325,4 +357,77 @@ table {
 		font-size: 16px;
 		border-radius:10px;
 	}
+	
+	
+	
+	
+	#navincourse{
+		width:1300px;
+		height:auto;
+		padding-left:300px;
+		float:left;
+		text-align:center;
+	}
+	#navincourse a{
+		width:200px;
+		height:30px;
+		padding-top:15px;
+		margin-right:2px;
+		border:1px solid;
+		border-color:#FFF;
+		border-radius:10px;
+		text-align:center;
+		background-color:rgba(169,169,169,0.9);
+		color: white;
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:18px;
+		text-decoration: none;
+		float:left;
+	}
+	#navincourse a:hover{ background-color: rgb(128,128,128); }
+	#news{
+		width:1500px;
+		height:auto;
+		float:left;
+	}
+	#newsh1{
+		font-family:"Times New Roman", Times, serif;
+		font-size:24px;
+		font-weight:bold;
+		color:#FFF;
+		padding-bottom:10px;
+	}
+	#newsp{
+		font-family:"Times New Roman", Times, serif;
+		font-size:18px;
+		color:#FFF;
+	}
+	
+	
+	
+	
+	.dropbtn{
+		display:none;
+	}
+	#myDropdown{
+		width:auto;
+		height:auto;
+	}
+	.dropdown-content a{
+		display:list-item;
+		list-style-type:none;
+		text-align:center;
+		text-decoration:none;
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:24px;
+		color:#FFF;
+		padding:6px 30px 6px 30px;
+		margin-bottom:2px;
+		margin-left:10px;
+		background-color: rgba(169,169,169,0.9);
+		border:1px solid;
+		border-color:#FFF;
+		border-radius:10px;
+	}
+	.dropdown-content a:hover{ background-color:rgb(128,128,128);}
 }

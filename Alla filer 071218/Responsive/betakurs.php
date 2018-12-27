@@ -12,7 +12,7 @@
         	<h1 id="headerlogoh1">"LOGGA"</h1>
         </header>
         <nav>
-        	<div class="dropdown">
+        	<div id="dropdown">
                 <button onclick="myFunction()" class="dropbtn"></button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="dropdowncontent">Hem</a>
@@ -23,19 +23,18 @@
                     </div>
              </div>
         </nav>
-        <section id="sectioncourse">
-        	<nav id="navincourse">
-            	<div id="divlinkincourse">
-            		<a href="linkincourse">Material</a>
-                </div>
-                <div id="divlinkincourse">
-                	<a href="linkincourse">Till kurs</a>
-                </div>
-                <div id="divlinkincourse">
-                	<a href="linkincourse">Inlämning</a>
-                </div>
-            </nav>
+        <section>
+        	<div id="navincourse">
+            	<a href="link">Material</a>
+                <a href="link">Till kurs</a>
+                <a href="link">Inlämning</a>
+            </div>
             <div id="news">
+            	<div id="news">
+            	<h1 id="newsh1">"You decide"</h1>
+                <p id="newsp">This is a random text that you as a user is able to write yourself. At this point we have not yet implementet the function that allows you to write here, but we are working our hardets to make things work! Soon enough you as a user (with ceratin priviledges) will be able to write news that will show up in this section so that your students will be able to read them!<br><br></p>
+                <p id="date"></p>
+            </div>
             </div>
         </section>
 	</div>
