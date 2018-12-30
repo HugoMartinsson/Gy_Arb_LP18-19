@@ -16,8 +16,8 @@
             	<a href="betacomp_1.php"><button><p id="link">Hem</p></button></a>
                 <a href="betacomp_2.php"><button><p id="link">Kurser/klassrum</p></button></a>
                 <a href="betacomp_3.php"><button><p id="link">Länksamling</p></button></a>
-                <a href=""><button><p id="link">Inlämningar</p></button></a>
-                <a href=""><button><p id="link">Konto</p></button></a>
+                <a href="betacomp_4.php"><button><p id="link">Inlämningar</p></button></a>
+                <a href="betacomp_5.php"><button><p id="link">Konto</p></button></a>
             </nav>
         </aside>
         <section>
@@ -31,7 +31,7 @@
             </div>
             <div id="block_news_add">
                 <form action="" method="get">
-                    <input type="text" name="headline" placeholder="Rubrik"><br>
+                    <input id="headline" type="text" name="headline" placeholder="Rubrik"><br>
                     <textarea type="text" name="text" placeholder="Innehåll"></textarea><br>
                     <input type="submit" value="Publicera">
                 </form>

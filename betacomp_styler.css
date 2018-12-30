@@ -110,7 +110,7 @@ button
 	border-color: #434343;
 	border-width: 2px;
 }
-
+/*Ändrar färgen på blocket när man hoverar över samt gör så att blocket hamnar på rät plats*/
 button :hover
 {
 	background-color: rgba(128,128,128,0.9);
@@ -120,35 +120,51 @@ button :hover
 	margin-left: -6px;
 	margin-right: -6px;
 }
-
+/*"Nyhets"-blocket*/
 #block
 {
 	width: 1400px;
 	height: auto;
 	float: left;
-	background-color: rgba(220,220,220, 0.95);
+	background-color: rgba(220,220,220, 0.9);
 	border-radius: 20px;
 	margin-bottom: 50px;
 	padding: 20px;
 }
-
+/*Blocket för att lägga till nyheter*/
 #block_news_add
 {
 	width: 700px;
 	height: auto;
 	float: left;
-	background-color: rgba(220,220,220, 0.95);
+	background-color: rgba(220,220,220, 0.9);
 	border-radius: 20px;
 	margin-bottom: 50px;
 	padding: 20px;
 }
-	
+/*ID för att ändra storleken på rubriks-rutan (vet inte om man kan göra på ett bättre sätt*/
+#headline
+{
+	width: 200px;
+	height: 30px;
+}
+/*"Kurser/Klassrum"-blocket*/
+#block_course
+{
+	width: 500px;
+	height: auto;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	padding: 20px;
+	margin-top: 80px;
+}
+/*Blocket för att lägga till en kurs*/
 #block_course_add
 {
 	width: 500px;
 	height: auto;
 	float: left;
-	background-color: rgba(220,220,220, 0.95);
+	background-color: rgba(220,220,220, 0.9);
 	border-radius: 20px;
 	padding: 20px;
 }
@@ -158,7 +174,7 @@ button :hover
 	width: 908px;
 	height: auto;
 	float: left;
-	background-color: rgba(220,220,220, 0.95);
+	background-color: rgba(220,220,220, 0.9);
 	border-radius: 20px;
 	padding: 20px;
 }
@@ -169,15 +185,10 @@ p
 	font-size: 24px;
 	color: #000;
 }
-
+/*ID för att texten i button-blocken i nav ska se annorlunda ut från vanliga p*/
 #link
 {
 	font-style: italic;
-}
-
-#info
-{
-	font-size: 10px;
 }
 
 a
@@ -207,7 +218,7 @@ input[type=text]
 	text-align: center;
 	border-radius: 5px;
 }
-
+/*Textrutan där man anger innehållet i en nyhet*/
 textarea
 {
 	width: 700px;
@@ -216,3 +227,15 @@ textarea
 	border-radius: 10px;
 }
 
+select
+{
+	background-color: rgba(169,169,169);
+	border-color: #000;
+}
+
+input[type=submit]
+{
+	background-color: rgba(169,169,169);
+	border-color: #000;
+	border-width: 1px;
+}
