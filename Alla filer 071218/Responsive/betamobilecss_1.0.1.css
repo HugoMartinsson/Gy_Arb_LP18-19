@@ -191,7 +191,7 @@ table {
 		padding-bottom:10px;
 		float:left;
 	}
-	#navincourse a{
+	#navincourselink{
 		width:155px;
 		height:30px;
 		padding-top:15px;
@@ -206,7 +206,23 @@ table {
 		text-decoration: none;
 		float:left;
 	}
-	#navincourse a:hover{ background-color: rgb(128,128,128); }
+	#navincourselink:hover{ background-color: rgb(128,128,128); }
+	.navincourseon
+	{
+		width:155px;
+		height:30px;
+		padding-top:15px;
+		border:1px solid;
+		border-color:#FFF;
+		border-radius:10px;
+		text-align:center;
+		background-color:rgb(128,128,128);
+		color: white;
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:18px;
+		text-decoration: none;
+		float:left;
+	}
 	
 	
 	
@@ -368,7 +384,7 @@ table {
 		float:left;
 		text-align:center;
 	}
-	#navincourse a{
+	#navincourselink{
 		width:200px;
 		height:30px;
 		padding-top:15px;
@@ -384,7 +400,23 @@ table {
 		text-decoration: none;
 		float:left;
 	}
-	#navincourse a:hover{ background-color: rgb(128,128,128); }
+	#navincourselink:hover{ background-color: rgb(128,128,128); }
+	.navincourseon{ 
+		width:200px;
+		height:30px;
+		padding-top:15px;
+		margin-right:2px;
+		border:1px solid;
+		border-color:#FFF;
+		border-radius:10px;
+		text-align:center;
+		background-color:rgb(128,128,128);
+		color: white;
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:18px;
+		text-decoration: none;
+		float:left;
+	}
 	#news{
 		width:1500px;
 		height:auto;
