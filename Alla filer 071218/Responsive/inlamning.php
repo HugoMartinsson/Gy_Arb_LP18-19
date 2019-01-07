@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Material</title>
-<link rel="stylesheet" href="betamobilecss_1.0.1.css" type="text/css">
+<link rel="stylesheet" href="styler.css" type="text/css">
 </head>
 
 <body>
@@ -25,16 +25,14 @@
         </nav>
         <section>
         	<div id="navincourse">
-            	<a class="navincourseon" href="link">Material</a>
+            	<a id="navincourselink" href="link">Material</a>
                 <a id="navincourselink" href="link">Till kurs</a>
-                <a id="navincourselink" href="link">Inlämning</a>
+                <a class="navincourseon"" href="link">Inlämning</a>
             </div>
             <div id="news">
             	<div id="news">
-            	<h1 id="newsh1">"You decide"</h1>
-                <p id="newsp">VET EJ VILKEN CONTENT VI WSKALL HA HÄR!<br><br></p>
-                <p id="date"></p>
-            </div>
+            		<h1 id="newsh1">Antar att det skall vara php här så hoppar det nu</h1>
+            	</div>
             </div>
         </section>
 	</div>

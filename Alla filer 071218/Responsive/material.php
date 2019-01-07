@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Kurser</title>
-<link rel="stylesheet" href="betamobilecss_1.0.1.css" type="text/css">
+<title>Material</title>
+<link rel="stylesheet" href="styler.css" type="text/css">
 </head>
 
 <body>
@@ -25,14 +25,14 @@
         </nav>
         <section>
         	<div id="navincourse">
-            	<a href="link">Material</a>
-                <a href="link">Till kurs</a>
-                <a href="link">Inlämning</a>
+            	<a class="navincourseon" href="link">Material</a>
+                <a id="navincourselink" href="link">Till kurs</a>
+                <a id="navincourselink" href="link">Inlämning</a>
             </div>
             <div id="news">
             	<div id="news">
             	<h1 id="newsh1">"You decide"</h1>
-                <p id="newsp">This is a random text that you as a user is able to write yourself. At this point we have not yet implementet the function that allows you to write here, but we are working our hardets to make things work! Soon enough you as a user (with ceratin priviledges) will be able to write news that will show up in this section so that your students will be able to read them!<br><br></p>
+                <p id="newsp">VET EJ VILKEN CONTENT VI WSKALL HA HÄR!<br><br></p>
                 <p id="date"></p>
             </div>
             </div>

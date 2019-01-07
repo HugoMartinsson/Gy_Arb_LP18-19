@@ -226,7 +226,12 @@ table {
 	
 	
 	
-	
+	#divmyacc{
+		width:470px;
+		height:300px;
+		float:left;
+		background-color:#FFF;
+	}
 	
 
 
@@ -434,6 +439,21 @@ table {
 		font-size:18px;
 		color:#FFF;
 	}
+	
+	
+	
+	
+	
+	
+	#divmyacc{
+		width:1500px;
+		height:300px;
+		float:left;
+		background-color:#FFF;
+	}
+	
+	
+	
 	
 	
 	
