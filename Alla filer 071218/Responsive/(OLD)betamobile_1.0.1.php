@@ -1,43 +1,36 @@
-<!DOCTYPE HTML>
+  <!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Kurser</title>
-<link rel="stylesheet" href="styler.css" type="text/css">
+<title>gymnasiumarbete_1.0.1</title>
+<link rel="stylesheet" href="betamobilecss_1.0.1.css" type="text/css">
 </head>
-
 <body>
 	<div id="wrapper">
     	<header>
         	<h1 id="headerlogoh1">"LOGGA"</h1>
         </header>
         <nav>
-        	<div id="dropdown">
+        	<div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn"></button>
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="start.php">Hem</a>
-                        <a href="kurser_overview_KLAR.php">Kurser/Klassrum</a>
-                        <a href="dropdowncontent">Länksamlingar</a>
-                        <a href="inlamning.php">Inlämningar</a>
-                        <a href="mittkonto.php">Mitt Konto</a>
+                        <a href="">Hem</a>
+                        <a href="">Kurser/Klassrum</a>
+                        <a href="">Länksamlingar</a>
+                        <a href="">Inlämningar</a>
+                        <a href="">Mitt Konto</a>
                     </div>
              </div>
         </nav>
-        <section>
-        	<div id="navincourse">
-            	<a id="navincourselink" href="link">Material</a>
-                <a class="navincourseon" href="link">Till kurs</a>
-                <a id="navincourselink" href="link">Inlämning</a>
-            </div>
-            <div id="news">
-            	<div id="news">
+        <section id="sectionstart">
+        	<div id="news">
             	<h1 id="newsh1">"You decide"</h1>
                 <p id="newsp">This is a random text that you as a user is able to write yourself. At this point we have not yet implementet the function that allows you to write here, but we are working our hardets to make things work! Soon enough you as a user (with ceratin priviledges) will be able to write news that will show up in this section so that your students will be able to read them!<br><br></p>
                 <p id="date"></p>
             </div>
-            </div>
         </section>
-	</div>
+    </div>
+    
     <script>
 		/* When the user clicks on the button, 
 		toggle between hiding and showing the dropdown content */
@@ -57,8 +50,8 @@
         openDropdown.classList.remove('show');
       }
     }
-  	}
-	}
+  }
+}
 	</script>
 </body>
 </html>

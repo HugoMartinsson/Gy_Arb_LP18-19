@@ -455,6 +455,26 @@ table {
 	
 	
 	
+	#linktocourse{
+		width:400px;
+		height:40px;
+		padding-top:10px;
+		margin-left:400px;
+		display:list-item;
+		list-style-type:none;
+		text-decoration:none;
+		text-align:center;
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:28px;
+		color:#FFF;
+		background-color: rgba(169,169,169,0.9);
+		border:1px solid;
+		border-color:#FFF;
+		border-radius:10px;	
+	}
+	#linktocourse:hover{ background-color:rgb(128,128,128); }
+	
+	
 	
 	
 	
