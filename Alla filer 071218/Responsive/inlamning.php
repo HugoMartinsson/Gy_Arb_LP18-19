@@ -1,3 +1,22 @@
+<?php
+require("db.php");
+session_start();
+?>
+<?php
+	//SKA ERSÄTTAS MED RIKTIG CURRENTUSER
+	$_SESSION['currentuser'] = "huma0130";
+	
+	//Detta ska vara kvär även när riktig currentuser har implementerats
+	$user = "%" . $_SESSION['currentuser'] . "%";
+	
+	//Hämtar de kurser den inloggade eleven deltar i
+	$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+	$stmt = $dbh->prepare($sql);
+	$stmt->bindParam(':currentuser', $user);
+	$stmt->execute();
+	$result = $stmt->fetchAll();
+
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -27,12 +46,117 @@
         	<div id="navincourse">
             	<a id="navincourselink" href="link">Material</a>
                 <a id="navincourselink" href="link">Till kurs</a>
-                <a class="navincourseon"" href="link">Inlämning</a>
+                <a class="navincourseon" href="link">Inlämning</a>
             </div>
             <div id="news">
-            	<div id="news">
-            		<h1 id="newsh1">Antar att det skall vara php här så hoppar det nu</h1>
-            	</div>
+            	
+                	<form action="" method="get">
+                        Välj kurs:
+                        <select name="course">
+                            <?php
+                                foreach($result as $row)
+                                {
+                                    ?>
+                                    <option value="<?php echo $row->Name; ?>"><?php echo $row->Name; ?></option>
+                                    <?php
+                                }
+                                ?>
+                        </select>
+    					<input type="submit" value="Välj">
+					</form>
+                    <?php
+							if(!empty($_GET))
+							{
+								$course = $_GET['course'];
+								
+								$sql = "SELECT HandInName FROM handin WHERE HandInCourse = :course";
+								$stmt = $dbh->prepare($sql);
+								$stmt->bindParam(":course", $course);
+								$stmt->execute();
+								$result = $stmt->fetchAll();
+							}
+							if(!empty($_GET['course']))
+							{
+					?>
+								<form action="" method="get">
+									<input type="hidden" name="course" value="<?php echo $course ?>">
+									<select name="handin">
+									<?php
+									foreach($result as $row)
+									{
+										?>
+										<option value="<?php echo $row->HandInName; ?>"><?php echo $row->HandInName; ?></option>
+										<?php
+									}
+									?>
+                                    </select>
+                                    <input type="submit" value="Fortsätt">
+								</form>
+					<?php
+						}
+						if(!empty($_GET['handin']) && !empty($_GET['course']))
+						{
+							$handInName = $_GET['handin'];
+							$course = $_GET['course'];
+							?>
+							<form action="" method="post" enctype="multipart/form-data">
+								<input type="file" name="myfile" id="fileToUpload">
+								<input type="submit" value="Lämna in fil" name="submit">
+							</form> <?php
+                        }
+
+		if(!empty($_POST))
+		{
+			$sql2 = "SELECT MAX(FileID) AS MaxFileID FROM studentfiles";
+			$sql2 = "SELECT FileID FROM studentfiles order by FileID";
+			$stmt = $dbh->prepare($sql2);
+			$stmt->execute();
+			$result = $stmt->fetchAll();
+			
+			//SER TILL SÅ ATT FILEN FÅR SAMMA ID I FILNAMNET SOM FileID så att man kan identifiera filer med samma namn ändå
+			foreach($result as $row)
+			{
+				$FileID = $row->FileID;
+			}
+			$FileID = $FileID + 1;
+			$FileNameToShow = $_FILES['myfile']['name'];
+			
+			//FILE UPLOAD
+			$currentDir = getcwd();
+			$uploadDirectory = "/Uploaded_Files/";
+			$fileName = $FileID . "." . $handInName .  "_" .  $_FILES['myfile']['name'];
+			$fileTmpName  = $_FILES['myfile']['tmp_name'];
+			$fileType = $_FILES['myfile']['type'];
+			
+			//Add file to database
+			$sql = "INSERT INTO studentfiles (FileName, FileFolder, FileCourse, FileHandInName, Uploader) VALUES (:fileName, :uploadDirectory, :course, :FileHandinName, :uploader)";
+			$stmt = $dbh->prepare($sql);
+			$stmt->bindParam(":fileName", $fileName);
+			$stmt->bindParam(":uploadDirectory", $uploadDirectory);
+			$stmt->bindParam(":course", $course);
+			$stmt->bindParam(":FileHandinName", $handInName);
+			$stmt->bindParam(":uploader", $_SESSION['currentuser']);
+			$stmt->execute();
+			
+			$uploadPath = $currentDir . $uploadDirectory . basename($fileName);
+	
+			if (isset($_POST['submit']))
+			{
+				if (empty($errors))
+				{
+					$didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+				}
+				if ($didUpload)
+				{
+					 echo "The file " . $FileNameToShow . " has been uploaded";
+				} 
+				else
+				{
+					 echo "An error occurred somewhere. Try again or contact the admin";
+				}
+			}
+		}
+?>
             </div>
         </section>
 	</div>
@@ -56,7 +180,7 @@
       }
     }
   	}
-	}
-	</script>
+		}
+</script>
 </body>
 </html>
