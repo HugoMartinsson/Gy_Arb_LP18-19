@@ -1,3 +1,7 @@
+<?php
+require("db.php");
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -29,12 +33,28 @@
                 <a class="navincourseon" href="link">Till kurs</a>
                 <a id="navincourselink" href="link">Inlämning</a>
             </div>
+            <?php
+				$coursename = $_GET['coursename'];
+				
+				?><h1 id="newsh1"><?php echo $coursename ?></h1>
+			
             <div id="news">
             	<div id="news">
-            	<h1 id="newsh1">"You decide"</h1>
-                <p id="newsp">This is a random text that you as a user is able to write yourself. At this point we have not yet implementet the function that allows you to write here, but we are working our hardets to make things work! Soon enough you as a user (with ceratin priviledges) will be able to write news that will show up in this section so that your students will be able to read them!<br><br></p>
-                <p id="date"></p>
-            </div>
+                <?php
+					$sql = "SELECT * FROM news WHERE course = :coursename ORDER BY datetime DESC";
+					$stmt = $dbh->prepare($sql);
+					$stmt->bindParam(":coursename", $coursename);
+					$stmt->execute();
+					$result = $stmt->fetchAll();
+					
+					foreach($result as $row)
+					{
+						?> <h1 id="newsh1"><?php echo $row->headline; ?></h1>
+                        <p id="newsp"><?php echo $row->news; ?><br><br></p>
+               	 		<p id="date"> <?php echo $row->datetime; ?></p><?php
+					}
+				?>
+          	  	</div>
             </div>
         </section>
 	</div>

@@ -34,11 +34,11 @@ session_start();
         	<div id="dropdown">
                 <button onclick="myFunction()" class="dropbtn"></button>
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="dropdowncontent">Hem</a>
-                        <a href="dropdowncontent">Kurser/Klassrum</a>
+                        <a href="start.php">Hem</a>
+                        <a href="kurser_overview_KLAR.php">Kurser/Klassrum</a>
                         <a href="dropdowncontent">Länksamlingar</a>
-                        <a href="dropdowncontent">Inlämningar</a>
-                        <a href="dropdowncontent">Mitt Konto</a>
+                        <a href="inlamning.php">Inlämningar</a>
+                        <a href="mittkonto.php">Mitt Konto</a>
                     </div>
              </div>
         </nav>
