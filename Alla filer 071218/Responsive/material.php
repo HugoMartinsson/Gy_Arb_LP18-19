@@ -1,3 +1,8 @@
+<?php
+require("db.php");
+session_start();
+$coursename = $_GET['coursename'];
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,16 +30,33 @@
         </nav>
         <section>
         	<div id="navincourse">
-            	<a class="navincourseon" href="link">Material</a>
-                <a id="navincourselink" href="link">Till kurs</a>
-                <a id="navincourselink" href="link">Inlämning</a>
+            	<a class="navincourseon" href="<?php echo "material.php?coursename=" . $coursename ?>">Material</a>
+                <a id="navincourselink" href=<?php echo "betakurs.php?coursename=" . $coursename ?>>Till kurs</a>
+                <a id="navincourselink" href=<?php echo "handin.php?coursename=" . $coursename ?>>Inlämning</a>
             </div>
+            <?php 
+				$sql = "SELECT * FROM teacherfiles WHERE Filecourse = :coursename";
+				$stmt = $dbh->prepare($sql);
+				$stmt->bindParam(":coursename", $coursename);
+				$stmt->execute();
+				$result = $stmt->fetchAll();
+				
+				
+			?>
             <div id="news">
-            	<div id="news">
-            	<h1 id="newsh1">"You decide"</h1>
+            	<?php 
+					if(empty($result))
+					{
+						echo "Det finns inga uppladdade filer i den här kursen";
+					}
+					foreach($result as $row)
+					{
+						?><a href=" <?php echo $row->Filefolder . $row->Filename ?>" download><?php echo $row->Nametoshow?></a><br><?php
+					}
+					?>
+                <h1 id="newsh1">"You decide"</h1>
                 <p id="newsp">VET EJ VILKEN CONTENT VI WSKALL HA HÄR!<br><br></p>
                 <p id="date"></p>
-            </div>
             </div>
         </section>
 	</div>
