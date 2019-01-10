@@ -8,10 +8,10 @@
 
 <body>
 	<div id="wrapperlogin">
-    	<header>
+    	<div id="headerlogin">
         	<h1 id="headerlogoh1">"LOGGA"</h1>
         </header>
-        <section>
+        <div id="sectionlogin">
         	<div id="loginsectionborder">
                 <form action="betamobile_1.0.1.php" method="get">
                     <div id="logoncredentialsdiv">
