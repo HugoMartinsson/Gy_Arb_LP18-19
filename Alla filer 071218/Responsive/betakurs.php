@@ -1,6 +1,7 @@
 <?php
 require("db.php");
 session_start();
+$coursename = $_GET['coursename'];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -29,12 +30,12 @@ session_start();
         </nav>
         <section>
         	<div id="navincourse">
-            	<a id="navincourselink" href="link">Material</a>
+            	<a id="navincourselink" href=<?php echo "material.php?coursename=" . $coursename ?>>Material</a>
                 <a class="navincourseon" href="link">Till kurs</a>
                 <a id="navincourselink" href="link">Inlämning</a>
             </div>
             <?php
-				$coursename = $_GET['coursename'];
+				
 				
 				?><h1 id="newsh1"><?php echo $coursename ?></h1>
 			
