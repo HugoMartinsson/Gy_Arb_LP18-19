@@ -51,12 +51,9 @@ $coursename = $_GET['coursename'];
 					}
 					foreach($result as $row)
 					{
-						?><a href=" <?php echo $row->Filefolder . $row->Filename ?>" download><?php echo $row->Nametoshow?></a><br><?php
+						?><a id="materaillinksa" href=" <?php echo $row->Filefolder . $row->Filename ?>" download><?php echo $row->Nametoshow?></a><?php
 					}
 					?>
-                <h1 id="newsh1">"You decide"</h1>
-                <p id="newsp">VET EJ VILKEN CONTENT VI WSKALL HA HÄR!<br><br></p>
-                <p id="date"></p>
             </div>
         </section>
 	</div>

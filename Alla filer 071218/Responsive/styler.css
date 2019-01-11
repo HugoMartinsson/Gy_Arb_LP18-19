@@ -442,6 +442,7 @@ table {
 		width:1300px;
 		height:auto;
 		padding-left:300px;
+		margin-bottom:50px;
 		float:left;
 		text-align:center;
 	}
@@ -555,6 +556,35 @@ table {
 		margin-left:430px;
 	}
 	#lanksammlinga:hover{ background-color:rgb(128,128,128); }
+	
+	
+	
+	
+	
+	
+	#materaillinksa{
+		display:list-item;
+		list-style-type:none;
+		width:610px;
+		height:auto;
+		padding: 6px 0px 6px 0px; 
+		margin-bottom:4px;
+		margin-left:300px;
+		border-radius:10px;
+		border:1px solid;
+		border-color:#FFF;
+		border-radius:10px;
+		text-align:center;
+		text-decoration:none;
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:24px;
+		color:#FFF;
+		background-color:rgba(169,169,169,0.9);
+	}
+	#materaillinksa:hover{ background-color:rgb(128,128,128); }
+	
+	
+	
 	
 	
 	
