@@ -307,6 +307,41 @@ table {
 
 
 
+
+	#createhandindiv{
+		width:auto;
+		height:auto;
+		text-align:center;
+		margin-top:30px;
+	}
+	select{
+		border-style:none;
+		padding:10px 20px 10px 20px;
+		border-radius:10px;
+		font-family:"Arial Black", Gadget, sans-serif;
+	}
+	#hanndinp{
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:18px;
+		color:#FFF;
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+	#inputhandin{
+		margin-bottom:10px;
+		padding:5px 10px 5px 10px;
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:16px;
+		color:#000;
+		background-color:#FFF;
+	}
+
+
+
+
+
+
+
 	.dropbtn {
 		background-color:transparent;
 		background-image:url(img_betaphone_1.0.1/menulogo.png);
@@ -614,6 +649,38 @@ table {
 	}
 	#materaillinksa:hover{ background-color:rgb(128,128,128); }
 	
+	
+	
+	
+	
+	#createhandindiv{
+		width:auto;
+		height:auto;
+		text-align:center;
+		margin-left:-300px;
+		margin-top:50px;
+	}
+	select{
+		border-style:none;
+		padding:10px 20px 10px 20px;
+		border-radius:10px;
+		font-family:"Arial Black", Gadget, sans-serif;
+	}
+	#hanndinp{
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:24px;
+		color:#FFF;
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+	#inputhandin{
+		margin-bottom:10px;
+		padding:5px 10px 5px 10px;
+		font-family:"Arial Black", Gadget, sans-serif;
+		font-size:18px;
+		color:#000;
+		background-color:#FFF;
+	}
 	
 	
 	
