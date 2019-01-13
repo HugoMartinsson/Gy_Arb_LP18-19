@@ -1,6 +1,7 @@
 <?php
 require("db.php");
 session_start();
+$coursename = $_GET['coursename'];
 ?>
 <?php
 	//SKA ERSÄTTAS MED RIKTIG CURRENTUSER
@@ -43,38 +44,28 @@ session_start();
              </div>
         </nav>
         <section>
+        	<div id="navincourse">
+            	<a id="navincourselink" href=<?php echo "material.php?coursename=" . $coursename ?>>Material</a>
+                <a id="navincourselink" href=<?php echo "betakurs.php?coursename=" . $coursename ?>>Till kurs</a>
+                <a class="navincourseon" href=<?php echo "inlamningikurs.php?coursename=" . $coursename ?>>Inlämning</a>
+            </div>
             <div id="news">
-            	
-                	<form action="" method="get">
-                        Välj kurs:
-                        <select name="course">
-                            <?php
-                                foreach($result as $row)
-                                {
-                                    ?>
-                                    <option value="<?php echo $row->Name; ?>"><?php echo $row->Name; ?></option>
-                                    <?php
-                                }
-                                ?>
-                        </select>
-    					<input type="submit" value="Välj">
-					</form>
                     <?php
 							if(!empty($_GET))
 							{
-								$course = $_GET['course'];
+								
 								
 								$sql = "SELECT HandInName FROM handin WHERE HandInCourse = :course";
 								$stmt = $dbh->prepare($sql);
-								$stmt->bindParam(":course", $course);
+								$stmt->bindParam(":course", $coursename);
 								$stmt->execute();
 								$result = $stmt->fetchAll();
 							}
-							if(!empty($_GET['course']))
+							if(!empty($coursename))
 							{
 					?>
 								<form action="" method="get">
-									<input type="hidden" name="course" value="<?php echo $course ?>">
+									<input type="hidden" name="course" value="<?php echo $coursename ?>">
 									<select name="handin">
 									<?php
 									foreach($result as $row)

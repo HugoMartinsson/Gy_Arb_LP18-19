@@ -34,7 +34,7 @@ session_start();
                     <div id="myDropdown" class="dropdown-content">
                         <a href="start.php">Hem</a>
                         <a href="kurser_overview_KLAR.php">Kurser/Klassrum</a>
-                        <a href="dropdowncontent">Länksamlingar</a>
+                        <a href="lanksamling.php">Länksamlingar</a>
                         <a href="inlamning.php">Inlämningar</a>
                         <a href="mittkonto.php">Mitt Konto</a>
                     </div>

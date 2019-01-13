@@ -32,7 +32,7 @@ $coursename = $_GET['coursename'];
         	<div id="navincourse">
             	<a class="navincourseon" href="<?php echo "material.php?coursename=" . $coursename ?>">Material</a>
                 <a id="navincourselink" href=<?php echo "betakurs.php?coursename=" . $coursename ?>>Till kurs</a>
-                <a id="navincourselink" href=<?php echo "handin.php?coursename=" . $coursename ?>>Inlämning</a>
+                <a id="navincourselink" href=<?php echo "inlamningikurs.php?coursename=" . $coursename ?>>Inlämning</a>
             </div>
             <?php 
 				$sql = "SELECT * FROM teacherfiles WHERE Filecourse = :coursename";
@@ -40,8 +40,6 @@ $coursename = $_GET['coursename'];
 				$stmt->bindParam(":coursename", $coursename);
 				$stmt->execute();
 				$result = $stmt->fetchAll();
-				
-				
 			?>
             <div id="news">
             	<?php 

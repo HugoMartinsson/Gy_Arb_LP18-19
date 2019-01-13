@@ -1,6 +1,6 @@
-<?php /*
+<?php 
 session_start();
-require("db.php");*/
+require("db.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -11,23 +11,16 @@ require("db.php");*/
 </head>
 <body>
 <?php
-	/*$username = "root";
-	$password = "";
-	$servername = "localhost";
-	$dbname = "eclass";
-	$conn = new MySQLi($servername, $username, $password, $dbname);	
-	$username = $_GET['username'];
-	$password = $_GET['password'];
-	$_SESSION['currentuser'] = $_GET['username'];
+	$_SESSION['currentuser'] = "Huma0130";
 	
-	$sql = "SELECT Password FROM users WHERE Username = :username";
+	//Kan tas bort mot slutet men låt ligga kvar nu
+	/*$sql = "SELECT Password FROM users WHERE Username = :username";
 	$stmt = $dbh->prepare($sql);
 	$stmt->bindParam(":username", $username);
 	$stmt->execute();
-	$result = $stmt->fetchAll();
+	$result = $stmt->fetchAll();*/
 	
-	/*$result = $conn->query($sql);*/
-	//$row = $result -> fetch_assoc();
+	
 ?>
 	<?php 
 	/*
@@ -43,7 +36,7 @@ require("db.php");*/
 <?php
 	if($row->Password == $password)
 	{
-		echo "Welcome $username";
+		echo "Welcome " . $_SESSION['currentuser'];
 		*/?>
         <div id="wrapper">
     	<header>
@@ -55,7 +48,7 @@ require("db.php");*/
                     <div id="myDropdown" class="dropdown-content">
                         <a href="start.php">Hem</a>
                         <a href="kurser_overview_KLAR.php">Kurser/Klassrum</a>
-                        <a href="dropdowncontent">Länksamlingar</a>
+                        <a href="lanksamling.php">Länksamlingar</a>
                         <a href="inlamning.php">Inlämningar</a>
                         <a href="mittkonto.php">Mitt Konto</a>
                     </div>

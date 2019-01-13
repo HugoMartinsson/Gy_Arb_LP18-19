@@ -22,7 +22,7 @@ $coursename = $_GET['coursename'];
                     <div id="myDropdown" class="dropdown-content">
                         <a href="start.php">Hem</a>
                         <a href="kurser_overview_KLAR.php">Kurser/Klassrum</a>
-                        <a href="dropdowncontent">Länksamlingar</a>
+                        <a href="lanksamling.php">Länksamlingar</a>
                         <a href="inlamning.php">Inlämningar</a>
                         <a href="mittkonto.php">Mitt Konto</a>
                     </div>
@@ -31,8 +31,8 @@ $coursename = $_GET['coursename'];
         <section>
         	<div id="navincourse">
             	<a id="navincourselink" href=<?php echo "material.php?coursename=" . $coursename ?>>Material</a>
-                <a class="navincourseon" href="link">Till kurs</a>
-                <a id="navincourselink" href="link">Inlämning</a>
+                <a class="navincourseon" href=<?php echo "betakurs.php?coursename=" . $coursename ?>>Till kurs</a>
+                <a id="navincourselink" href=<?php echo "inlamningikurs.php?coursename=" . $coursename ?>>Inlämning</a>
             </div>
             <?php
 				

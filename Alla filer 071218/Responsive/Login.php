@@ -10,10 +10,10 @@
 	<div id="wrapperlogin">
     	<div id="headerlogin">
         	<h1 id="headerlogoh1">"LOGGA"</h1>
-        </header>
+        </div>
         <div id="sectionlogin">
         	<div id="loginsectionborder">
-                <form action="betamobile_1.0.1.php" method="get">
+                <form action="start.php" method="get">
                     <div id="logoncredentialsdiv">
                     	<p id="logoncredentialsp">Användarnamn:</p>
                     	<input type="text" name="username" id="logoncredentialsfillin">
@@ -28,6 +28,7 @@
                 </form>
             </div>
         </section>
+    </div>
     </div>
 </body>
 </html>
