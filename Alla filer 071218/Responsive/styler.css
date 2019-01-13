@@ -54,44 +54,44 @@ table {
 @media screen and (max-width: 480px)
 {
 	#wrapper {
-		background-image:url(img_betaphone_1.0.1/background_1.0.1.jpg);
-		width:480px;
-		height:100vh;
-		position:relative;
-		margin-left:auto;
-		margin-right:auto;
+		background-image: url(img_betaphone_1.0.1/background_1.0.1.jpg);
+		width: 480px;
+		height: 100vh;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	header{
-		width:100%;
-		height:70px;
-		padding-top:30px;
-		text-align:center;
-		float:left;
-		position:relative;
+		width: 100%;
+		height: 70px;
+		padding-top: 30px;
+		text-align: center;
+		float: left;
+		position: relative;
 	}
 	nav{
-		width:100%;
-		height:35px;
-		padding-bottom:5px;
-		float:left;
+		width: 100%;
+		height: 35px;
+		padding-bottom: 5px;
+		float: left;
 	}
 	section{
-		width:480px;
-		height:auto;
-		margin-left:5px;
-		float:left;
+		width: 480px;
+		height: auto;
+		margin-left: 5px;
+		float: left;
 	}
 	#headerlogoh1{
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:24px;
-		font-weight:bold;
-		color:#FFF;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 24px;
+		font-weight: bold;
+		color: #FFF;
 	}
 	#date{
 		
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:14px;
-		color:#000;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 14px;
+		color: #000;
 	}
 	
 	
@@ -99,81 +99,81 @@ table {
 	
 
 	#wrapperlogin{
-		background-image:url(img_betaphone_1.0.1/background_login_1.0.1.jpg);
-		background-repeat:no-repeat;
-		width:480px;
-		height:100vh;
-		position:relative;
-		margin-left:auto;
-		margin-right:auto;
+		background-image: url(img_betaphone_1.0.1/background_login_1.0.1.jpg);
+		background-repeat: no-repeat;
+		width: 480px;
+		height: 100vh;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	#headerlogin{
-		width:480px;
-		height:50px;
-		text-align:center;
-		padding-top:30px;
+		width: 480px;
+		height: 50px;
+		text-align: center;
+		padding-top: 30px;
 	}
 	#sectionlogin{
-		width:480px;
-		height:auto;
-		margin-top:30px;
+		width: 480px;
+		height: auto;
+		margin-top: 30px;
 	}
 	#loginsectionborder{
-		width:300px;
-		height:130px;
-		padding-top:50px;
-		padding-bottom:50px;
-		margin-left:auto;
-		margin-right:auto;
-		border-radius:15px;
-		background-color:rgba(255, 255, 255, 0.4);
+		width: 300px;
+		height: 130px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 15px;
+		background-color: rgba(255, 255, 255, 0.4);
 	}
 	#logoncredentialsdiv{
-		width:250px;
-		height:50px;
-		margin-left:auto;
-		margin-right:auto;
-		text-align:center;
+		width: 250px;
+		height: 50px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
 	}
 	#logonbuttondiv{
-		width:250px;
-		height:30px;
-		margin-left:auto;
-		margin-right:auto;
-		text-align:center;
+		width: 250px;
+		height: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
 	}
 	#logoncredentialsfillin{
-		width:120px;
-		height:20px;
+		width: 120px;
+		height: 20px;
 	}
 	#logoncredentialsp{
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:16px;
-		font-weight:bold;
-		color:#333;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		color: #333;
 	}
 	#inputlogin{
-		width:150px;
-		height:20px;
+		width: 150px;
+		height: 20px;
 		border-radius: 10px;
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 14px;
 	}
 	#logininput{
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:16px;
-		font-weight:bold;
-		margin-top:5px;
-		color:#333;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		margin-top: 5px;
+		color: #333;
 	}
 	input{
-		border-radius:10px;
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:14px;
-		font-weight:normal;
-		background-color:#FFF;
-		border-style:none;
-		text-align:center;
+		border-radius: 10px;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 14px;
+		font-weight: normal;
+		background-color: #FFF;
+		border-style: none;
+		text-align: center;
 	}
 		
 	
@@ -182,98 +182,101 @@ table {
 	
 	#news
 	{
-		width:480px;
-		height:50px;
-		position:relative;
-		padding-bottom:10px;
-		margin-top:20px;
-		float:left;
+		width: 480px;
+		height: 50px;
+		position: relative;
+		padding-bottom: 10px;
+		margin-top: 20px;
+		float: left;
 	}
 	#newsh1{
-		font-family:"Times New Roman", Times, serif;
-		font-size:20px;
-		font-weight:bold;
-		color:#FFF;
-		padding-bottom:10px;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 20px;
+		font-weight: bold;
+		color: #FFF;
+		padding-bottom: 10px;
 	}
 	#newsp{
-		font-family:"Times New Roman", Times, serif;
-		font-size:18px;
-		color:#FFF;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 18px;
+		color: #FFF;
 	}
 	#navincourse{
-		width:475px;
-		height:45px;
-		padding-bottom:10px;
-		float:left;
+		width: 475px;
+		height: 45px;
+		padding-bottom: 10px;
+		float: left;
 	}
 	#navincourselink{
-		width:155px;
-		height:30px;
-		padding-top:15px;
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;
-		text-align:center;
-		background-color:rgba(169,169,169,0.9);
+		width: 155px;
+		height: 30px;
+		padding-top: 15px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		background-color: rgba(169,169,169,0.9);
 		color: white;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:18px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
 		text-decoration: none;
-		float:left;
+		float: left;
 	}
-	#navincourselink:hover{ background-color: rgb(128,128,128); }
-	.navincourseon
-	{
-		width:155px;
-		height:30px;
-		padding-top:15px;
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;
-		text-align:center;
-		background-color:rgb(128,128,128);
+	#navincourselink:hover{
+		background-color: rgb(128,128,128); 
+		}
+	.navincourseon{
+		width: 155px;
+		height: 30px;
+		padding-top: 15px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		background-color: rgb(128,128,128);
 		color: white;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:18px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
 		text-decoration: none;
-		float:left;
+		float: left;
 	}
 	
 	
 	
 	#divmyacc{
-		width:470px;
-		height:300px;
-		float:left;
-		background-color:#FFF;
+		width: 470px;
+		height: 300px;
+		float: left;
+		background-color: #FFF;
 	}
 	
 
 
 
 	#lanksammlinga{
-		display:list-item;
-		list-style-type:none;
-		width:400px;
-		height:30px;
-		padding-top:10px;
-		margin-bottom:3px;
+		display: list-item;
+		list-style-type: none;
+		width: 400px;
+		height: 30px;
+		padding-top: 10px;
+		margin-bottom: 3px;
 		border-radius:10px;
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;
-		text-align:center;
-		text-decoration:none;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:20px;
-		color:#FFF;
-		background-color:rgba(169,169,169,0.9);
-		margin-left:auto;
-		margin-right:auto;
-		position:relative;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 20px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
 	}
-	#lanksammlinga:hover{ background-color:rgb(128,128,128); }
+	#lanksammlinga:hover{ 
+		background-color:rgb(128,128,128); 
+		}
 
 
 
@@ -281,27 +284,29 @@ table {
 
 
 	#materaillinksa{
-		display:list-item;
-		list-style-type:none;
-		width:350px;
-		height:30px;
-		padding-top:10px;
-		border-radius:10px;
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;
-		text-align:center;
-		text-decoration:none;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:20px;
-		color:#FFF;
-		background-color:rgba(169,169,169,0.9);
-		margin-bottom:3px;
-		margin-left:auto;
-		margin-right:auto;
-		position:relative;
+		display: list-item;
+		list-style-type: none;
+		width: 350px;
+		height: 30px;
+		padding-top: 10px;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 20px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		margin-bottom: 3px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
 	}
-	#materaillinksa:hover{ background-color:rgb(128,128,128); }
+	#materaillinksa:hover{ 
+		background-color:rgb(128,128,128); 
+	}
 
 
 
@@ -309,31 +314,31 @@ table {
 
 
 	#createhandindiv{
-		width:auto;
-		height:auto;
-		text-align:center;
-		margin-top:30px;
+		width: auto;
+		height: auto;
+		text-align: center;
+		margin-top: 30px;
 	}
 	select{
-		border-style:none;
-		padding:10px 20px 10px 20px;
-		border-radius:10px;
-		font-family:"Arial Black", Gadget, sans-serif;
+		border-style: none;
+		padding: 10px 20px 10px 20px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
 	}
 	#hanndinp{
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:18px;
-		color:#FFF;
-		margin-top:10px;
-		margin-bottom:10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
+		color: #FFF;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 	#inputhandin{
-		margin-bottom:10px;
-		padding:5px 10px 5px 10px;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:16px;
-		color:#000;
-		background-color:#FFF;
+		margin-bottom: 10px;
+		padding: 5px 10px 5px 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		color: #000;
+		background-color: #FFF;
 	}
 
 
@@ -343,22 +348,22 @@ table {
 
 
 	.dropbtn {
-		background-color:transparent;
-		background-image:url(img_betaphone_1.0.1/menulogo.png);
-		background-repeat:no-repeat;
-		width:35px;
-		height:35px;
-		margin-left:5px;
+		background-color: transparent;
+		background-image: url(img_betaphone_1.0.1/menulogo.png);
+		background-repeat: no-repeat;
+		width: 35px;
+		height: 35px;
+		margin-left: 5px;
 		color: white;
 		border: none;
 		cursor: pointer;
 	}
 	.dropbtn:hover, .dropbtn:focus {
-		background-color:transparent;
+		background-color: transparent;
 	}
 	.dropdown {
 		position: relative;
-		display:inline;
+		display: inline;
 	}
 	.dropdown-content {    
 		display: none;
@@ -366,59 +371,63 @@ table {
 		background-color: rgba(169,169,169,0.9);
 		min-width: 470px;
 		min-height: 50px;
-		margin-left:5px;
-		text-align:center;
-		border-radius:10px;
+		margin-left: 5px;
+		text-align: center;
+		border-radius: 10px;
 		overflow: auto;
 		z-index: 1;
 	}
 	.dropdown-content a {
 		color: white;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:18px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
 		padding: 12px 16px;
 		text-decoration: none;
 		display: block;
 	}
-	#dropdown a:hover {background-color: rgb(128,128,128);}
-	.show {display: block;}
+	#dropdown a:hover {
+		background-color: rgb(128,128,128);
+	}
+	.show {
+		display: block;
+	}
 }
 @media screen and (min-width: 481px)
 {
 	#wrapper{
-		background-image:url(img_betaphone_1.0.1/testimagefull.jpg);
-		width:1900px;
-		height:100vh;
-		margin-left:auto;
-		margin-right:auto;
-		position:relative;
+		background-image: url(img_betaphone_1.0.1/testimagefull.jpg);
+		width: 1900px;
+		height: 100vh;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
 	}
 	header{
-		width:1900px;
+		width: 1900px;
 		height: 100px;
 		padding-top: 20px;
 		float: left;
-		text-align:center;
+		text-align: center;
 	}
 	nav{
-		width:300px;
-		hieght:auto;
-		padding-bottom:10px;
-		float:left;
+		width: 300px;
+		height: 1000px;
+		padding-bottom: 10px;
+		float: left;
 	}
 	section{
-		width:1500px;
+		width: 1500px;
 		height: auto;
 		float: left;
-		position:relative;
-		margin-left:50px;
-		margin-right:50px;
+		position: relative;
+		padding-left: 50px;
+		padding-right: 50px;
 	}
 	#headerlogoh1{
-		font-family:Tahoma, Geneva, sans-serif;
-		font-size:36px;
-		font-weight:bold;
-		color:#FFF;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 36px;
+		font-weight: bold;
+		color: #FFF;
 	}
 	
 	
@@ -427,7 +436,7 @@ table {
 	
 	
 	#wrapperlogin{
-		background-image:url(img_betaphone_1.0.1/backgroundimage_logoncomp.jpg);
+		background-image: url(img_betaphone_1.0.1/backgroundimage_logoncomp.jpg);
 		width: 700px;
 		height: 100vh;
 		position: relative;
@@ -435,17 +444,17 @@ table {
 		margin-right: auto;
 	}
 	#headerlogin{
-		width:700px;
-		height:100px;
-		padding-top:50px;
-		text-align:center;
+		width: 700px;
+		height: 100px;
+		padding-top: 50px;
+		text-align: center;
 	}
 	#sectionlogin{
-		width:700px;
-		height:auto;
-		margin-left:auto;
-		margin-right:auto;
-		position:relative;
+		width: 700px;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
 	}
 	#loginsectionborder{
 		width: 500px;
@@ -453,30 +462,30 @@ table {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top:50px;
+		margin-top: 50px;
 		border-radius: 15px;
 		background-color: rgba(255, 255, 255, 0.4);
 	}
 	#logoncredentialsdiv{
-		width:250px;
-		height:30px;
-		margin-left:auto;
-		margin-right:auto;
-		text-align:center;
-		padding-top:20px;
-		padding-bottom:20px;
+		width: 250px;
+		height: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 	#logonbuttondiv{
-		width:250px;
-		height:30px;
-		padding-top:20px;
-		margin-left:auto;
-		margin-right:auto;
-		text-align:center;
+		width: 250px;
+		height: 30px;
+		padding-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
 	}
 	#inputlogin{
-		width:250px;
-		height:35px;
+		width: 250px;
+		height: 35px;
 		border-radius: 10px;
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 18px;
@@ -491,76 +500,118 @@ table {
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 20px;
 		font-weight: 600;
-		background-color:#FFF;
+		background-color: #FFF;
 	}
-	input{
+	input[type=text]{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
-		border-radius:10px;
-		border-style:none;
-		text-align:center;
+		border-radius: 10px;
+		border-style: none;
+		text-align: center;
 	}
+	input[type=submit]{
+		width: 100px;
+		height: 20px;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 16px;
+		border-radius: 5px;
+		border-style: none;
+		text-align: center;	
+		border-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169);
+	}
+	input[type=file]{
+		border-style: none;
+		width: 190px;
+		height: 22px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 1px solid;
+		border-color: #FFF;
+		color: #FFF;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-left: 8px;
+	}
+	select{
+		border-style: none;
+		width: 200px;
+		height: 38px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 1px solid;
+		border-color: #FFF;
+		margin-bottom: 2px;
+		padding-left: 30px;
+		color: #FFF;
+	}
+		
 	
 	
 	
 	
 	#navincourse{
-		width:1300px;
-		height:auto;
-		padding-left:300px;
-		margin-bottom:50px;
-		float:left;
-		text-align:center;
+		width: 1300px;
+		height: auto;
+		padding-left: 300px;
+		margin-bottom: 50px;
+		float: left;
+		text-align: center;
 	}
 	#navincourselink{
-		width:200px;
-		height:30px;
-		padding-top:15px;
-		margin-right:2px;
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;
-		text-align:center;
-		background-color:rgba(169,169,169,0.9);
-		color: white;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:18px;
+		width: 200px;
+		height: 30px;
+		padding-top: 15px;
+		margin-right: 2px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		background-color: rgba(169,169,169,0.9);
+		color: #FFF;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
 		text-decoration: none;
-		float:left;
+		float: left;
 	}
-	#navincourselink:hover{ background-color: rgb(128,128,128); }
+	#navincourselink:hover{ 
+		background-color: rgb(128,128,128); 
+	}
 	.navincourseon{ 
-		width:200px;
-		height:30px;
-		padding-top:15px;
-		margin-right:2px;
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;
-		text-align:center;
-		background-color:rgb(128,128,128);
-		color: white;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:18px;
+		width: 200px;
+		height: 30px;
+		padding-top: 15px;
+		margin-right: 2px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		background-color: rgb(128,128,128);
+		color: #FFF;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
 		text-decoration: none;
-		float:left;
+		float: left;
 	}
 	#news{
-		width:1500px;
-		height:auto;
-		float:left;
+		width: 1500px;
+		height: auto;
+		float: left;
 	}
 	#newsh1{
-		font-family:"Times New Roman", Times, serif;
-		font-size:24px;
-		font-weight:bold;
-		color:#FFF;
-		padding-bottom:10px;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 24px;
+		font-weight: bold;
+		color: #FFF;
+		padding-bottom: 10px;
 	}
 	#newsp{
-		font-family:"Times New Roman", Times, serif;
-		font-size:18px;
-		color:#FFF;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 18px;
+		color: #FFF;
 	}
 	
 	
@@ -569,33 +620,35 @@ table {
 	
 	
 	#divmyacc{
-		width:1500px;
-		height:300px;
-		float:left;
-		background-color:#FFF;
+		width: 1500px;
+		height: 300px;
+		float: left;
+		background-color: #FFF;
 	}
 	
 	
 	
 	
 	#linktocourse{
-		width:400px;
-		height:40px;
-		padding-top:10px;
-		margin-left:400px;
-		display:list-item;
-		list-style-type:none;
-		text-decoration:none;
-		text-align:center;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:28px;
-		color:#FFF;
+		width: 400px;
+		height: 40px;
+		padding-top: 10px;
+		margin-left: 400px;
+		display: list-item;
+		list-style-type: none;
+		text-decoration: none;
+		text-align: center;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 28px;
+		color: #FFF;
 		background-color: rgba(169,169,169,0.9);
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;	
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;	
 	}
-	#linktocourse:hover{ background-color:rgb(128,128,128); }
+	#linktocourse:hover{ 
+		background-color:rgb(128,128,128); 
+	}
 	
 	
 	
@@ -603,25 +656,27 @@ table {
 	
 	
 	#lanksammlinga{
-		display:list-item;
-		list-style-type:none;
-		width:350px;
-		height:35px;
-		padding-top:6px;
-		margin-bottom:3px;
-		border-radius:10px;
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;
-		text-align:center;
-		text-decoration:none;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:24px;
-		color:#FFF;
-		background-color:rgba(169,169,169,0.9);
-		margin-left:430px;
+		display: list-item;
+		list-style-type: none;
+		width: 350px;
+		height: 35px;
+		padding-top: 6px;
+		margin-bottom: 3px;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 24px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		margin-left: 430px;
 	}
-	#lanksammlinga:hover{ background-color:rgb(128,128,128); }
+	#lanksammlinga:hover{
+		background-color: rgb(128,128,128); 
+	}
 	
 	
 	
@@ -629,57 +684,53 @@ table {
 	
 	
 	#materaillinksa{
-		display:list-item;
-		list-style-type:none;
-		width:610px;
-		height:auto;
+		display: list-item;
+		list-style-type: none;
+		width: 610px;
+		height: auto;
 		padding: 6px 0px 6px 0px; 
-		margin-bottom:4px;
-		margin-left:300px;
-		border-radius:10px;
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;
-		text-align:center;
-		text-decoration:none;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:24px;
-		color:#FFF;
-		background-color:rgba(169,169,169,0.9);
+		margin-bottom: 4px;
+		margin-left: 300px;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 24px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
 	}
-	#materaillinksa:hover{ background-color:rgb(128,128,128); }
+	#materaillinksa:hover{ 
+		background-color: rgb(128,128,128); 
+	}
 	
 	
 	
 	
 	
 	#createhandindiv{
-		width:auto;
-		height:auto;
-		text-align:center;
-		margin-left:-300px;
-		margin-top:50px;
-	}
-	select{
-		border-style:none;
-		padding:10px 20px 10px 20px;
-		border-radius:10px;
-		font-family:"Arial Black", Gadget, sans-serif;
+		width: auto;
+		height: auto;
+		text-align: center;
+		margin-left: -300px;
+		margin-top: 50px;
 	}
 	#hanndinp{
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:24px;
-		color:#FFF;
-		margin-top:10px;
-		margin-bottom:10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 24px;
+		color: #FFF;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 	#inputhandin{
-		margin-bottom:10px;
-		padding:5px 10px 5px 10px;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:18px;
-		color:#000;
-		background-color:#FFF;
+		margin-bottom: 10px;
+		padding: 5px 10px 5px 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
+		color: #000;
+		background-color: #FFF;
 	}
 	
 	
@@ -688,27 +739,29 @@ table {
 	
 	
 	.dropbtn{
-		display:none;
+		display: none;
 	}
 	#myDropdown{
-		width:auto;
-		height:auto;
+		width: auto;
+		height: auto;
 	}
 	.dropdown-content a{
-		display:list-item;
-		list-style-type:none;
-		text-align:center;
-		text-decoration:none;
-		font-family:"Arial Black", Gadget, sans-serif;
-		font-size:24px;
-		color:#FFF;
-		padding:6px 30px 6px 30px;
-		margin-bottom:2px;
-		margin-left:10px;
+		display: list-item;
+		list-style-type: none;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 24px;
+		color: #FFF;
+		padding: 6px 30px 6px 30px;
+		margin-bottom: 2px;
+		margin-left: 10px;
 		background-color: rgba(169,169,169,0.9);
-		border:1px solid;
-		border-color:#FFF;
-		border-radius:10px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
 	}
-	.dropdown-content a:hover{ background-color:rgb(128,128,128);}
+	.dropdown-content a:hover{ 
+		background-color: rgb(128,128,128);
+	}
 }

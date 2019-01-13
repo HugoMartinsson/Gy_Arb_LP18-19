@@ -21,7 +21,7 @@ session_start();
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Material</title>
+<title>Inlämningar</title>
 <link rel="stylesheet" href="styler.css" type="text/css">
 </head>
 
@@ -44,10 +44,9 @@ session_start();
         </nav>
         <section>
             <div id="news">
-            	
                 	<form action="" method="get">
-                        Välj kurs:
                         <select name="course">
+                        	<option value="" disabled selected>Kurs</option>
                             <?php
                                 foreach($result as $row)
                                 {
@@ -76,15 +75,16 @@ session_start();
 								<form action="" method="get">
 									<input type="hidden" name="course" value="<?php echo $course ?>">
 									<select name="handin">
-									<?php
-									foreach($result as $row)
-									{
-										?>
-										<option value="<?php echo $row->HandInName; ?>"><?php echo $row->HandInName; ?></option>
+                                    	<option value="" disabled selected>Uppgift</option>
 										<?php
-									}
-									?>
-                                    </select>
+                                        foreach($result as $row)
+                                        {
+                                            ?>
+                                            <option value="<?php echo $row->HandInName; ?>"><?php echo $row->HandInName; ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                        </select>
                                     <input type="submit" value="Fortsätt">
 								</form>
 					<?php
@@ -148,6 +148,11 @@ session_start();
 				else
 				{
 					 echo "An error occurred somewhere. Try again or contact the admin";
+					 ?>
+                     <form action="inlamning.php">
+                     	<input type="submit" value="Tillbaka">
+                     </form>
+                     <?php
 				}
 			}
 		}

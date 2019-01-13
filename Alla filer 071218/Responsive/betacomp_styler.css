@@ -1,0 +1,247 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video 
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section 
+{
+	display: block;
+}
+
+body 
+{
+	line-height: 1;
+}
+
+ol, ul 
+{
+	list-style: none;
+}
+
+blockquote, q 
+{
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after 
+{
+	content: '';
+	content: none;
+}
+
+table 
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body
+{
+	background-image:url(img/2.jpg);
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+}
+
+#wrapper
+{
+	width: 1900px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header
+{
+	width: 1900px;
+	height: 93px;
+	float: left;
+	text-align: center;
+	padding-top: 57px;
+}
+
+aside
+{
+	width: 400px;
+	height: 1000px;
+	float: left;
+}
+
+nav
+{
+	width: 300px;
+	height: 375px;
+	float: left;
+}
+
+section
+{
+	width: 1500px;
+	height: 1900px;
+	float: left;
+}
+
+button
+{
+	width: 300px;
+	height: 75px;
+	background-color: rgba(169,169,169,0.9);
+	border-color: #434343;
+	border-width: 2px;
+}
+/*Ändrar färgen på blocket när man hoverar över samt gör så att blocket hamnar på rät plats*/
+button :hover
+{
+	background-color: rgba(128,128,128,0.9);
+	padding-top: 16px;
+	padding-bottom: 18px;
+	margin-top: -1px;
+	margin-left: -6px;
+	margin-right: -6px;
+}
+/*"Nyhets"-blocket*/
+#block
+{
+	width: 1400px;
+	height: auto;
+	float: left;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	margin-bottom: 50px;
+	padding: 20px;
+}
+/*Blocket för att lägga till nyheter*/
+#block_news_add
+{
+	width: 700px;
+	height: auto;
+	float: left;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	margin-bottom: 50px;
+	padding: 20px;
+}
+/*ID för att ändra storleken på rubriks-rutan (vet inte om man kan göra på ett bättre sätt*/
+#headline
+{
+	width: 200px;
+	height: 30px;
+}
+/*"Kurser/Klassrum"-blocket*/
+#block_course
+{
+	width: 500px;
+	height: auto;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	padding: 20px;
+	margin-top: 80px;
+}
+/*Blocket för att lägga till en kurs*/
+#block_course_add
+{
+	width: 500px;
+	height: auto;
+	float: left;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	padding: 20px;
+}
+
+#block_resources
+{
+	width: 908px;
+	height: auto;
+	float: left;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	padding: 20px;
+}
+
+p
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 24px;
+	color: #000;
+}
+/*ID för att texten i button-blocken i nav ska se annorlunda ut från vanliga p*/
+#link
+{
+	font-style: italic;
+}
+
+a
+{
+	text-decoration: none;
+}
+h1
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 36px;
+	font-style: italic;
+	color: #FFF;
+}
+
+h2
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 36px;
+	font-style: italic;
+	color: #000;
+}
+
+input[type=text]
+{
+	width: 100px;
+	background-color: rgba(169,169,169);
+	text-align: center;
+	border-radius: 5px;
+}
+/*Textrutan där man anger innehållet i en nyhet*/
+textarea
+{
+	width: 700px;
+	height: 400px;
+	background-color: rgba(169,169,169);
+	border-radius: 10px;
+}
+
+select
+{
+	background-color: rgba(169,169,169);
+	border-color: #000;
+}
+
+input[type=submit]
+{
+	background-color: rgba(169,169,169);
+	border-color: #000;
+	border-width: 1px;
+}
+
+#comment
+{
+	width: 300px;
+	height: 200px;
+}
