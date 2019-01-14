@@ -44,7 +44,7 @@ session_start();
         </nav>
         <section>
             <div id="news">
-                	<form action="" method="get">
+                	<form action="inlamning.php" method="get">
                         <select name="course">
                         	<option value="" disabled selected>Kurs</option>
                             <?php
@@ -149,7 +149,7 @@ session_start();
 				{
 					 echo "An error occurred somewhere. Try again or contact the admin";
 					 ?>
-                     <form action="inlamning.php">
+                     <form action=<?php echo "inlamning.php?coursename=" . $coursename; ?>>
                      	<input type="submit" value="Tillbaka">
                      </form>
                      <?php

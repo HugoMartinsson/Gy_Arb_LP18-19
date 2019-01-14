@@ -22,7 +22,7 @@ $coursename = $_GET['coursename'];
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Kurser/Klassrum</title>
+<title>Material</title>
 <link rel="stylesheet" href="styler.css" type="text/css">
 </head>
 
@@ -65,7 +65,7 @@ $coursename = $_GET['coursename'];
 							{
 					?>
 								<form action="" method="get">
-									<input type="hidden" name="course" value="<?php echo $coursename ?>">
+									<input type="hidden" name="coursename" value="<?php echo $coursename ?>">
 									<select name="handin">
 									<?php
 									foreach($result as $row)
