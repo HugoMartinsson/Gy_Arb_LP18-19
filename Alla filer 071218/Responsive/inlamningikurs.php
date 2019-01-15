@@ -83,7 +83,7 @@ $coursename = $_GET['coursename'];
 						if(!empty($_GET['handin']) && !empty($_GET['coursename']))
 						{
 							$handInName = $_GET['handin'];
-							$course = $_GET['coursename'];
+							$coursename = $_GET['coursename'];
 							?>
 							<form action="" method="post" enctype="multipart/form-data">
 								<input type="file" name="myfile" id="fileToUpload">
@@ -119,7 +119,7 @@ $coursename = $_GET['coursename'];
 			$stmt = $dbh->prepare($sql);
 			$stmt->bindParam(":fileName", $fileName);
 			$stmt->bindParam(":uploadDirectory", $uploadDirectory);
-			$stmt->bindParam(":course", $course);
+			$stmt->bindParam(":course", $coursename);
 			$stmt->bindParam(":FileHandinName", $handInName);
 			$stmt->bindParam(":uploader", $_SESSION['currentuser']);
 			$stmt->execute();
@@ -139,6 +139,12 @@ $coursename = $_GET['coursename'];
 				else
 				{
 					 echo "An error occurred somewhere. Try again or contact the admin";
+					 
+					 ?>
+                     <form action="<?php echo "inlamningikurs.php?coursename=" . $coursename; ?>" method="get">
+                     	<input type="submit" value="Tillbaka">
+                     </form>
+                     <?php
 				}
 			}
 		}
