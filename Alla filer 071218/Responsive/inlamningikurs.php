@@ -80,10 +80,10 @@ $coursename = $_GET['coursename'];
 								</form>
 					<?php
 						}
-						if(!empty($_GET['handin']) && !empty($_GET['course']))
+						if(!empty($_GET['handin']) && !empty($_GET['coursename']))
 						{
 							$handInName = $_GET['handin'];
-							$course = $_GET['course'];
+							$course = $_GET['coursename'];
 							?>
 							<form action="" method="post" enctype="multipart/form-data">
 								<input type="file" name="myfile" id="fileToUpload">
