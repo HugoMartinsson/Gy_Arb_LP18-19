@@ -94,6 +94,7 @@ nav
 	height: 375px;
 	float: left;
 }
+
 section
 {
 	width: 1500px;
@@ -109,7 +110,7 @@ button
 	border-color: #434343;
 	border-width: 2px;
 }
-
+/*Ändrar färgen på blocket när man hoverar över samt gör så att blocket hamnar på rät plats*/
 button :hover
 {
 	background-color: rgba(128,128,128,0.9);
@@ -119,42 +120,81 @@ button :hover
 	margin-left: -6px;
 	margin-right: -6px;
 }
-
+/*"Nyhets"-blocket*/
 #block
 {
 	width: 1400px;
 	height: auto;
 	float: left;
-	background-color: rgba(220,220,220, 0.95);
+	background-color: rgba(220,220,220, 0.9);
 	border-radius: 20px;
 	margin-bottom: 50px;
 	padding: 20px;
 }
-	
-#block_1
+/*Blocket för att lägga till nyheter*/
+#block_news_add
 {
-	width: 1000px;
-	height: 500px;
+	width: 700px;
+	height: auto;
 	float: left;
-	background-color: rgba(220,220,220, 0.95);
-	border_radius: 20px;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	margin-bottom: 50px;
 	padding: 20px;
 }
+/*ID för att ändra storleken på rubriks-rutan (vet inte om man kan göra på ett bättre sätt*/
+#headline
+{
+	width: 200px;
+	height: 30px;
+}
+/*"Kurser/Klassrum"-blocket*/
+#block_course
+{
+	width: 500px;
+	height: auto;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	padding: 20px;
+	margin-top: 80px;
+}
+/*Blocket för att lägga till en kurs*/
+#block_course_add
+{
+	width: 500px;
+	height: auto;
+	float: left;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	padding: 20px;
+}
+
+#block_resources
+{
+	width: 908px;
+	height: auto;
+	float: left;
+	background-color: rgba(220,220,220, 0.9);
+	border-radius: 20px;
+	padding: 20px;
+}
+
 p
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 24px;
 	color: #000;
 }
-
+/*ID för att texten i button-blocken i nav ska se annorlunda ut från vanliga p*/
 #link
 {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	font-size: 24px;
 	font-style: italic;
-	color: #000;
 }
 
+a
+{
+	text-decoration: none;
+}
 h1
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -169,4 +209,39 @@ h2
 	font-size: 36px;
 	font-style: italic;
 	color: #000;
+}
+
+input[type=text]
+{
+	width: 100px;
+	background-color: rgba(169,169,169);
+	text-align: center;
+	border-radius: 5px;
+}
+/*Textrutan där man anger innehållet i en nyhet*/
+textarea
+{
+	width: 700px;
+	height: 400px;
+	background-color: rgba(169,169,169);
+	border-radius: 10px;
+}
+
+select
+{
+	background-color: rgba(169,169,169);
+	border-color: #000;
+}
+
+input[type=submit]
+{
+	background-color: rgba(169,169,169);
+	border-color: #000;
+	border-width: 1px;
+}
+
+#comment
+{
+	width: 300px;
+	height: 200px;
 }
