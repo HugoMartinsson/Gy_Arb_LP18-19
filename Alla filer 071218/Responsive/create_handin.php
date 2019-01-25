@@ -38,21 +38,22 @@ session_start();
         </nav>
         <section>
         	<div id="createhandindiv">
-				<form action="" method="get">	
+				<form action="" method="get">
+                	<p id="hanndinp">Välj kurs</p>	
 					<select name="course">
         				<?php
 						//Skriver ut alla kurser så läraren får välja vart filen ska publiceras
 						foreach($result as $row)
 						{
 							?>
-        	 					<option value="<?php echo $row->Name; ?>"><?php echo $row->Name; ?></option>
+        	 					<option id="inputoptions" value="<?php echo $row->Name; ?>"><?php echo $row->Name; ?></option>
             				<?php
 						}
 						?>
     			</select>
     			<p id="hanndinp">Namn på inlämningen</p>
 				<input id="inputhandin" type="text" name="handInName"><br>
-    			<input id="inputhandin" type="submit">
+    			<input id="inputhandin" type="submit" value="Skapa">
 				</form>
 				<?php 
 					if(!empty($_GET))

@@ -312,7 +312,7 @@ table {
 
 
 
-
+/* Skapa inlämning */
 	#createhandindiv{
 		width: auto;
 		height: auto;
@@ -321,9 +321,16 @@ table {
 	}
 	select{
 		border-style: none;
-		padding: 10px 20px 10px 20px;
+		width: 200px;
+		height: 38px;
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		margin-bottom: 2px;
+		padding-left: 30px;
+		color: #FFF;
 	}
 	#hanndinp{
 		font-family: "Arial Black", Gadget, sans-serif;
@@ -337,8 +344,10 @@ table {
 		padding: 5px 10px 5px 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		font-size: 16px;
-		color: #000;
-		background-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
 	}
 
 
@@ -346,7 +355,7 @@ table {
 
 
 
-
+/* CSS för dropdown */
 	.dropbtn {
 		background-color: transparent;
 		background-image: url(img_betaphone_1.0.1/menulogo.png);
@@ -434,7 +443,7 @@ table {
 	
 	
 	
-	
+/* CSS för login*/	
 	#wrapperlogin{
 		background-image: url(img_betaphone_1.0.1/backgroundimage_logoncomp.jpg);
 		width: 700px;
@@ -502,6 +511,12 @@ table {
 		font-weight: 600;
 		background-color: #FFF;
 	}
+	
+	
+	
+	
+	
+	
 	input[type=text]{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
@@ -542,7 +557,7 @@ table {
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		background-color: rgba(169,169,169,0.9);
-		border: 1px solid;
+		border: 2px solid;
 		border-color: #FFF;
 		margin-bottom: 2px;
 		padding-left: 30px;
@@ -597,9 +612,17 @@ table {
 		float: left;
 	}
 	#news{
-		width: 1500px;
+		width: 980px;
 		height: auto;
+		padding: 10px;
 		float: left;
+		margin-left: 110px;
+		margin-top: 10px;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		text-align: center;
+		background-color: rgba(169,169,169,0.9);
 	}
 	#newsh1{
 		font-family: "Times New Roman", Times, serif;
@@ -608,7 +631,19 @@ table {
 		color: #FFF;
 		padding-bottom: 10px;
 	}
+	#courseh1{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 24px;
+		font-weight: bold;
+		color: #FFF;
+		padding-bottom: 10px;
+	}
 	#newsp{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 18px;
+		color: #FFF;
+	}
+	#date{
 		font-family: "Times New Roman", Times, serif;
 		font-size: 18px;
 		color: #FFF;
@@ -709,7 +744,7 @@ table {
 	
 	
 	
-	
+/* Skapa inlämning */	
 	#createhandindiv{
 		width: auto;
 		height: auto;
@@ -726,18 +761,19 @@ table {
 	}
 	#inputhandin{
 		margin-bottom: 10px;
-		padding: 5px 10px 5px 10px;
+		height: 34px;
+		padding-bottom: 5px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		font-size: 18px;
-		color: #000;
-		background-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
 	}
 	
 	
 	
-	
-	
-	
+/* CSS för menysystem */		
 	.dropbtn{
 		display: none;
 	}
