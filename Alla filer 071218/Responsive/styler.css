@@ -166,14 +166,38 @@ table {
 		margin-top: 5px;
 		color: #333;
 	}
-	input{
-		border-radius: 10px;
+	input[type=text]{
 		font-family: Tahoma, Geneva, sans-serif;
-		font-size: 14px;
-		font-weight: normal;
-		background-color: #FFF;
+		font-size: 16px;
+		border-radius: 10px;
 		border-style: none;
 		text-align: center;
+	}
+	input[type=submit]{
+		width: 100px;
+		height: 20px;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 16px;
+		border-radius: 5px;
+		border-style: none;
+		text-align: center;	
+		border-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169);
+	}
+	input[type=file]{
+		border-style: none;
+		width: 190px;
+		height: 22px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-left: 8px;
 	}
 		
 	
@@ -332,6 +356,7 @@ table {
 		padding-left: 30px;
 		color: #FFF;
 	}
+	
 	#hanndinp{
 		font-family: "Arial Black", Gadget, sans-serif;
 		font-size: 18px;
