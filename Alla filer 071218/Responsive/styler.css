@@ -153,19 +153,22 @@ table {
 		color: #333;
 	}
 	#inputlogin{
-		width: 150px;
+		width: 200px;
 		height: 20px;
 		border-radius: 10px;
-		font-family: Tahoma, Geneva, sans-serif;
-		font-size: 14px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		margin-bottom: 2px;
+		padding-left: 30px;
+		color: #FFF;
 	}
-	#logininput{
-		font-family: Tahoma, Geneva, sans-serif;
-		font-size: 16px;
-		font-weight: bold;
-		margin-top: 5px;
-		color: #333;
-	}
+
+
+
+
+
 	input[type=text]{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
@@ -512,29 +515,38 @@ table {
 	#logonbuttondiv{
 		width: 250px;
 		height: 30px;
-		padding-top: 20px;
+		margin-top: 20px;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
-	}
-	#inputlogin{
-		width: 250px;
-		height: 35px;
-		border-radius: 10px;
-		font-family: Tahoma, Geneva, sans-serif;
-		font-size: 18px;
 	}
 	#logoncredentialsp{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 20px;
 		font-weight: bold;
-		color: #333;
+		color: #FFF;
 	}	
-	#logininput{
-		font-family: Tahoma, Geneva, sans-serif;
-		font-size: 20px;
-		font-weight: 600;
-		background-color: #FFF;
+	#logoncredentialsfillin{
+		width:250px;
+		height:30px;
+		padding: 0px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+	}
+	#inputlogin{
+		width:150px;
+		height:30px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		margin-bottom: 2px;
+		color: #FFF;
 	}
 	
 	

@@ -27,12 +27,11 @@
                     	<input type="text" name="password" id="logoncredentialsfillin">
                 	</div>
                 	<div id="logonbuttondiv">
-                		<input type="submit" id="logininput" value="Logga in">
+                		<input id="inputlogin" type="submit" id="logininput" value="Logga in">
                 	</div>
                 </form>
             </div>
-        </section>
-    </div>
+        </div>
     </div>
 <?php
 	/*if(!empty($_POST))
