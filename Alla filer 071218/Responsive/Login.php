@@ -1,3 +1,7 @@
+<?php
+	require("db.php");
+	session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -13,7 +17,7 @@
         </div>
         <div id="sectionlogin">
         	<div id="loginsectionborder">
-                <form action="start.php" method="get">
+                <form action="" method="post">
                     <div id="logoncredentialsdiv">
                     	<p id="logoncredentialsp">Användarnamn:</p>
                     	<input type="text" name="username" id="logoncredentialsfillin">
@@ -23,12 +27,47 @@
                     	<input type="text" name="password" id="logoncredentialsfillin">
                 	</div>
                 	<div id="logonbuttondiv">
-                		<input id="logininput" type="submit" value="Logga in" id="presstologin">
+                		<input type="submit" id="logininput" value="Logga in">
                 	</div>
                 </form>
             </div>
         </section>
     </div>
     </div>
+<?php
+	/*if(!empty($_POST))
+	{
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		
+		$sql = "SELECT Password FROM users WHERE Username = :username";
+		$stmt = $dbh->prepare($sql);
+		$stmt->bindParam(":username", $username);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+		
+		foreach($result as $row)
+		{
+			if(password_verify($password, $row->Password) == true)
+			{
+				$_SESSION['currentuser'] =  $username;
+				echo "Welcome";
+				?>
+                <script>
+					window.location.href = "start.php";
+                </script>
+                <?php
+			}
+			else if(!password_verify($password, $row->Password) == false)
+			{
+				?><p>Username or password is incorrect!</p><?php
+			}
+			else
+			{
+				?><p>An error occured, please try again!</p><?php
+			}
+		}
+	}*/
+?>
 </body>
 </html>
