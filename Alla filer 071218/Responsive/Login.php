@@ -24,7 +24,7 @@
                 	</div>
                 	<div id="logoncredentialsdiv">
                     	<p id="logoncredentialsp">Lösenord:</p>
-                    	<input type="password" name="password" id="logoncredentialsfillin">
+                    	<input type="text" name="password" id="logoncredentialsfillin">
                 	</div>
                 	<div id="logonbuttondiv">
                 		<input id="inputlogin" type="submit" id="logininput" value="Logga in">
