@@ -24,7 +24,7 @@
                 	</div>
                 	<div id="logoncredentialsdiv">
                     	<p id="logoncredentialsp">Lösenord:</p>
-                    	<input type="text" name="password" id="logoncredentialsfillin">
+                    	<input type="password" name="password" id="logoncredentialsfillin">
                 	</div>
                 	<div id="logonbuttondiv">
                 		<input id="inputlogin" type="submit" id="logininput" value="Logga in">
@@ -34,10 +34,11 @@
         </div>
     </div>
 <?php
-	/*if(!empty($_POST))
+	if(!empty($_POST))
 	{
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+		//$hashed_password = password_hash($password, PASSWORD_DEFUALT);
 		
 		$sql = "SELECT Password FROM users WHERE Username = :username";
 		$stmt = $dbh->prepare($sql);
@@ -47,7 +48,7 @@
 		
 		foreach($result as $row)
 		{
-			if(password_verify($password, $row->Password) == true)
+			if(password_verify($password, $row->Password))
 			{
 				$_SESSION['currentuser'] =  $username;
 				echo "Welcome";
@@ -57,7 +58,7 @@
                 </script>
                 <?php
 			}
-			else if(!password_verify($password, $row->Password) == false)
+			else if(!password_verify($password, $row->Password))
 			{
 				?><p>Username or password is incorrect!</p><?php
 			}
@@ -66,7 +67,7 @@
 				?><p>An error occured, please try again!</p><?php
 			}
 		}
-	}*/
+	}
 ?>
 </body>
 </html>
