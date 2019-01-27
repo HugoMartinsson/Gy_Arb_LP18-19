@@ -1,7 +1,7 @@
 <?php
 require("db.php");
 session_start();
-$coursename = $_GET['coursename'];
+$course = $_GET['course'];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -30,32 +30,25 @@ $coursename = $_GET['coursename'];
         </nav>
         <section>
         	<div id="navincourse">
-            	<a id="navincourselink" href=<?php echo "material.php?coursename=" . $coursename ?>>Material</a>
-                <a class="navincourseon" href=<?php echo "betakurs.php?coursename=" . $coursename ?>>Till kurs</a>
-                <a id="navincourselink" href=<?php echo "inlamningikurs.php?coursename=" . $coursename ?>>Inlämning</a>
-            </div>
-            <?php
-				
-				
-				?><h1 id="newsh1"><?php echo $coursename ?></h1>
-			
+            	<a id="navincourselink" href=<?php echo "material.php?course=" . $course ?>>Material</a>
+                <a class="navincourseon" href=<?php echo "betakurs.php?course=" . $course ?>><?php echo $course ?></a>
+                <a id="navincourselink" href=<?php echo "inlamningikurs.php?course=" . $course ?>>Inlämning</a>
+            </div>			
             <div id="news">
-            	<div id="news">
                 <?php
-					$sql = "SELECT * FROM news WHERE course = :coursename ORDER BY datetime DESC";
-					$stmt = $dbh->prepare($sql);
-					$stmt->bindParam(":coursename", $coursename);
-					$stmt->execute();
-					$result = $stmt->fetchAll();
+				$sql = "SELECT * FROM news WHERE course = :course ORDER BY datetime DESC";
+				$stmt = $dbh->prepare($sql);
+				$stmt->bindParam(":course", $course);
+				$stmt->execute();
+				$result = $stmt->fetchAll();
 					
-					foreach($result as $row)
-					{
-						?> <h1 id="newsh1"><?php echo $row->headline; ?></h1>
-                        <p id="newsp"><?php echo $row->news; ?><br><br></p>
-               	 		<p id="date"> <?php echo $row->datetime; ?></p><?php
-					}
+				foreach($result as $row)
+				{
+					?> <h1 id="newsh1"><?php echo $row->headline; ?></h1>
+                    <p id="newsp"><?php echo $row->news; ?><br><br></p>
+               	 	<p id="date"> <?php echo $row->datetime; ?></p><?php
+				}
 				?>
-          	  	</div>
             </div>
         </section>
 	</div>

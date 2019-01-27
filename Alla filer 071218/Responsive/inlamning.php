@@ -149,7 +149,7 @@ session_start();
 				{
 					 echo "An error occurred somewhere. Try again or contact the admin";
 					 ?>
-                     <form action=<?php echo "inlamning.php?coursename=" . $coursename; ?>>
+                     <form action=<?php echo "inlamning.php?course=" . $course; ?>>
                      	<input type="submit" value="Tillbaka">
                      </form>
                      <?php

@@ -1,7 +1,7 @@
 <?php
 require("db.php");
 session_start();
-$coursename = $_GET['coursename'];
+$course = $_GET['course'];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -30,14 +30,14 @@ $coursename = $_GET['coursename'];
         </nav>
         <section>
         	<div id="navincourse">
-            	<a class="navincourseon" href="<?php echo "material.php?coursename=" . $coursename ?>">Material</a>
-                <a id="navincourselink" href=<?php echo "betakurs.php?coursename=" . $coursename ?>>Till kurs</a>
-                <a id="navincourselink" href=<?php echo "inlamningikurs.php?coursename=" . $coursename ?>>Inlämning</a>
+            	<a class="navincourseon" href="<?php echo "material.php?course=" . $course ?>">Material</a>
+                <a id="navincourselink" href=<?php echo "betakurs.php?course=" . $course ?>>Till kurs</a>
+                <a id="navincourselink" href=<?php echo "inlamningikurs.php?course=" . $course ?>>Inlämning</a>
             </div>
             <?php 
-				$sql = "SELECT * FROM teacherfiles WHERE Filecourse = :coursename";
+				$sql = "SELECT * FROM teacherfiles WHERE Filecourse = :course";
 				$stmt = $dbh->prepare($sql);
-				$stmt->bindParam(":coursename", $coursename);
+				$stmt->bindParam(":course", $course);
 				$stmt->execute();
 				$result = $stmt->fetchAll();
 			?>

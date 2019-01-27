@@ -43,13 +43,14 @@ session_start();
 				?>
 				
 			<form action="" method="post" enctype="multipart/form-data">
-				<input type="file" name="myfile" id="fileToUpload">
+				<input type="file" name="myfile" id="fileToUpload"><br>
 				<select name="course">
 					<?php
 					//Skriver ut alla kurser så läraren får välja vart filen ska publiceras
 					foreach($result as $row)
 					{
 						?>
+                        <option value="" disabled selected>Uppgift</option>
 						<option value="<?php echo $row->Name; ?>"><?php echo $row->Name; ?></option>
 						<?php
 					}
@@ -109,6 +110,11 @@ session_start();
 					else
 					{
 						 echo "An error occurred somewhere. Try again or contact the admin";
+						 ?>
+                         <form action="teacher_file_upload.php">
+                            <input type="submit" value="Tillbaka">
+                         </form>
+                         <?php
 					}
 				}
 			}

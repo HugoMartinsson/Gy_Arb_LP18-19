@@ -1,7 +1,7 @@
 <?php
 require("db.php");
 session_start();
-$coursename = $_GET['coursename'];
+$course = $_GET['course'];
 ?>
 <?php
 	//SKA ERSÄTTAS MED RIKTIG CURRENTUSER
@@ -22,7 +22,7 @@ $coursename = $_GET['coursename'];
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Material</title>
+<title>Inlämning</title>
 <link rel="stylesheet" href="styler.css" type="text/css">
 </head>
 
@@ -45,28 +45,27 @@ $coursename = $_GET['coursename'];
         </nav>
         <section>
         	<div id="navincourse">
-            	<a id="navincourselink" href=<?php echo "material.php?coursename=" . $coursename ?>>Material</a>
-                <a id="navincourselink" href=<?php echo "betakurs.php?coursename=" . $coursename ?>>Till kurs</a>
-                <a class="navincourseon" href=<?php echo "inlamningikurs.php?coursename=" . $coursename ?>>Inlämning</a>
+            	<a id="navincourselink" href=<?php echo "material.php?course=" . $course ?>>Material</a>
+                <a id="navincourselink" href=<?php echo "betakurs.php?course=" . $course ?>><?php echo $course ?></a>
+                <a class="navincourseon" href=<?php echo "inlamningikurs.php?course=" . $course ?>>Inlämning</a>
             </div>
             <div id="news">
                     <?php
 							if(!empty($_GET))
 							{
-								
-								
 								$sql = "SELECT HandInName FROM handin WHERE HandInCourse = :course";
 								$stmt = $dbh->prepare($sql);
-								$stmt->bindParam(":course", $coursename);
+								$stmt->bindParam(":course", $course);
 								$stmt->execute();
 								$result = $stmt->fetchAll();
 							}
-							if(!empty($coursename))
+							if(!empty($course))
 							{
 					?>
 								<form action="" method="get">
-									<input type="hidden" name="coursename" value="<?php echo $coursename ?>">
+									<input type="hidden" name="course" value="<?php echo $course ?>">
 									<select name="handin">
+                                    <option value="" disabled selected>Uppgift</option>
 									<?php
 									foreach($result as $row)
 									{
@@ -80,10 +79,10 @@ $coursename = $_GET['coursename'];
 								</form>
 					<?php
 						}
-						if(!empty($_GET['handin']) && !empty($_GET['coursename']))
+						if(!empty($_GET['handin']) && !empty($_GET['course']))
 						{
 							$handInName = $_GET['handin'];
-							$coursename = $_GET['coursename'];
+							$course = $_GET['course'];
 							?>
 							<form action="" method="post" enctype="multipart/form-data">
 								<input type="file" name="myfile" id="fileToUpload">
@@ -119,7 +118,7 @@ $coursename = $_GET['coursename'];
 			$stmt = $dbh->prepare($sql);
 			$stmt->bindParam(":fileName", $fileName);
 			$stmt->bindParam(":uploadDirectory", $uploadDirectory);
-			$stmt->bindParam(":course", $coursename);
+			$stmt->bindParam(":course", $course);
 			$stmt->bindParam(":FileHandinName", $handInName);
 			$stmt->bindParam(":uploader", $_SESSION['currentuser']);
 			$stmt->execute();
@@ -141,7 +140,7 @@ $coursename = $_GET['coursename'];
 					 echo "An error occurred somewhere. Try again or contact the admin";
 					 
 					 ?>
-                     <form action="<?php echo "inlamningikurs.php?coursename=" . $coursename; ?>" method="get">
+                     <form action="<?php echo "inlamningikurs.php?course=" . $course; ?>" method="get">
                      	<input type="submit" value="Tillbaka">
                      </form>
                      <?php

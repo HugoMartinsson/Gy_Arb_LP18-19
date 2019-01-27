@@ -52,18 +52,7 @@ session_start();
                     <input type="submit" value="Lägg till kurs">
                 </form>
 				<?php*/
-				?>
-                <?php
-				if(!empty($_GET['name']) && !empty($_GET['teacher']) && $currentusertype == 'teacher')
-				{
-					$name = $_GET['name'];
-					$text = $_GET['teacher'];
-					//Fortsätta
-				}
-				?>
-            
-            <div id="block_course">
-            	<?php
+				
 				if($currentusertype == "student")
 				{
 					//SKA VARA KVAR ÄVEN NÄR CURRENTUSER ÄR IMPLEMENTERAD
@@ -78,7 +67,7 @@ session_start();
 					
 					foreach($result2 as $row)
 					{
-						?><a id="linktocourse" href="<?php echo 'betakurs.php?coursename=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
+						?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
                     }
 				}
 				if($currentusertype == 'teacher')
@@ -93,18 +82,10 @@ session_start();
 					
 					foreach($result2 as $row)
 					{
-						?><a id="linktocourse" href="<?php echo 'betakurs.php?coursename=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
+						?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
                     }
 				}
-				?>
-                <a id="linktocourse" href=""><p>Exempel</p></a><br>
-                <a id="linktocourse" href=""><p>Exempel</p></a><br>
-                <a id="linktocourse" href=""><p>Exempel</p></a><br>
-                <a id="linktocourse" href=""><p>Exempel</p></a><br>
-                <a id="linktocourse" href=""><p>Exempel</p></a><br>
-                <a id="linktocourse" href=""><p>Exempel</p></a><br>
-            </div>
-            
+				?>            
         </section>
     </div>
 </body>
