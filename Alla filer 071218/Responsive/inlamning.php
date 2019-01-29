@@ -144,12 +144,17 @@ session_start();
 				if ($didUpload)
 				{
 					 echo "The file " . $FileNameToShow . " has been uploaded";
+					 ?>
+                     <form action="inlamning.php" method="get">
+                     	<input type="submit" value="Tillbaka">
+                     </form>
+                     <?php
 				} 
 				else
 				{
 					 echo "An error occurred somewhere. Try again or contact the admin";
 					 ?>
-                     <form action=<?php echo "inlamning.php?course=" . $course; ?>>
+                     <form action="inlamning.php" method="get">
                      	<input type="submit" value="Tillbaka">
                      </form>
                      <?php

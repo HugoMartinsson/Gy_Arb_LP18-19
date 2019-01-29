@@ -140,8 +140,9 @@ $course = $_GET['course'];
 					 echo "An error occurred somewhere. Try again or contact the admin";
 					 
 					 ?>
-                     <form action="<?php echo "inlamningikurs.php?course=" . $course; ?>" method="get">
+                     <form action="" method="get">
                      	<input type="submit" value="Tillbaka">
+                        <input type="hidden" name="course" value="<?php echo $course ?>">
                      </form>
                      <?php
 				}
