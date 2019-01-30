@@ -20,11 +20,11 @@
                 <form action="" method="post">
                     <div id="logoncredentialsdiv">
                     	<p id="logoncredentialsp">Användarnamn:</p>
-                    	<input type="text" name="username" id="logoncredentialsfillin">
+                    	<input type="text" name="username" id="logoncredentialsfillin" placeholder="Användarnamn">
                 	</div>
                 	<div id="logoncredentialsdiv">
                     	<p id="logoncredentialsp">Lösenord:</p>
-                    	<input type="text" name="password" id="logoncredentialsfillin">
+                    	<input type="text" name="password" id="logoncredentialsfillin" placeholder="Lösenord">
                 	</div>
                 	<div id="logonbuttondiv">
                 		<input id="inputlogin" type="submit" id="logininput" value="Logga in">

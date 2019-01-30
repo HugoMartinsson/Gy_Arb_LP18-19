@@ -50,9 +50,10 @@ table {
 	border-spacing: 0;
 }
 
-
+/* CSS för "mobil" */
 @media screen and (max-width: 480px)
 {
+/* Allmän CSS */
 	#wrapper {
 		background-image: url(img/background_mobile.jpg);
 		background-repeat: no-repeat;
@@ -99,7 +100,7 @@ table {
 	
 	
 	
-
+/* CSS för login */
 	#wrapperlogin{
 		background-image: url(img_betaphone_1.0.1/background_login_1.0.1.jpg);
 		background-repeat: no-repeat;
@@ -128,7 +129,7 @@ table {
 		margin-left: auto;
 		margin-right: auto;
 		border-radius: 15px;
-		background-color: rgba(255, 255, 255, 0.4);
+		background-color: rgba(94, 94, 94, 0.4);
 	}
 	#logoncredentialsdiv{
 		width: 250px;
@@ -144,27 +145,35 @@ table {
 		margin-right: auto;
 		text-align: center;
 	}
-	#logoncredentialsfillin{
-		width: 120px;
-		height: 20px;
-	}
 	#logoncredentialsp{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
 		font-weight: bold;
-		color: #333;
+		color: #FFF;
 	}
 	#inputlogin{
-		width: 200px;
-		height: 20px;
+		width:100px;
+		height:30px;
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		background-color: rgba(169,169,169,0.9);
 		border: 2px solid;
 		border-color: #FFF;
 		margin-bottom: 2px;
-		padding-left: 30px;
+		margin-top: 5px;
 		color: #FFF;
+	}
+	#logoncredentialsfillin{
+		width: 150px;
+		height: 25px;
+		padding: 0px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+		text-align: center;
 	}
 
 
@@ -513,7 +522,7 @@ table {
 		margin-right: auto;
 		margin-top: 50px;
 		border-radius: 15px;
-		background-color: rgba(255, 255, 255, 0.4);
+		background-color: rgba(94, 94, 94, 0.4);
 	}
 	#logoncredentialsdiv{
 		width: 250px;
