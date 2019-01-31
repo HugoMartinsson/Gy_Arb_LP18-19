@@ -39,6 +39,7 @@ $course = $_GET['course'];
                         <a href="kurser_overview_KLAR.php">Kurser/Klassrum</a>
                         <a href="lanksamling.php">Länksamlingar</a>
                         <a href="inlamning.php">Inlämningar</a>
+                        <a href="http://www.novasoftware.se/webviewer/(S(kfzct0fzd3s4iy55e3xyz345))/design1.aspx?schoolid=53520">Schema</a>
                         <a href="mittkonto.php">Mitt Konto</a>
                     </div>
              </div>

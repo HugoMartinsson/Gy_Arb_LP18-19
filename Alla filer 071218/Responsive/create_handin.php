@@ -30,8 +30,9 @@ session_start();
                     <div id="myDropdown" class="dropdown-content">
                         <a href="start.php">Hem</a>
                         <a href="kurser_overview_KLAR.php">Kurser/Klassrum</a>
-                        <a href="dropdowncontent">Länksamlingar</a>
+                        <a href="lanksamling.php">Länksamlingar</a>
                         <a href="inlamning.php">Inlämningar</a>
+                        <a href="http://www.novasoftware.se/webviewer/(S(kfzct0fzd3s4iy55e3xyz345))/design1.aspx?schoolid=53520">Schema</a>
                         <a href="mittkonto.php">Mitt Konto</a>
                     </div>
              </div>
@@ -39,8 +40,8 @@ session_start();
         <section>
         	<div id="createhandindiv">
 				<form action="" method="get">
-                	<p id="hanndinp">Välj kurs</p>	
 					<select name="course">
+                    	<option value="" disabled selected>Välj kurs</option>
         				<?php
 						//Skriver ut alla kurser så läraren får välja vart filen ska publiceras
 						foreach($result as $row)
@@ -50,9 +51,8 @@ session_start();
             				<?php
 						}
 						?>
-    			</select>
-    			<p id="hanndinp">Namn på inlämningen</p>
-				<input id="inputhandin" type="text" name="handInName"><br>
+    				</select><br>
+				<input id="inputhandin" type="text" name="handInName" placeholder="Namn på inlämningen"><br>
     			<input id="inputhandin" type="submit" value="Skapa">
 				</form>
 				<?php 
@@ -68,7 +68,8 @@ session_start();
 						$stmt->execute();
 					}
 				?>
-    	</div>
-	</section>
+    		</div>
+		</section>
+    </div>
 </body>
 </html>
