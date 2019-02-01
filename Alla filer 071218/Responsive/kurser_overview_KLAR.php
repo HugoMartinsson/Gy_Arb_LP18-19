@@ -2,18 +2,18 @@
 require("db.php");
 session_start();
 
-	$_SESSION['currentuser'] = "huma0130";
+$_SESSION['currentuser'] = "huma0130";
 	
-	$sql = "SELECT Type FROM users where Username = :currentuser";
-	$stmt = $dbh->prepare($sql);
-	$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
-	$stmt->execute();
-	$result = $stmt->fetchAll();
+$sql = "SELECT Type FROM users where Username = :currentuser";
+$stmt = $dbh->prepare($sql);
+$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+$stmt->execute();
+$result = $stmt->fetchAll();
 	
-	foreach($result as $row)
-	{
-		$currentusertype = $row->Type;
-	}
+foreach($result as $row)
+{
+	$currentusertype = $row->Type;
+}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -42,52 +42,63 @@ session_start();
              </div>
         </nav>
         <section>
-        <?php
-		//DEHÄR SKIPPAR VI ÄN SÅ LÄNGE, OM VI HAR TID ÖVER KAN VI BÖRJA TITTA PÅ DETTA
-		/*
-		?>
-        	<div id="block_course_add">
-            	<form action="" method="get">
-                	<input type="text" name="name" placeholder="Kursnamn">
-                    <input type="text" name="teacher" placeholder="Lärare">
-                    <input type="submit" value="Lägg till kurs">
-                </form>
-				<?php*/
-				
-				if($currentusertype == "student")
+        	<?php
+			if($currentusertype == "student")
+			{
+				//SKA VARA KVAR ÄVEN NÄR CURRENTUSER ÄR IMPLEMENTERAD
+				$user = "%" . $_SESSION['currentuser'] . "%";
+					
+				//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
+				$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+				$stmt = $dbh->prepare($sql);
+				$stmt->bindParam(":currentuser", $user);
+				$stmt->execute();
+				$result2 = $stmt->fetchAll();
+					
+				foreach($result2 as $row)
 				{
-					//SKA VARA KVAR ÄVEN NÄR CURRENTUSER ÄR IMPLEMENTERAD
-					$user = "%" . $_SESSION['currentuser'] . "%";
+					?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><?php
+                }
+			}
+			if($currentusertype == 'teacher')
+			{
 					
-					//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
-					$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
-					$stmt = $dbh->prepare($sql);
-					$stmt->bindParam(":currentuser", $user);
-					$stmt->execute();
-					$result2 = $stmt->fetchAll();
+				//Hämtar alla kurser som läraren undervisar i
+				$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
+				$stmt = $dbh->prepare($sql);
+				$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+				$stmt->execute();
+				$result2 = $stmt->fetchAll();
 					
-					foreach($result2 as $row)
-					{
-						?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
-                    }
-				}
-				if($currentusertype == 'teacher')
+				foreach($result2 as $row)
 				{
-					
-					//Hämtar alla kurser som läraren undervisar i
-					$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
-					$stmt = $dbh->prepare($sql);
-					$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
-					$stmt->execute();
-					$result2 = $stmt->fetchAll();
-					
-					foreach($result2 as $row)
-					{
-						?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
-                    }
-				}
-				?>            
+					?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
+                }
+			}
+			?>            
         </section>
     </div>
+<script>
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+    	document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) {
+  		if (!event.target.matches('.dropbtn')) {
+
+  	    var dropdowns = document.getElementsByClassName("dropdown-content");
+    	var i;
+    	for (i = 0; i < dropdowns.length; i++) {
+     	var openDropdown = dropdowns[i];
+    if (openDropdown.classList.contains('show')) {
+       	openDropdown.classList.remove('show');
+      }
+	}
+}
+}
+</script>
 </body>
 </html>

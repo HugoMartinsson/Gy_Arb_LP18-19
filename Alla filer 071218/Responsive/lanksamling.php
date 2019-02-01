@@ -8,7 +8,7 @@
 <body>
 	<div id="wrapper">
     	<header>
-        	<h1 id="headerlogoh1">"Logga"</h1>
+        	<h1 id="headerlogoh1">"LOGGA"</h1>
         </header>
         <nav>
         	<div id="dropdown">
@@ -24,32 +24,32 @@
              </div>
         </nav>
         <section>
-            	<a id="lanksammlinga" href="https://www.inlasningstjanst.se/bibliotek/#/bokhyllan">Inläsningstjänst</a>
-                <a id="lanksammlinga" href="https://www.ne.se">NE</a>
-                <a id="lanksammlinga" href="https://onedrive.live.com/?authkey=%21ADf60_BzaaEZbqw&cid=F406DF85EF25B27E&id=F406DF85EF25B27E%2114521&parId=F406DF85EF25B27E%2114400&action=locate">Logger Pro</a>
+            	<a id="lanksamlinga" href="https://www.inlasningstjanst.se/bibliotek/#/bokhyllan">Inläsningstjänst</a>
+                <a id="lanksamlinga" href="https://www.ne.se">NE</a>
+                <a id="lanksamlinga" href="https://onedrive.live.com/?authkey=%21ADf60_BzaaEZbqw&cid=F406DF85EF25B27E&id=F406DF85EF25B27E%2114521&parId=F406DF85EF25B27E%2114400&action=locate">Logger Pro</a>
                 
-                <a id="lanksammlinga" href="">Provvakt - Matematik</p></a>
+                <a id="lanksamlinga" href="">Provvakt - Matematik</p></a>
                 <!-- Går inte att få fram länken från vklass -->
                 
-                <a id="lanksammlinga" href="">Provvakt - Word</a>
+                <a id="lanksamlinga" href="">Provvakt - Word</a>
                 <!-- Går inte att få fram länken från vklass -->
                 
-                <a id="lanksammlinga" href="">Provvakt - Wordpad</a>
+                <a id="lanksamlinga" href="">Provvakt - Wordpad</a>
                 <!-- Går inte att få fram länken från vklass -->
                 
-                <a id="lanksammlinga" href="https://education.ti.com/en/software/details/en/62263B036C1641C3B6CF1C4F18FE84DA/ti-nspirecxcas_pc_update">TI-Nspire</a>
-                <a id="lanksammlinga" href="https://www.alex.se">Alex</a>
-                <a id="lanksammlinga" href="">ArtikelSök</a>
+                <a id="lanksamlinga" href="https://education.ti.com/en/software/details/en/62263B036C1641C3B6CF1C4F18FE84DA/ti-nspirecxcas_pc_update">TI-Nspire</a>
+                <a id="lanksamlinga" href="https://www.alex.se">Alex</a>
+                <a id="lanksamlinga" href="">ArtikelSök</a>
                 <!-- Blev redirectad till fronter med länken på vklass -->
                 
-                <a id="lanksammlinga" href="https://digitalpedagogik.se">Digital Pedagogik</a>
-                <a id="lanksammlinga" href="">Digitala Lärresurser</a>
+                <a id="lanksamlinga" href="https://digitalpedagogik.se">Digital Pedagogik</a>
+                <a id="lanksamlinga" href="">Digitala Lärresurser</a>
                 <!-- Går inte att få fram länken från vklass -->
                 
-                <a id="lanksammlinga" href="http://galeapps.galegroup.com/apps/auth/vasterh?cause=http%3A%2F%2Ffind.galegroup.com%2Fmenu%2Fcommonmenu.do%3FuserGroupName%3Dv">Global Issues in context</a>
-                <a id="lanksammlinga" href="https://skovde.inspera.com">Inspera - elever</a>
-                <a id="lanksammlinga" href="https://www.ui.se/landguiden">Landguiden</a>               
-                <a id="lanksammlinga" href="https://www.retriever-info.com/?e=3">Retriever</a>
+                <a id="lanksamlinga" href="http://galeapps.galegroup.com/apps/auth/vasterh?cause=http%3A%2F%2Ffind.galegroup.com%2Fmenu%2Fcommonmenu.do%3FuserGroupName%3Dv">Global Issues in context</a>
+                <a id="lanksamlinga" href="https://skovde.inspera.com">Inspera - elever</a>
+                <a id="lanksamlinga" href="https://www.ui.se/landguiden">Landguiden</a>               
+                <a id="lanksamlinga" href="https://www.retriever-info.com/?e=3">Retriever</a>
         </section>
     </div>
     <script>
