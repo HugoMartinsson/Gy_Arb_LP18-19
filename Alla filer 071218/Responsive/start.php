@@ -1,6 +1,6 @@
 <?php 
-session_start();
-require("db.php");
+	session_start();
+	require("db.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -12,32 +12,7 @@ require("db.php");
 <body>
 <?php
 	$_SESSION['currentuser'] = "Huma0130";
-	
-	//Kan tas bort mot slutet men låt ligga kvar nu
-	/*$sql = "SELECT Password FROM users WHERE Username = :username";
-	$stmt = $dbh->prepare($sql);
-	$stmt->bindParam(":username", $username);
-	$stmt->execute();
-	$result = $stmt->fetchAll();*/
-	
-	
 ?>
-	<?php 
-	/*
-	foreach($result as $row)
-	{
-	if($row->Password != $password) : ?>
-    	<form action="betamobilelogin_1.0.1.php" method="get">
-        	<p>Felaktigt användarnamn eller lösenord</p>
-        	<p>Klicka på knappen för att komma tillbaka till inloggningen</p>
-        	<input type="submit" value="Till Inloggning">
-       	</form>
-	<?php endif; ?>
-<?php
-	if($row->Password == $password)
-	{
-		echo "Welcome " . $_SESSION['currentuser'];
-		*/?>
         <div id="wrapper">
     	<header>
         	<h1 id="headerlogoh1">"LOGGA"</h1>
@@ -57,9 +32,41 @@ require("db.php");
         </nav>
         <section>
         	<div id="news">
-            	<h1 id="newsh1">"You decide"</h1>
-                <p id="newsp">This is a random text that you as a user is able to write yourself. At this point we have not yet implementet the function that allows you to write here, but we are working our hardets to make things work! Soon enough you as a user (with ceratin priviledges) will be able to write news that will show up in this section so that your students will be able to read them!<br><br></p>
-                <p id="date"></p>
+            	<?php 
+					
+					try
+					{
+						$user = "%" . $_SESSION['currentuser'] . "%";
+						$count = 1;
+						
+						//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
+						$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+						$stmt = $dbh->prepare($sql);
+						$stmt->bindParam(":currentuser", $user);
+						$stmt->execute();
+						$result = $stmt->fetchAll();
+						
+						foreach($result as $row)
+						{
+							$sql = "SELECT * FROM news WHERE course = :course";
+							$stmt = $dbh->prepare($sql);
+							$stmt->bindParam(":course", $row->Name);
+							$stmt->execute();
+							$result2 = $stmt->fetchAll();
+							
+							foreach($result2 as $row)
+							{
+								?> <h1 id="newsh1"><?php echo $row->headline ?></h1>
+								<p id="newsp"><?php echo $row->news ?><br><br></p>
+								<p id="date"> <?php echo $row->datetime ?></p><?php
+							}
+						}
+					}
+					catch(Exception $e)
+					{
+						echo $e->getMessage();	
+					}
+				?>
             </div>
         </section>
     </div>
