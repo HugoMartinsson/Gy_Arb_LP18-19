@@ -55,8 +55,13 @@ session_start();
 				<input id="inputhandin" type="text" name="handInName" placeholder="Namn på inlämningen"><br>
     			<input id="inputhandin" type="submit" value="Skapa">
 				</form>
-				<?php 
-					if(!empty($_GET))
+				<?php
+					if(empty($_GET['handInName']) && !empty($_GET))
+					{
+						echo "Var vänlig skriv ett namn och försök igen";
+					}
+					
+					if(!empty($_GET['handInName']))
 					{
 						$course = $_GET['course'];
 						$handInName = $_GET['handInName'];
