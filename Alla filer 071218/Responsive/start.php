@@ -31,43 +31,45 @@
              </div>
         </nav>
         <section>
-        	<div id="news">
-            	<?php 
+            <?php 
 					
-					try
+				try
+				{
+					$user = "%" . $_SESSION['currentuser'] . "%";
+					$count = 1;
+						
+					//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
+					$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+					$stmt = $dbh->prepare($sql);
+					$stmt->bindParam(":currentuser", $user);
+					$stmt->execute();
+					$result = $stmt->fetchAll();
+						
+					foreach($result as $row)
 					{
-						$user = "%" . $_SESSION['currentuser'] . "%";
-						$count = 1;
-						
-						//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
-						$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+						$sql = "SELECT * FROM news WHERE course = :course";
 						$stmt = $dbh->prepare($sql);
-						$stmt->bindParam(":currentuser", $user);
+						$stmt->bindParam(":course", $row->Name);
 						$stmt->execute();
-						$result = $stmt->fetchAll();
-						
-						foreach($result as $row)
-						{
-							$sql = "SELECT * FROM news WHERE course = :course";
-							$stmt = $dbh->prepare($sql);
-							$stmt->bindParam(":course", $row->Name);
-							$stmt->execute();
-							$result2 = $stmt->fetchAll();
+						$result2 = $stmt->fetchAll();
 							
-							foreach($result2 as $row)
-							{
-								?> <h1 id="newsh1"><?php echo $row->headline ?></h1>
-								<p id="newsp"><?php echo $row->news ?><br><br></p>
-								<p id="date"> <?php echo $row->datetime ?></p><?php
-							}
+						foreach($result2 as $row)
+						{
+							?>
+                               <div id="news">
+                               	<h1 id="newsh1"><?php echo $row->headline ?></h1>
+								<p id="newsp"><?php echo $row->news ?></p>
+								<p id="date"> <?php echo $row->datetime ?></p>
+                               </div>
+                            <?php
 						}
 					}
-					catch(Exception $e)
-					{
-						echo $e->getMessage();	
-					}
-				?>
-            </div>
+				}
+				catch(Exception $e)
+				{
+					echo $e->getMessage();	
+				}
+			?>
         </section>
     </div>
     

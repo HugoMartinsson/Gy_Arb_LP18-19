@@ -54,6 +54,11 @@ table {
 @media screen and (max-width: 480px)
 {
 /* Allmän CSS */
+	body{
+		background-image: url(img/background_mobile.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
 	#wrapper {
 		background-image: url(img/background_mobile.jpg);
 		background-repeat: no-repeat;
@@ -77,14 +82,12 @@ table {
 		height: 35px;
 		padding-bottom: 5px;
 		float: left;
-		background-color: #F00;
 	}
 	section{
 		width: 475px;
 		height: auto;
 		padding-left: 5px;
 		float: left;
-		background-color: #0F0;
 	}
 	#headerlogoh1{
 		font-family: Tahoma, Geneva, sans-serif;
@@ -104,8 +107,6 @@ table {
 	
 /* CSS för login */
 	#wrapperlogin{
-		background-image: url(img_betaphone_1.0.1/background_login_1.0.1.jpg);
-		background-repeat: no-repeat;
 		width: 480px;
 		height: 100vh;
 		position: relative;
@@ -507,7 +508,6 @@ table {
 	
 /* CSS för login*/	
 	#wrapperlogin{
-		background-image: url(img_betaphone_1.0.1/backgroundimage_logoncomp.jpg);
 		width: 700px;
 		height: 100vh;
 		position: relative;
@@ -702,7 +702,7 @@ table {
 		font-size: 24px;
 		font-weight: bold;
 		color: #FFF;
-		padding-bottom: 10px;
+		padding-top: 20px;
 	}
 	#courseh1{
 		font-family: "Times New Roman", Times, serif;
@@ -715,11 +715,14 @@ table {
 		font-family: "Times New Roman", Times, serif;
 		font-size: 18px;
 		color: #FFF;
+		padding-bottom: 5px;
+		padding-top: 5px;
 	}
 	#date{
 		font-family: "Times New Roman", Times, serif;
 		font-size: 18px;
 		color: #FFF;
+		padding-bottom: 20px;
 	}
 	
 	
