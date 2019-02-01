@@ -77,12 +77,14 @@ table {
 		height: 35px;
 		padding-bottom: 5px;
 		float: left;
+		background-color: #F00;
 	}
 	section{
-		width: 480px;
+		width: 475px;
 		height: auto;
-		margin-left: 5px;
+		padding-left: 5px;
 		float: left;
+		background-color: #0F0;
 	}
 	#headerlogoh1{
 		font-family: Tahoma, Geneva, sans-serif;
@@ -234,10 +236,10 @@ table {
 	
 	#news
 	{
-		width: 470px;
+		width: 448px;
 		height: auto;
 		padding: 10px;
-		margin-top: 10px;
+		margin-top: 5px;
 		float: left;
 		border-radius: 10px;
 		border: 1px solid;
@@ -277,6 +279,7 @@ table {
 		font-size: 18px;
 		text-decoration: none;
 		float: left;
+		margin-top: 5px;
 	}
 	#navincourselink:hover{
 		background-color: rgb(128,128,128); 
@@ -295,6 +298,7 @@ table {
 		font-size: 18px;
 		text-decoration: none;
 		float: left;
+		margin-top: 5px;
 	}
 	#divmyacc{
 		width: 470px;
@@ -307,6 +311,7 @@ table {
 		height: 40px;
 		padding-top: 10px;
 		margin-left: 40px;
+		margin-top: 5px;
 		display: list-item;
 		list-style-type: none;
 		text-decoration: none;
@@ -322,13 +327,13 @@ table {
 	#linktocourse:hover{ 
 		background-color:rgb(128,128,128); 
 	}
-	#lanksammlinga{
+	#lanksamlinga{
 		display: list-item;
 		list-style-type: none;
 		width: 400px;
 		height: 30px;
 		padding-top: 10px;
-		margin-bottom: 3px;
+		margin-top: 5px;
 		border-radius:10px;
 		border: 1px solid;
 		border-color: #FFF;
@@ -343,7 +348,7 @@ table {
 		margin-right: auto;
 		position: relative;
 	}
-	#lanksammlinga:hover{ 
+	#lanksamlinga:hover{ 
 		background-color:rgb(128,128,128); 
 	}
 	#materaillinksa{
@@ -737,6 +742,7 @@ table {
 		height: 40px;
 		padding-top: 10px;
 		margin-left: 400px;
+		margin-top: 5px;
 		display: list-item;
 		list-style-type: none;
 		text-decoration: none;
@@ -758,7 +764,7 @@ table {
 	
 	
 	
-	#lanksammlinga{
+	#lanksamlinga{
 		display: list-item;
 		list-style-type: none;
 		width: 350px;

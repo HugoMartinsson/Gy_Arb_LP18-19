@@ -32,7 +32,7 @@ $course = $_GET['course'];
         <section>
         	<div id="navincourse">
             	<a class="navincourseon" href="<?php echo "material.php?course=" . $course ?>">Material</a>
-                <a id="navincourselink" href=<?php echo "betakurs.php?course=" . $course ?>>Till kurs</a>
+                <a id="navincourselink" href=<?php echo "betakurs.php?course=" . $course ?>><?php echo $course ?></a>
                 <a id="navincourselink" href=<?php echo "inlamningikurs.php?course=" . $course ?>>Inlämning</a>
             </div>
             <?php 
