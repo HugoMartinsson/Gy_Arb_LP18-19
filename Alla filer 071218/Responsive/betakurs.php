@@ -37,11 +37,18 @@ $course = $_GET['course'];
             </div>			
             <div id="news">
                 <?php
-				$sql = "SELECT * FROM news WHERE course = :course ORDER BY datetime DESC";
-				$stmt = $dbh->prepare($sql);
-				$stmt->bindParam(":course", $course);
-				$stmt->execute();
-				$result = $stmt->fetchAll();
+				try
+				{
+					$sql = "SELECT * FROM news WHERE course = :course ORDER BY datetime DESC";
+					$stmt = $dbh->prepare($sql);
+					$stmt->bindParam(":course", $course);
+					$stmt->execute();
+					$result = $stmt->fetchAll();
+				}
+				catch(Exception $e)
+				{
+					echo $e->getMessage();
+				}
 					
 				foreach($result as $row)
 				{

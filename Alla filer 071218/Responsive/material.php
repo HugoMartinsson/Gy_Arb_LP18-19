@@ -36,11 +36,18 @@ $course = $_GET['course'];
                 <a id="navincourselink" href=<?php echo "inlamningikurs.php?course=" . $course ?>>Inlämning</a>
             </div>
             <?php 
-				$sql = "SELECT * FROM teacherfiles WHERE Filecourse = :course";
-				$stmt = $dbh->prepare($sql);
-				$stmt->bindParam(":course", $course);
-				$stmt->execute();
-				$result = $stmt->fetchAll();
+				try
+				{
+					$sql = "SELECT * FROM teacherfiles WHERE Filecourse = :course";
+					$stmt = $dbh->prepare($sql);
+					$stmt->bindParam(":course", $course);
+					$stmt->execute();
+					$result = $stmt->fetchAll();
+				}
+				catch(Exception $e)
+				{
+					echo $e->getMessage();
+				}
 			?>
             <div id="news">
             	<?php 

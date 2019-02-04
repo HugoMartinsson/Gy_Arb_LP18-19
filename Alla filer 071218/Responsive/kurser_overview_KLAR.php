@@ -3,13 +3,20 @@ require("db.php");
 session_start();
 
 $_SESSION['currentuser'] = "huma0130";
-	
-$sql = "SELECT Type FROM users where Username = :currentuser";
-$stmt = $dbh->prepare($sql);
-$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
-$stmt->execute();
-$result = $stmt->fetchAll();
-	
+
+try
+{
+	$sql = "SELECT Type FROM users where Username = :currentuser";
+	$stmt = $dbh->prepare($sql);
+	$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+	$stmt->execute();
+	$result = $stmt->fetchAll();
+}
+catch(Exception $e)
+{
+	echo $e->getMessage();
+}
+
 foreach($result as $row)
 {
 	$currentusertype = $row->Type;
@@ -47,13 +54,20 @@ foreach($result as $row)
 			{
 				//SKA VARA KVAR ÄVEN NÄR CURRENTUSER ÄR IMPLEMENTERAD
 				$user = "%" . $_SESSION['currentuser'] . "%";
-					
-				//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
-				$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
-				$stmt = $dbh->prepare($sql);
-				$stmt->bindParam(":currentuser", $user);
-				$stmt->execute();
-				$result2 = $stmt->fetchAll();
+				
+				try
+				{
+					//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
+					$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+					$stmt = $dbh->prepare($sql);
+					$stmt->bindParam(":currentuser", $user);
+					$stmt->execute();
+					$result2 = $stmt->fetchAll();
+				}
+				catch(Exception $e)
+				{
+					echo $e->getMessage();
+				}
 					
 				foreach($result2 as $row)
 				{
@@ -62,14 +76,20 @@ foreach($result as $row)
 			}
 			if($currentusertype == 'teacher')
 			{
-					
-				//Hämtar alla kurser som läraren undervisar i
-				$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
-				$stmt = $dbh->prepare($sql);
-				$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
-				$stmt->execute();
-				$result2 = $stmt->fetchAll();
-					
+				try
+				{
+					//Hämtar alla kurser som läraren undervisar i
+					$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
+					$stmt = $dbh->prepare($sql);
+					$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+					$stmt->execute();
+					$result2 = $stmt->fetchAll();
+				}
+				catch(Exception $e)
+				{
+					echo $e->getMessage();
+				}
+				
 				foreach($result2 as $row)
 				{
 					?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php

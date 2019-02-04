@@ -38,13 +38,19 @@
 	{
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		//$hashed_password = password_hash($password, PASSWORD_DEFUALT);
 		
-		$sql = "SELECT Password FROM users WHERE Username = :username";
-		$stmt = $dbh->prepare($sql);
-		$stmt->bindParam(":username", $username);
-		$stmt->execute();
-		$result = $stmt->fetchAll();
+		try
+		{
+			$sql = "SELECT Password FROM users WHERE Username = :username";
+			$stmt = $dbh->prepare($sql);
+			$stmt->bindParam(":username", $username);
+			$stmt->execute();
+			$result = $stmt->fetchAll();
+		}
+		catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
 		
 		foreach($result as $row)
 		{

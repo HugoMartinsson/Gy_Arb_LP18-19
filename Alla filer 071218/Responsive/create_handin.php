@@ -4,12 +4,19 @@ session_start();
 
 		$_SESSION['currentuser'] = "Henrik";
 		
-		//Hämtar alla kurser som den inloggade läraren undervisar i. 
-		$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
-		$stmt = $dbh->prepare($sql);
-		$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
-		$stmt->execute();
-		$result = $stmt->fetchAll();
+		try
+		{
+			//Hämtar alla kurser som den inloggade läraren undervisar i. 
+			$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
+			$stmt = $dbh->prepare($sql);
+			$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+			$stmt->execute();
+			$result = $stmt->fetchAll();
+		}
+		catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -65,12 +72,19 @@ session_start();
 					{
 						$course = $_GET['course'];
 						$handInName = $_GET['handInName'];
-		
-						$sql = "INSERT INTO handin (HandInName, HandInCourse) VALUES (:handinname, :handincourse)";
-						$stmt = $dbh->prepare($sql);
-						$stmt->bindParam(":handinname", $handInName);
-						$stmt->bindParam(":handincourse", $course);
-						$stmt->execute();
+						
+						try
+						{
+							$sql = "INSERT INTO handin (HandInName, HandInCourse) VALUES (:handinname, :handincourse)";
+							$stmt = $dbh->prepare($sql);
+							$stmt->bindParam(":handinname", $handInName);
+							$stmt->bindParam(":handincourse", $course);
+							$stmt->execute();
+						}
+						catch(Exception $e)
+						{
+							echo $e->getMessage();
+						}
 					}
 				?>
     		</div>

@@ -4,18 +4,25 @@ session_start();
 $course = $_GET['course'];
 ?>
 <?php
-	//SKA ERSÄTTAS MED RIKTIG CURRENTUSER
-	$_SESSION['currentuser'] = "huma0130";
-	
-	//Detta ska vara kvär även när riktig currentuser har implementerats
-	$user = "%" . $_SESSION['currentuser'] . "%";
-	
-	//Hämtar de kurser den inloggade eleven deltar i
-	$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
-	$stmt = $dbh->prepare($sql);
-	$stmt->bindParam(':currentuser', $user);
-	$stmt->execute();
-	$result = $stmt->fetchAll();
+	try
+	{
+		//SKA ERSÄTTAS MED RIKTIG CURRENTUSER
+		$_SESSION['currentuser'] = "huma0130";
+		
+		//Detta ska vara kvär även när riktig currentuser har implementerats
+		$user = "%" . $_SESSION['currentuser'] . "%";
+		
+		//Hämtar de kurser den inloggade eleven deltar i
+		$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+		$stmt = $dbh->prepare($sql);
+		$stmt->bindParam(':currentuser', $user);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+	}
+	catch(Exception $e)
+	{
+		echo $e->getMessage();
+	}
 
 ?>
 <!DOCTYPE HTML>
@@ -52,13 +59,21 @@ $course = $_GET['course'];
             </div>
             <div id="news">
                     <?php
+					
 							if(!empty($_GET))
 							{
-								$sql = "SELECT HandInName FROM handin WHERE HandInCourse = :course";
-								$stmt = $dbh->prepare($sql);
-								$stmt->bindParam(":course", $course);
-								$stmt->execute();
-								$result = $stmt->fetchAll();
+								try
+								{
+									$sql = "SELECT HandInName FROM handin WHERE HandInCourse = :course";
+									$stmt = $dbh->prepare($sql);
+									$stmt->bindParam(":course", $course);
+									$stmt->execute();
+									$result = $stmt->fetchAll();
+								}
+								catch(Exception $e)
+								{
+									echo $e->getMessage();
+								}
 							}
 							if(!empty($course))
 							{
@@ -93,36 +108,43 @@ $course = $_GET['course'];
 
 		if(!empty($_POST))
 		{
-			$sql2 = "SELECT MAX(FileID) AS MaxFileID FROM studentfiles";
-			$sql2 = "SELECT FileID FROM studentfiles order by FileID";
-			$stmt = $dbh->prepare($sql2);
-			$stmt->execute();
-			$result = $stmt->fetchAll();
-			
-			//SER TILL SÅ ATT FILEN FÅR SAMMA ID I FILNAMNET SOM FileID så att man kan identifiera filer med samma namn ändå
-			foreach($result as $row)
+			try
 			{
-				$FileID = $row->FileID;
+				$sql2 = "SELECT MAX(FileID) AS MaxFileID FROM studentfiles";
+				$sql2 = "SELECT FileID FROM studentfiles order by FileID";
+				$stmt = $dbh->prepare($sql2);
+				$stmt->execute();
+				$result = $stmt->fetchAll();
+				
+				//SER TILL SÅ ATT FILEN FÅR SAMMA ID I FILNAMNET SOM FileID så att man kan identifiera filer med samma namn ändå
+				foreach($result as $row)
+				{
+					$FileID = $row->FileID;
+				}
+				$FileID = $FileID + 1;
+				$FileNameToShow = $_FILES['myfile']['name'];
+				
+				//FILE UPLOAD
+				$currentDir = getcwd();
+				$uploadDirectory = "/Uploaded_Files/";
+				$fileName = $FileID . "." . $handInName .  "_" .  $_FILES['myfile']['name'];
+				$fileTmpName  = $_FILES['myfile']['tmp_name'];
+				$fileType = $_FILES['myfile']['type'];
+				
+				//Add file to database
+				$sql = "INSERT INTO studentfiles (FileName, FileFolder, FileCourse, FileHandInName, Uploader) VALUES (:fileName, :uploadDirectory, :course, :FileHandinName, :uploader)";
+				$stmt = $dbh->prepare($sql);
+				$stmt->bindParam(":fileName", $fileName);
+				$stmt->bindParam(":uploadDirectory", $uploadDirectory);
+				$stmt->bindParam(":course", $course);
+				$stmt->bindParam(":FileHandinName", $handInName);
+				$stmt->bindParam(":uploader", $_SESSION['currentuser']);
+				$stmt->execute();
 			}
-			$FileID = $FileID + 1;
-			$FileNameToShow = $_FILES['myfile']['name'];
-			
-			//FILE UPLOAD
-			$currentDir = getcwd();
-			$uploadDirectory = "/Uploaded_Files/";
-			$fileName = $FileID . "." . $handInName .  "_" .  $_FILES['myfile']['name'];
-			$fileTmpName  = $_FILES['myfile']['tmp_name'];
-			$fileType = $_FILES['myfile']['type'];
-			
-			//Add file to database
-			$sql = "INSERT INTO studentfiles (FileName, FileFolder, FileCourse, FileHandInName, Uploader) VALUES (:fileName, :uploadDirectory, :course, :FileHandinName, :uploader)";
-			$stmt = $dbh->prepare($sql);
-			$stmt->bindParam(":fileName", $fileName);
-			$stmt->bindParam(":uploadDirectory", $uploadDirectory);
-			$stmt->bindParam(":course", $course);
-			$stmt->bindParam(":FileHandinName", $handInName);
-			$stmt->bindParam(":uploader", $_SESSION['currentuser']);
-			$stmt->execute();
+			catch(Exception $e)
+			{
+				echo $e->getMessage();
+			}
 			
 			$uploadPath = $currentDir . $uploadDirectory . basename($fileName);
 	

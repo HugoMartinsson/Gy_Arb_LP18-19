@@ -32,26 +32,37 @@
         </nav>
         <section>
             <?php 
-					
-				try
-				{
 					$user = "%" . $_SESSION['currentuser'] . "%";
 					$count = 1;
-						
-					//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
-					$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
-					$stmt = $dbh->prepare($sql);
-					$stmt->bindParam(":currentuser", $user);
-					$stmt->execute();
-					$result = $stmt->fetchAll();
+					
+					try
+					{
+						//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
+						$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+						$stmt = $dbh->prepare($sql);
+						$stmt->bindParam(":currentuser", $user);
+						$stmt->execute();
+						$result = $stmt->fetchAll();
+					}
+					catch(Exception $e)
+					{
+						echo $e->getMessage();
+					}
 						
 					foreach($result as $row)
 					{
-						$sql = "SELECT * FROM news WHERE course = :course";
-						$stmt = $dbh->prepare($sql);
-						$stmt->bindParam(":course", $row->Name);
-						$stmt->execute();
-						$result2 = $stmt->fetchAll();
+						try
+						{
+							$sql = "SELECT * FROM news WHERE course = :course";
+							$stmt = $dbh->prepare($sql);
+							$stmt->bindParam(":course", $row->Name);
+							$stmt->execute();
+							$result2 = $stmt->fetchAll();
+						}
+						catch(Exception $e)
+						{
+							echo $e->getMessage();
+						}
 							
 						foreach($result2 as $row)
 						{
@@ -64,11 +75,6 @@
                             <?php
 						}
 					}
-				}
-				catch(Exception $e)
-				{
-					echo $e->getMessage();	
-				}
 			?>
         </section>
     </div>
