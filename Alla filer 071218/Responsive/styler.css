@@ -104,7 +104,6 @@ table {
 	
 	
 	
-	
 /* CSS för login */
 	#wrapperlogin{
 		width: 480px;
@@ -155,8 +154,8 @@ table {
 		color: #FFF;
 	}
 	#inputlogin{
-		width:100px;
-		height:30px;
+		width: 100px;
+		height: 30px;
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		background-color: rgba(169,169,169,0.9);
@@ -169,7 +168,7 @@ table {
 	#logoncredentialsfillin{
 		width: 150px;
 		height: 25px;
-		padding: 0px;
+		padding: 0px; /* Vad är detta till? /Gabriel */
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		background-color: rgba(169,169,169,0.9);
@@ -181,7 +180,7 @@ table {
 
 
 
-
+/* CSS för form */
 	input[type=text]{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
@@ -231,8 +230,6 @@ table {
 		color: #FFF;
 	}
 		
-	
-	
 	
 	
 	#news
@@ -350,7 +347,7 @@ table {
 		position: relative;
 	}
 	#lanksamlinga:hover{ 
-		background-color:rgb(128,128,128); 
+		background-color: rgb(128,128,128); 
 	}
 	#materaillinksa{
 		display: list-item;
@@ -379,8 +376,6 @@ table {
 
 
 
-
-
 /* Skapa inlämning */
 	#createhandindiv{
 		width: 480px;
@@ -390,7 +385,6 @@ table {
 		float: left;
 		text-align: center;
 	}
-	
 	#hanndinp{
 		font-family: "Arial Black", Gadget, sans-serif;
 		font-size: 18px;
@@ -411,11 +405,8 @@ table {
 
 
 
-
-
-
 /* CSS för dropdown */
-	.dropbtn {
+	.dropbtn{
 		background-color: transparent;
 		background-image: url(img_betaphone_1.0.1/menulogo.png);
 		background-repeat: no-repeat;
@@ -426,14 +417,14 @@ table {
 		border: none;
 		cursor: pointer;
 	}
-	.dropbtn:hover, .dropbtn:focus {
+	.dropbtn:hover, .dropbtn:focus{
 		background-color: transparent;
 	}
-	.dropdown {
-		position: relative;
+	.dropdown{
+		position: fixed;
 		display: inline;
 	}
-	.dropdown-content {    
+	.dropdown-content{    
 		display: none;
 		position: absolute;
 		background-color: rgba(169,169,169,0.9);
@@ -445,18 +436,18 @@ table {
 		overflow: auto;
 		z-index: 1;
 	}
-	.dropdown-content a {
-		color: white;
+	.dropdown-content a{
+		color: #FFF;
 		font-family: "Arial Black", Gadget, sans-serif;
 		font-size: 18px;
 		padding: 12px 16px;
 		text-decoration: none;
 		display: block;
 	}
-	#dropdown a:hover {
+	#dropdown a:hover{
 		background-color: rgb(128,128,128);
 	}
-	.show {
+	.show{
 		display: block;
 	}
 }
@@ -501,8 +492,6 @@ table {
 		font-weight: bold;
 		color: #FFF;
 	}
-	
-	
 	
 	
 	
@@ -561,8 +550,8 @@ table {
 		color: #FFF;
 	}	
 	#logoncredentialsfillin{
-		width:250px;
-		height:30px;
+		width: 250px;
+		height: 30px;
 		padding: 0px;
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
@@ -572,8 +561,8 @@ table {
 		color: #FFF;
 	}
 	#inputlogin{
-		width:150px;
-		height:30px;
+		width: 150px;
+		height: 30px;
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		background-color: rgba(169,169,169,0.9);
@@ -584,10 +573,8 @@ table {
 	}
 	
 	
-	
-	
-	
-	
+
+/* CSS för form */
 	input[type=text]{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
@@ -637,8 +624,6 @@ table {
 		color: #FFF;
 	}
 		
-	
-	
 	
 	
 	#navincourse{
@@ -727,16 +712,12 @@ table {
 	
 	
 	
-	
-	
-	
 	#divmyacc{
 		width: 1500px;
 		height: 300px;
 		float: left;
 		background-color: #FFF;
 	}
-	
 	
 	
 	
@@ -761,9 +742,6 @@ table {
 	#linktocourse:hover{ 
 		background-color:rgb(128,128,128); 
 	}
-	
-	
-	
 	
 	
 	
@@ -792,9 +770,6 @@ table {
 	
 	
 	
-	
-	
-	
 	#materaillinksa{
 		display: list-item;
 		list-style-type: none;
@@ -817,7 +792,6 @@ table {
 	#materaillinksa:hover{ 
 		background-color: rgb(128,128,128); 
 	}
-	
 	
 	
 	
@@ -858,6 +832,7 @@ table {
 	#myDropdown{
 		width: auto;
 		height: auto;
+		position: fixed;
 	}
 	.dropdown-content a{
 		display: list-item;
