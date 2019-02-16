@@ -408,7 +408,7 @@ table {
 /* CSS för dropdown */
 	.dropbtn{
 		background-color: transparent;
-		background-image: url(img_betaphone_1.0.1/menulogo.png);
+		background-image: url(img/menulogo.png):
 		background-repeat: no-repeat;
 		width: 35px;
 		height: 35px;
