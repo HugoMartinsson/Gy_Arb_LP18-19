@@ -257,6 +257,30 @@ table {
 		font-size: 18px;
 		color: #FFF;
 	}
+	#date{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 15px;
+		color: #FFF;
+		padding-bottom: 20px;
+	}
+	#newsa{
+		text-decoration: none;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 16px;
+		color: #FFF;
+		padding: 5px 10px 5px 10px;
+		background-color: rgb(128,128,128);
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		
+	}
+	#newsa:hover{
+		background-color: rgb(64, 64, 64);
+	}
+	
+	
+	
 	#navincourse{
 		width: 475px;
 		height: 45px;
@@ -708,6 +732,21 @@ table {
 		font-size: 18px;
 		color: #FFF;
 		padding-bottom: 20px;
+	}
+	#newsa{
+		text-decoration: none;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 17px;
+		color: #FFF;
+		padding: 5px 10px 5px 10px;
+		background-color: rgb(128,128,128);
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		
+	}
+	#newsa:hover{
+		background-color: rgb(64, 64, 64);
 	}
 	
 	
