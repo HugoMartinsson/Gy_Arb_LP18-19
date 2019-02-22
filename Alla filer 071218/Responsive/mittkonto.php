@@ -1,3 +1,8 @@
+<?php
+require("db.php");
+session_start();
+$_SESSION['currentuser'] = "Huma0130";
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,9 +30,33 @@
              </div>
         </nav>
         <section>
-        	<div id="divmyacc">
-            	<p>Prata om hur och vad som skall finnas på "konto sidan"</p>
-            </div>
+        	<?php
+			if(isset($_SESSION['currentuser']))
+			{
+				$sql = "SELECT Backgroundid FROM users WHERE Username = :username";
+				$stmt = $dbh->prepare($sql);
+				$stmt->bindParam(':username', $_SESSION['currentuser']);
+				$stmt->execute();
+				$res = $stmt->fetchAll();
+				
+				foreach($res as $row)
+				{
+					$bgid = $row->Backgroundid;
+				}
+				
+				if(!empty($bgid) && $bgid != 0)
+				{
+					echo $bgid;
+					?>
+                    <script type="text/javascript">
+					<?php
+					echo "$('body').css('background-image','url(img/Backgrounds_desktop/Desktop_2.jpg)'";
+					?>
+					</script>
+                    <?php
+				}
+			}
+			?>
         </section>
 	</div>
     <script>
