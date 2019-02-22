@@ -69,8 +69,9 @@
 							?>
                                <div id="news">
                                	<h1 id="newsh1"><?php echo $row->headline ?></h1>
-								<p id="newsp"><?php echo $row->news ?></p>
-								<p id="date"> <?php echo $row->datetime  . " - " . $row->course; ?></p>
+								<p id="newsp"><?php echo $row->news ?></p><br>
+								<p id="date"> <?php echo $row->datetime  . " - ";?><a id="newsa" href="betakurs.php?course=<?php echo $row->course; ?> "><?php echo $row->course; ?></a></p>
+                                
                                </div>
                             <?php
 						}
