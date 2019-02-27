@@ -55,12 +55,10 @@ table {
 {
 /* Allmän CSS */
 	body{
-		background-image: url(img/Backgrounds_mobile/Mobile_2.jpg);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
 	#wrapper {
-		background-image: url(img/background_mobile.jpg);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 		width: 480px;
@@ -427,6 +425,7 @@ table {
 		border-color: #FFF;
 	}
 
+	
 
 
 /* CSS för dropdown */
@@ -861,6 +860,20 @@ table {
 		border-color: #FFF;
 	}
 	
+	
+	#bgpics
+	{
+		width: 448px;
+		height: 600px;
+		padding: 10px;
+		margin-top: 5px;
+		float: left;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		text-align: center;
+		background-color: rgba(169,169,169,0.9);
+	}
 	
 	
 /* CSS för menysystem */		

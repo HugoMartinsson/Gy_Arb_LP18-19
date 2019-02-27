@@ -27,7 +27,7 @@
                     	<input type="text" name="password" id="logoncredentialsfillin" placeholder="Lösenord">
                 	</div>
                 	<div id="logonbuttondiv">
-                		<input id="inputlogin" type="submit" id="logininput" value="Logga in">
+                		<input type="submit" id="inputlogin" value="Logga in">
                 	</div>
                 </form>
             </div>
@@ -75,5 +75,10 @@
 		}
 	}
 ?>
+<?php
+			?><script type="text/javascript">
+						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_1.jpg')";}
+						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_1.jpg')";}
+                        </script>
 </body>
 </html>
