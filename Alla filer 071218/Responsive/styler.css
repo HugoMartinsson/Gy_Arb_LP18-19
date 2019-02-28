@@ -163,6 +163,9 @@ table {
 		margin-top: 5px;
 		color: #FFF;
 	}
+	#inputlogin:hover{
+		background-color: rgb(128,128,128);
+	}
 	#logoncredentialsfillin{
 		width: 150px;
 		height: 25px;
@@ -179,6 +182,11 @@ table {
 
 
 /* CSS för form */
+	input[type=password]{
+		border-radius: 10px;
+		border-style: none;
+		text-align: center;
+	}
 	input[type=text]{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
@@ -593,10 +601,19 @@ table {
 		margin-bottom: 2px;
 		color: #FFF;
 	}
+	#inputlogin:hover{
+		background-color: rgb(128,128,128);
+	}
+
 	
 	
 
 /* CSS för form */
+	input[type=password]{
+		border-radius: 10px;
+		border-style: none;
+		text-align: center;
+	}
 	input[type=text]{
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
