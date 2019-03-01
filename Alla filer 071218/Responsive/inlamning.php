@@ -23,9 +23,6 @@ if(isset($_SESSION['currentuser']))
 	}
 	try
 	{
-		//SKA ERSÄTTAS MED RIKTIG CURRENTUSER
-		$_SESSION['currentuser'] = "huma0130";
-		
 		//Detta ska vara kvär även när riktig currentuser har implementerats
 		$user = "%" . $_SESSION['currentuser'] . "%";
 		
