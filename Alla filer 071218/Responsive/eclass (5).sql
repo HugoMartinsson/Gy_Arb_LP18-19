@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 27 feb 2019 kl 16:51
+-- Tid vid skapande: 01 mars 2019 kl 09:59
 -- Serverversion: 10.1.37-MariaDB
 -- PHP-version: 7.3.0
 
@@ -40,10 +40,13 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`CourseID`, `Name`, `Teacher`, `Students`) VALUES
-(1, 'Prgrm_2_Te3b', 'Henrik', 'huma0130, gapa0505, joma0620,'),
-(2, 'test', 'admin', ''),
-(3, 'test2', 'admin', ''),
-(4, 'Cisco', 'Henrik', 'Huma0130');
+(1, 'Programmering_2_TE3', 'Henrik', 'huma0130, Gabriel, Joakim'),
+(4, 'Nätverksteknologier_TE3', 'Henrik', 'Huma0130, Gabriel, Joakim'),
+(5, 'Webbserverprogrammering_T', 'Henrik', 'Huma0130, Joakim, Gabriel'),
+(6, 'Svenska_3_TE3B', 'Marja', 'Huma0130, Joakim, Gabriel'),
+(7, 'Engelska_7_Jst', 'Jenny', 'Huma0130, Joakim, Gabriel'),
+(8, 'Religion_1_TE3B', 'Marie', 'Huma0130, Gabriel, Joakim'),
+(9, 'Matematik_5_TE3', 'Conny', 'Huma0130, Joakim, Gabriel');
 
 -- --------------------------------------------------------
 
@@ -65,7 +68,11 @@ INSERT INTO `handin` (`HandInID`, `HandInName`, `HandInCourse`) VALUES
 (1, 'PHP_MYSQL_LAB', 'Prgrm_2_Te3b'),
 (2, 'PHP_LAB_1', 'Prgrm_2_Te3b'),
 (3, 'TEST', 'test'),
-(4, 'CISCO_LAB_1', 'Prgrm_2_Te3b');
+(4, 'CISCO_LAB_1', 'Prgrm_2_Te3b'),
+(5, 'Gästbok', 'Webbserverprogrammering_T'),
+(6, 'Forum steg 1', 'Webbserverprogrammering_T'),
+(7, 'Forum steg 2', 'Webbserverprogrammering_T'),
+(8, 'Forum steg 3', 'Webbserverprogrammering_T');
 
 -- --------------------------------------------------------
 
@@ -119,7 +126,9 @@ INSERT INTO `studentfiles` (`FileID`, `FileName`, `FileFolder`, `FileCourse`, `F
 (4, '4.PHP_MYSQL_LAB_', '/Uploaded_Files/', 'Prgrm_2_Te3b', 'PHP_MYSQL_LAB', 'huma0130'),
 (5, '5.PHP_MYSQL_LAB_', '/Uploaded_Files/', 'Prgrm_2_Te3b', 'PHP_MYSQL_LAB', 'huma0130'),
 (6, '6.PHP_LAB_1_APR2007_xinput_x64.cab', '/Uploaded_Files/', 'Prgrm_2_Te3b', 'PHP_LAB_1', 'huma0130'),
-(7, '7.PHP_LAB_1_APR2007_xinput_x64.cab', '/Uploaded_Files/', 'Prgrm_2_Te3b', 'PHP_LAB_1', 'huma0130');
+(7, '7.PHP_LAB_1_APR2007_xinput_x64.cab', '/Uploaded_Files/', 'Prgrm_2_Te3b', 'PHP_LAB_1', 'huma0130'),
+(8, '8.PHP_LAB_1_', '/Uploaded_Files/', 'Prgrm_2_Te3b', 'PHP_LAB_1', 'huma0130'),
+(9, '9.PHP_LAB_1_forum_steg_4_hugo.zip', '/Uploaded_Files/', 'Prgrm_2_Te3b', 'PHP_LAB_1', 'Huma0130');
 
 -- --------------------------------------------------------
 
@@ -144,7 +153,11 @@ CREATE TABLE `teacherfiles` (
 INSERT INTO `teacherfiles` (`FileID`, `Filename`, `Filefolder`, `Filecourse`, `Uploader`, `Uploaddate`, `Nametoshow`) VALUES
 (9, '9.Prgrm_2_Te3b_gästbok_hugo_martinsson.zip', 'Uploaded_Files/', 'Prgrm_2_Te3b', 'Henrik', '0000-00-00 00:00:00.000000', 'gästbok_hugo_martinsson.zip'),
 (10, '10.Prgrm_2_Te3b_gästbok_hugo_martinsson2.zip', 'Uploaded_Files/', 'Prgrm_2_Te3b', 'Henrik', '2019-01-10 10:21:13.000000', 'gästbok_hugo_martinsson2.zip'),
-(11, '11.Prgrm_2_Te3b_SO Utbud Efterfrågan.docx', 'Uploaded_Files/', 'Prgrm_2_Te3b', 'Henrik', '2019-01-10 12:49:36.000000', 'SO Utbud efterfrågan');
+(11, '11.Prgrm_2_Te3b_SO Utbud Efterfrågan.docx', 'Uploaded_Files/', 'Prgrm_2_Te3b', 'Henrik', '2019-01-10 12:49:36.000000', 'SO Utbud efterfrågan'),
+(12, '12.Webbserverprogrammering_T_ForumSteg1.pdf', '/Uploaded_Files/', 'Webbserverprogrammering_T', 'Henrik', '0000-00-00 00:00:00.000000', 'Forum steg 1'),
+(13, '13.Webbserverprogrammering_T_ForumSteg2.pdf', '/Uploaded_Files/', 'Webbserverprogrammering_T', 'Henrik', '0000-00-00 00:00:00.000000', 'Forum steg 2'),
+(14, '14.Webbserverprogrammering_T_ForumSteg3.pdf', '/Uploaded_Files/', 'Webbserverprogrammering_T', 'Henrik', '0000-00-00 00:00:00.000000', 'Forum steg 3'),
+(15, '15.Webbserverprogrammering_T_LaborationGästbok.pdf', '/Uploaded_Files/', 'Webbserverprogrammering_T', 'Henrik', '0000-00-00 00:00:00.000000', 'Gästbok');
 
 -- --------------------------------------------------------
 
@@ -168,10 +181,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`UserID`, `Username`, `Password`, `Name`, `Type`, `Backgroundid`) VALUES
 (3, 'lärare1', '123', 'Anders', 'teacher', 0),
 (6, 'admin', '$2y$10$hLhABKEESq8UtZXIPPlcb.D9GZhjvc2lx7utWlfNQt2enYMHH1sXq', 'Hugo', 'teacher', 0),
-(7, 'Henrik', '$2y$10$ApDrdKjXH94ricKRDoA.GuBrP5/FQEJN1sj1oMj.o30uL3ozDfGmm', 'Henrik', 'teacher', 3),
+(7, 'Henrik', '$2y$10$ApDrdKjXH94ricKRDoA.GuBrP5/FQEJN1sj1oMj.o30uL3ozDfGmm', 'Henrik', 'teacher', 7),
 (10, 'Jokim', '$2y$10$LoVRFqJGGIWzQ/c69re7f.4lSqgBTFeVNzEdmap3siIHaRCIdMpHm', 'Joakim Malmgren', 'student', 0),
-(11, 'huma0130', '$2y$10$Du0kXnsKchf3144CdJvSDuVmmoBEjYlAl2UhcVr8R6D5lAbuehWbW', 'Hugo Martinsson', 'student', 2),
-(12, 'Gabriel', '$2y$10$QvymILSwzcqtTZihfUQmv.VpIiZg71qtgPC2kg75cOPJ.qA6tg.UC', 'Gabriel Panarelii', 'student', 0),
+(11, 'huma0130', '$2y$10$Du0kXnsKchf3144CdJvSDuVmmoBEjYlAl2UhcVr8R6D5lAbuehWbW', 'Hugo Martinsson', 'student', 6),
+(12, 'Gabriel', '$2y$10$QvymILSwzcqtTZihfUQmv.VpIiZg71qtgPC2kg75cOPJ.qA6tg.UC', 'Gabriel Panarelii', 'student', 6),
 (13, 'Joakim', '$2y$10$5TIjigErkZVbCxXoweIFnOuJtGLb4MQXwvhW.ecADZ2/VldCa6Rt.', 'Joakim Malmgren', 'student', 0);
 
 --
@@ -222,13 +235,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT för tabell `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `CourseID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `CourseID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT för tabell `handin`
 --
 ALTER TABLE `handin`
-  MODIFY `HandInID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `HandInID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT för tabell `news`
@@ -240,13 +253,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT för tabell `studentfiles`
 --
 ALTER TABLE `studentfiles`
-  MODIFY `FileID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `FileID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT för tabell `teacherfiles`
 --
 ALTER TABLE `teacherfiles`
-  MODIFY `FileID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `FileID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT för tabell `users`
