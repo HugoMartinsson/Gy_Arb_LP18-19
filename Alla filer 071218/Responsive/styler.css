@@ -237,7 +237,7 @@ table {
 	}
 		
 	
-	
+/* AKTUS COMPACTUS FÖR NEWS */	
 	#news
 	{
 		width: 448px;
@@ -289,22 +289,29 @@ table {
 	
 	#navincourse{
 		width: 475px;
-		height: 45px;
+		height: auto;
 		padding-bottom: 10px;
 		float: left;
 	}
+	#centerincourse{
+		width: fit-content;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
 	#navincourselink{
-		width: 155px;
+		width: 100px;
 		height: 30px;
 		padding-top: 15px;
 		border: 1px solid;
 		border-color: #FFF;
 		border-radius: 10px;
 		text-align: center;
-		background-color: rgba(169,169,169,0.9);
+		background-color: rgba(169,169,169,0.9);	
 		color: white;
 		font-family: "Arial Black", Gadget, sans-serif;
-		font-size: 18px;
+		font-size: 14px;
 		text-decoration: none;
 		float: left;
 		margin-top: 5px;
@@ -313,9 +320,10 @@ table {
 		background-color: rgb(128,128,128); 
 	}
 	.navincourseon{
-		width: 155px;
+		width: fit-content;
+		min-width: 150px;
 		height: 30px;
-		padding-top: 15px;
+		padding: 15px 10px 0px 10px;
 		border: 1px solid;
 		border-color: #FFF;
 		border-radius: 10px;
@@ -323,7 +331,7 @@ table {
 		background-color: rgb(128,128,128);
 		color: white;
 		font-family: "Arial Black", Gadget, sans-serif;
-		font-size: 18px;
+		font-size: 14px;
 		text-decoration: none;
 		float: left;
 		margin-top: 5px;
@@ -678,12 +686,17 @@ table {
 	
 	
 	#navincourse{
-		width: 1300px;
+		width: 1210px;
 		height: auto;
-		padding-left: 300px;
 		margin-bottom: 50px;
 		float: left;
-		text-align: center;
+	}
+	#centerincourse{
+		width: fit-content;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
 	}
 	#navincourselink{
 		width: 200px;
@@ -705,9 +718,10 @@ table {
 		background-color: rgb(128,128,128); 
 	}
 	.navincourseon{ 
-		width: 200px;
+		width: fit-content;
+		min-width: 200px;
 		height: 30px;
-		padding-top: 15px;
+		padding: 15px 10px 0px 10px;
 		margin-right: 2px;
 		border: 1px solid;
 		border-color: #FFF;
@@ -720,6 +734,9 @@ table {
 		text-decoration: none;
 		float: left;
 	}
+	
+	
+/* AKTUS COMPACTUS FÖR NEWS */ 	
 	#news{
 		width: 980px;
 		height: auto;
