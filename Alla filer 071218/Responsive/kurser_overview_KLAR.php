@@ -62,53 +62,55 @@ foreach($result as $row)
              </div>
         </nav>
         <section>
-        	<?php
-			if($usertype == "student")
-			{
-				//SKA VARA KVAR ÄVEN NÄR CURRENTUSER ÄR IMPLEMENTERAD
-				$user = "%" . $_SESSION['currentuser'] . "%";
-				
-				try
-				{
-					//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
-					$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
-					$stmt = $dbh->prepare($sql);
-					$stmt->bindParam(":currentuser", $user);
-					$stmt->execute();
-					$result2 = $stmt->fetchAll();
-				}
-				catch(Exception $e)
-				{
-					echo $e->getMessage();
-				}
-					
-				foreach($result2 as $row)
-				{
-					?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><?php
+        	<div id="centerlinks">
+				<?php
+                if($usertype == "student")
+                {
+                    //SKA VARA KVAR ÄVEN NÄR CURRENTUSER ÄR IMPLEMENTERAD
+                    $user = "%" . $_SESSION['currentuser'] . "%";
+                    
+                    try
+                    {
+                        //HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
+                        $sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+                        $stmt = $dbh->prepare($sql);
+                        $stmt->bindParam(":currentuser", $user);
+                        $stmt->execute();
+                        $result2 = $stmt->fetchAll();
+                    }
+                    catch(Exception $e)
+                    {
+                        echo $e->getMessage();
+                    }
+                        
+                    foreach($result2 as $row)
+                    {
+                        ?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><?php
+                    }
                 }
-			}
-			if($usertype == 'teacher')
-			{
-				try
-				{
-					//Hämtar alla kurser som läraren undervisar i
-					$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
-					$stmt = $dbh->prepare($sql);
-					$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
-					$stmt->execute();
-					$result2 = $stmt->fetchAll();
-				}
-				catch(Exception $e)
-				{
-					echo $e->getMessage();
-				}
-				
-				foreach($result2 as $row)
-				{
-					?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
+                if($usertype == 'teacher')
+                {
+                    try
+                    {
+                        //Hämtar alla kurser som läraren undervisar i
+                        $sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
+                        $stmt = $dbh->prepare($sql);
+                        $stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+                        $stmt->execute();
+                        $result2 = $stmt->fetchAll();
+                    }
+                    catch(Exception $e)
+                    {
+                        echo $e->getMessage();
+                    }
+                    
+                    foreach($result2 as $row)
+                    {
+                        ?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
+                    }
                 }
-			}
-			?>            
+                ?>
+        	</div>            
         </section>
     </div>
 <script>
