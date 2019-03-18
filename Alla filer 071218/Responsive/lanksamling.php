@@ -60,6 +60,7 @@ if(isset($_SESSION['currentuser']))
              </div>
         </nav>
         <section>
+        	<div id="centerlinks">
             	<a id="lanksamlinga" href="https://www.inlasningstjanst.se/bibliotek/#/bokhyllan">Inläsningstjänst</a>
                 <a id="lanksamlinga" href="https://www.ne.se">NE</a>
                 <a id="lanksamlinga" href="https://onedrive.live.com/?authkey=%21ADf60_BzaaEZbqw&cid=F406DF85EF25B27E&id=F406DF85EF25B27E%2114521&parId=F406DF85EF25B27E%2114400&action=locate">Logger Pro</a>
@@ -86,6 +87,7 @@ if(isset($_SESSION['currentuser']))
                 <a id="lanksamlinga" href="https://skovde.inspera.com">Inspera - elever</a>
                 <a id="lanksamlinga" href="https://www.ui.se/landguiden">Landguiden</a>               
                 <a id="lanksamlinga" href="https://www.retriever-info.com/?e=3">Retriever</a>
+        	</div>
         </section>
     </div>
     <script>

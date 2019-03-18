@@ -378,9 +378,10 @@ table {
 	#lanksamlinga{
 		display: list-item;
 		list-style-type: none;
-		width: 400px;
-		height: 30px;
-		padding-top: 10px;
+		width: fit-content;
+		min-width: 230px;
+		height: 23px;
+		padding: 5px 5px 0px 5px;
 		margin-top: 5px;
 		border-radius:10px;
 		border: 1px solid;
@@ -389,7 +390,7 @@ table {
 		text-align: center;
 		text-decoration: none;
 		font-family: "Arial Black", Gadget, sans-serif;
-		font-size: 20px;
+		font-size: 16px;
 		color: #FFF;
 		background-color: rgba(169,169,169,0.9);
 		margin-left: auto;
@@ -835,14 +836,18 @@ table {
 	}
 	
 	
-	
+/* CSS för länksamlingar*/	
 	#lanksamlinga{
 		display: list-item;
 		list-style-type: none;
-		width: 350px;
+		width: fit-content;
+		min-width: 350px;
 		height: 35px;
-		padding-top: 6px;
+		padding: 6px 10px 0px 10px;
 		margin-bottom: 3px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative
 		border-radius: 10px;
 		border: 1px solid;
 		border-color: #FFF;
@@ -853,7 +858,6 @@ table {
 		font-size: 24px;
 		color: #FFF;
 		background-color: rgba(169,169,169,0.9);
-		margin-left: 430px;
 	}
 	#lanksamlinga:hover{
 		background-color: rgb(128,128,128); 
