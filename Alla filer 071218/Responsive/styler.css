@@ -196,7 +196,7 @@ table {
 	}
 	input[type=submit]{
 		width: 105px;
-		height: 30px;
+		height: 32px;
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
 		border-radius: 5px;
@@ -224,8 +224,8 @@ table {
 	}
 	select{
 		border-style: none;
-		width: 207px;
-		height: 40px;
+		width: 180px;
+		height: 35px;
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		background-color: rgba(169,169,169,0.9);
@@ -444,8 +444,9 @@ table {
 		margin-bottom: 10px;
 	}
 	#inputhandin{
-		margin-bottom: 10px;
-		padding: 5px 10px 5px 10px;
+		margin-bottom: 5px;
+		margin-top: 10px;
+		padding: 2px 0px 2px 0px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		font-size: 16px;
 		color: #FFF;
@@ -453,6 +454,8 @@ table {
 		border: 2px solid;
 		border-color: #FFF;
 	}
+	
+	
 
 	
 
@@ -907,7 +910,7 @@ table {
 		margin-bottom: 10px;
 	}
 	#inputhandin{
-		margin-bottom: 10px;
+		margin-top: 10px;
 		height: 34px;
 		padding-bottom: 5px;
 		font-family: "Arial Black", Gadget, sans-serif;
