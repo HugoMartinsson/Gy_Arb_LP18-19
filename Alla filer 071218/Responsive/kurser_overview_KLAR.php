@@ -106,7 +106,7 @@ foreach($result as $row)
                     
                     foreach($result2 as $row)
                     {
-                        ?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><br><?php
+                        ?><a id="linktocourse" href="<?php echo 'betakurs.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a><?php
                     }
                 }
                 ?>

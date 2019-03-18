@@ -454,6 +454,15 @@ table {
 		border: 2px solid;
 		border-color: #FFF;
 	}
+	#centerfileupload{
+		width: 240px;
+		padding-left: 10px;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		text-align: center;
+	}
 	
 	
 
@@ -660,18 +669,17 @@ table {
 	}
 	input[type=file]{
 		border-style: none;
-		width: 195px;
+		width: 220px;
 		height: 22px;
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
 		background-color: rgba(169,169,169,0.9);
 		border: 2px solid;
 		border-color: #FFF;
 		color: #FFF;
-		padding-top: 8px;
-		padding-bottom: 8px;
-		padding-left: 8px;
-		margin-bottom: 2px;
+		padding: 8px 8px 8px 8px;
+		margin-bottom: 8px;
 	}
 	select{
 		border-style: none;
@@ -914,12 +922,33 @@ table {
 		height: 34px;
 		padding-bottom: 5px;
 		font-family: "Arial Black", Gadget, sans-serif;
-		font-size: 18px;
+		font-size: 16px;
 		color: #FFF;
 		background-color: rgba(169,169,169,0.9);
 		border: 2px solid;
 		border-color: #FFF;
 	}
+	#inputhandintwo{
+		margin-top: 10px;
+		height: 40px;
+		width: fit-content;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+	}
+	#centerfileupload{
+		width: 240px;
+		padding-left: 10px;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		text-align: center;
+	}
+	
 	
 /* Bakgrundsbilder */	
 	#bgpics

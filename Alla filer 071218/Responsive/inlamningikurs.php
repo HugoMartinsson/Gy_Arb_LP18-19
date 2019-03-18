@@ -81,9 +81,11 @@ if(isset($_SESSION['currentuser']))
         </nav>
         <section>
         	<div id="navincourse">
-            	<a id="navincourselink" href=<?php echo "material.php?course=" . $course ?>>Material</a>
-                <a id="navincourselink" href=<?php echo "betakurs.php?course=" . $course ?>><?php echo $course ?></a>
-                <a class="navincourseon" href=<?php echo "inlamningikurs.php?course=" . $course ?>>Inlämning</a>
+            	<div id="centerincourse">
+                    <a id="navincourselink" href=<?php echo "material.php?course=" . $course ?>>Material</a>
+                    <a class="navincourseon" href=<?php echo "betakurs.php?course=" . $course ?>><?php echo $course ?></a>
+                    <a id="navincourselink" href=<?php echo "inlamningikurs.php?course=" . $course ?>>Inlämning</a>
+            	</div>
             </div>
             <div id="news">
                     <?php
