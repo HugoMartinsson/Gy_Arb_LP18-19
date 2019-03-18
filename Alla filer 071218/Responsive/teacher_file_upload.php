@@ -26,6 +26,7 @@ session_start();
                         <a href="mittkonto.php">Mitt Konto</a>
                         <a href="create_handin.php">Skapa inlämning</a>
                         <a href="teacher_file_upload.php">Ladda upp fil</a>
+                        <a href="add_news.php">Skriv nyhet</a>
                         <a href="logout.php">Logga ut</a>
                     </div>
              </div>

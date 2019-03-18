@@ -53,7 +53,7 @@ $course = $_GET['course'];
                         <?php 
 						if($usertype == "teacher")
 						{
-							?><a href="create_handin.php">Skapa inlämning</a><a href="teacher_file_upload.php">Ladda upp fil</a><?php
+							?><a href="create_handin.php">Skapa inlämning</a><a href="teacher_file_upload.php">Ladda upp fil</a><a href="add_news.php">Skriv nyhet</a><?php
 						}
 						?>
                         <a href="logout.php">Logga ut</a>
