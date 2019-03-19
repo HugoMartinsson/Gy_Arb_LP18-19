@@ -64,7 +64,7 @@ if(isset($_SESSION['currentuser']) or true)
 						}
 						?>
     				</select><br>
-				<input id="inputhandin" type="text" name="handInName" placeholder="Namn på inlämningen"><br>
+				<input id="inputhandinname" type="text" name="handInName" placeholder="Namn på inlämningen"><br>
     			<input id="inputhandin" type="submit" value="Skapa">
 				</form>
 				<?php
@@ -178,7 +178,32 @@ if(isset($_SESSION['currentuser']) or true)
                         </script><?php
 					}
 			}
-			?>
+	
+/* dropdownscript */			?>
+	<script>
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+    		document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+  			if (!event.target.matches('.dropbtn')) {
+
+  		    var dropdowns = document.getElementsByClassName("dropdown-content");
+    		var i;
+    		for (i = 0; i < dropdowns.length; i++) {
+     		var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  	}
+	}
+	
+	
+	</script>
 </body>
 </html>
 <?php

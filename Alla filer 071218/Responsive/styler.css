@@ -169,7 +169,7 @@ table {
 	#logoncredentialsfillin{
 		width: 150px;
 		height: 25px;
-		padding: 0px; /* Vad är detta till? /Gabriel */
+		padding: 0px; /* Vad är detta till? /Gabriel */ /* Bra fråga / Joakim*/
 		border-radius: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		background-color: rgba(169,169,169,0.9);
@@ -180,7 +180,6 @@ table {
 	}
 
 
-
 /* CSS för form */
 	input[type=password]{
 		border-radius: 10px;
@@ -188,16 +187,26 @@ table {
 		text-align: center;
 	}
 	input[type=text]{
+		padding: 5px;
+		margin-bottom: 5px;
 		font-family: Tahoma, Geneva, sans-serif;
 		font-size: 16px;
 		border-radius: 10px;
 		border-style: none;
 		text-align: center;
+		border-radius: 5px;
+		border-style: none;
+		text-align: center;	
+		border-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169);
+		border: 2px solid;
 	}
 	input[type=submit]{
 		width: 105px;
 		height: 32px;
-		font-family: Tahoma, Geneva, sans-serif;
+		margin-top: 5px;
+		font-family: "Arial Black", Gadget, sans-serif;
 		font-size: 16px;
 		border-radius: 5px;
 		border-style: none;
@@ -205,7 +214,7 @@ table {
 		border-color: #FFF;
 		color: #FFF;
 		background-color: rgba(169,169,169);
-		border: 1px solid;
+		border: 2px solid;
 	}
 	input[type=file]{
 		border-style: none;
@@ -234,6 +243,52 @@ table {
 		margin-bottom: 2px;
 		padding-left: 30px;
 		color: #FFF;
+	}
+/* fix med add_news */
+	#textareaaddnews{
+		border-style: none;
+		width: 250px;
+		height: 150px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 13px;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+		padding: 8px 8px 8px 8px;
+		margin-bottom: 5px;
+	}
+	#confirmnewsupploaddiv{
+		width: fit-content;
+		height: auto;
+		padding: 5px 10px 5px 10px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		margin-top: 10px;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		color: #FFF;
+	}
+	#confirmnewsuppload{
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 13px;
+		color: #FFF; 
+	}
+/* inputhandin fix */
+	#inputhandinname{
+		margin-top: 10px;
+		height: 20px;
+		padding-bottom: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 14px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
 	}
 		
 	
@@ -648,24 +703,34 @@ table {
 		text-align: center;
 	}
 	input[type=text]{
+		padding: 10px;
+		margin-bottom: 10px;
 		font-family: Tahoma, Geneva, sans-serif;
-		font-size: 16px;
+		font-size: 18px;
 		border-radius: 10px;
 		border-style: none;
 		text-align: center;
-	}
-	input[type=submit]{
-		width: 105px;
-		height: 30px;
-		font-family: Tahoma, Geneva, sans-serif;
-		font-size: 16px;
 		border-radius: 5px;
 		border-style: none;
 		text-align: center;	
 		border-color: #FFF;
 		color: #FFF;
 		background-color: rgba(169,169,169);
-		border: 1px solid;
+		border: 2px solid;
+	}
+	input[type=submit]{
+		width: 105px;
+		height: 30px;
+		margin-top: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		border-radius: 10px;
+		border-style: none;
+		text-align: center;	
+		border-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169);
+		border: 2px solid;
 	}
 	input[type=file]{
 		border-style: none;
@@ -693,6 +758,40 @@ table {
 		margin-bottom: 2px;
 		padding-left: 30px;
 		color: #FFF;
+	}
+	/* fix med add_news */
+	#textareaaddnews{
+		border-style: none;
+		width: 300px;
+		height: 200px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+		padding: 8px 8px 8px 8px;
+		margin-bottom: 8px;
+	}
+	#confirmnewsupploaddiv{
+		width: fit-content;
+		height: auto;
+		padding: 10px 15px 10px 15px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		margin-top: 10px;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		color: #FFF;
+	}
+	#confirmnewsuppload{
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
+		color: #FFF; 
 	}
 		
 	
@@ -918,9 +1017,20 @@ table {
 		margin-bottom: 10px;
 	}
 	#inputhandin{
-		margin-top: 10px;
+		margin-top: 0px;
 		height: 34px;
 		padding-bottom: 5px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+	}
+	#inputhandinname{
+		margin-top: 10px;
+		height: 20px;
+		padding-bottom: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
 		font-size: 16px;
 		color: #FFF;
