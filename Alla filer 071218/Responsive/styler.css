@@ -700,7 +700,7 @@ table {
 	
 
 /* CSS för form */
-	input[type=password]::placeholder{
+	input[type=password]{
 		border-radius: 10px;
 		border-style: none;
 		text-align: center;
