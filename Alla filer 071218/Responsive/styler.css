@@ -186,6 +186,9 @@ table {
 		border-style: none;
 		text-align: center;
 	}
+	input[type=password]::placeholder{
+		font-size: 16px;
+	}
 	input[type=text]{
 		padding: 5px;
 		margin-bottom: 5px;
@@ -697,10 +700,13 @@ table {
 	
 
 /* CSS för form */
-	input[type=password]{
+	input[type=password]::placeholder{
 		border-radius: 10px;
 		border-style: none;
 		text-align: center;
+	}
+	input[type=password]::placeholder{
+		font-size: 18px;
 	}
 	input[type=text]{
 		padding: 10px;
@@ -719,7 +725,8 @@ table {
 		border: 2px solid;
 	}
 	input[type=submit]{
-		width: 105px;
+		width: fit-content;
+		min-width: 105px;
 		height: 30px;
 		margin-top: 10px;
 		font-family: "Arial Black", Gadget, sans-serif;
