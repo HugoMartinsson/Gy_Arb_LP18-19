@@ -46,7 +46,26 @@ session_start();
                 {
                     echo $e->getMessage();
                 }
-                ?>
+                
+                //OBS, SKA SKICKAS MED NÄR LÄRARE SKAPAR INLÄMNING
+                $handInName = "PHP_MYSQL_LAB";
+                //OBS, SKA ERSÄTTAS MED RIKTIG "CURRENTUSER"
+                $_SESSION['currentuser'] = "Henrik";
+                
+                try
+                {
+                    //Hämtar alla kurser som den inloggade läraren undervisar i. 
+                    $sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
+                    $stmt = $dbh->prepare($sql);
+                    $stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+                    $stmt->execute();
+                    $result = $stmt->fetchAll();
+                }
+                catch(Exception $e)
+                {
+                    echo $e->getMessage();
+                }
+                ?>              
                 <form action="" method="post" enctype="multipart/form-data">
                 	<div id="centerfileupload">
                         <input type="file" name="myfile" id="fileToUpload"><br>
@@ -85,6 +104,7 @@ session_start();
                     {
                         $FileID = $row->FileID;
                     }
+					
                     $FileID = $FileID + 1;
                     $FileNameToShow = $_FILES['myfile']['name'];
                     
@@ -93,19 +113,18 @@ session_start();
                         //FILE UPLOAD
                         $currentDir = getcwd();
                         $uploadDirectory = "/Uploaded_Files/";
-						$FileFolder = "Uploaded_Files/";
                         $fileName = $FileID . "." . $_POST['course'] .  "_" .  $_FILES['myfile']['name'];
                         $fileTmpName  = $_FILES['myfile']['tmp_name'];
                         $fileType = $_FILES['myfile']['type'];
                     
                         //Add file to database
-                        $sql = "INSERT INTO teacherfiles (Filename, Filefolder, Filecourse, Uploader, Nametoshow, Uploaddate) VALUES (:fileName, :uploadDirectory, :course, :uploader, :nametoshow, NOW())";
+                        $sql = "INSERT INTO teacherfiles (Filename, Filefolder, Filecourse, FileHandinName, Uploader) VALUES (:fileName, :uploadDirectory, :course, :FileHandinName, :uploader)";
                         $stmt = $dbh->prepare($sql);
                         $stmt->bindParam(":fileName", $fileName);
-                        $stmt->bindParam(":uploadDirectory", $FileFolder);
+                        $stmt->bindParam(":uploadDirectory", $uploadDirectory);
                         $stmt->bindParam(":course", $_POST['course']);
                         $stmt->bindParam(":uploader", $_SESSION['currentuser']);
-						$stmt->bindParam(":nametoshow", $FileNameToShow);
+                        $stmt->bindParam(":FileHandinName", $handInName);
                         $stmt->execute();
                     }
                     catch(Exception $e)
