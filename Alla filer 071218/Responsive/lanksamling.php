@@ -1,7 +1,6 @@
 <?php
 require("db.php");
 session_start();
-
 if(isset($_SESSION['currentuser']))
 {
 	try
@@ -202,5 +201,5 @@ if(isset($_SESSION['currentuser']))
 }
 else
 {
-	header("Location: Login.php");
+	header("Location: login.php");
 }

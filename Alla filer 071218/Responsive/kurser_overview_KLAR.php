@@ -1,27 +1,25 @@
 <?php
 require("db.php");
 session_start();
-
 if(isset($_SESSION['currentuser']))
 {
-
-try
-{
-	$sql = "SELECT Type FROM users where Username = :currentuser";
-	$stmt = $dbh->prepare($sql);
-	$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
-	$stmt->execute();
-	$result = $stmt->fetchAll();
-}
-catch(Exception $e)
-{
-	echo $e->getMessage();
-}
-
-foreach($result as $row)
-{
-	$usertype = $row->Type;
-}
+	try
+	{
+		$sql = "SELECT Type FROM users where Username = :currentuser";
+		$stmt = $dbh->prepare($sql);
+		$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+	}
+	catch(Exception $e)
+	{
+		echo $e->getMessage();
+	}
+	
+	foreach($result as $row)
+	{
+		$usertype = $row->Type;
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -30,7 +28,6 @@ foreach($result as $row)
 <title>Kurser/Klassrum</title>
 <link rel="stylesheet" href="styler.css" type="text/css">
 </head>
-
 <body>
 	<div id="wrapper">
         <header>
@@ -225,5 +222,5 @@ foreach($result as $row)
 }
 else
 {
-	header("Location: Login.php");
+	header("Location: login.php");
 }

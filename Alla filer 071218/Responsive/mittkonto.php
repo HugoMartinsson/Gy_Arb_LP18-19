@@ -200,5 +200,5 @@ if(isset($_SESSION['currentuser']))
 }
 else
 {
-	header("Location: Login.php");
+	header("Location: login.php");
 }
