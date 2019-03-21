@@ -34,6 +34,11 @@ session_start();
         <section>
         	<div id="centerlinks">
 				<?php
+                //OBS, SKA SKICKAS MED NÄR LÄRARE SKAPAR INLÄMNING
+                $handInName = "PHP_MYSQL_LAB";
+                //OBS, SKA ERSÄTTAS MED RIKTIG "CURRENTUSER"
+                $_SESSION['currentuser'] = "Henrik";
+                
                     try
                     {
                         //Hämtar alla kurser som den inloggade läraren undervisar i. 
@@ -100,20 +105,19 @@ session_start();
                         //FILE UPLOAD
                         $currentDir = getcwd();
                         $uploadDirectory = "/Uploaded_Files/";
-						$FileFolder = "Uploaded_Files/";
                         $fileName = $FileID . "." . $_POST['course'] .  "_" .  $_FILES['myfile']['name'];
                         $fileTmpName  = $_FILES['myfile']['tmp_name'];
                         $fileType = $_FILES['myfile']['type'];
                     
                     
                         //Add file to database
-                        $sql = "INSERT INTO teacherfiles (Filename, Filefolder, Filecourse, Uploader, Nametoshow, Uploaddate) VALUES (:fileName, :uploadDirectory, :course, :uploader, :nametoshow, NOW())";
+                        $sql = "INSERT INTO teacherfiles (Filename, Filefolder, Filecourse, FileHandinName, Uploader) VALUES (:fileName, :uploadDirectory, :course, :FileHandinName, :uploader)";
                         $stmt = $dbh->prepare($sql);
                         $stmt->bindParam(":fileName", $fileName);
-                        $stmt->bindParam(":uploadDirectory", $FileFolder);
+                        $stmt->bindParam(":uploadDirectory", $uploadDirectory);
                         $stmt->bindParam(":course", $_POST['course']);
                         $stmt->bindParam(":uploader", $_SESSION['currentuser']);
-						$stmt->bindParam(":nametoshow", $FileNameToShow);
+                        $stmt->bindParam(":FileHandinName", $handInName);
                         $stmt->execute();
                     }
                     catch(Exception $e)
