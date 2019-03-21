@@ -15,12 +15,11 @@ if(isset($_SESSION['currentuser']))
 	{
 		echo $e->getMessage();
 	}
-	
 	foreach($result as $row)
 	{
 		$usertype = $row->Type;
 	}
-$course = $_GET['course'];
+	$course = $_GET['course'];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -29,7 +28,6 @@ $course = $_GET['course'];
 <title>Material</title>
 <link rel="stylesheet" href="styler.css" type="text/css">
 </head>
-
 <body>
 	<div id="wrapper">
     	<header>
@@ -45,7 +43,9 @@ $course = $_GET['course'];
                         <?php 
 						if($usertype == "student")
 						{
-							?><a href="inlamning.php">Inlämningar</a><?php
+							?>
+                            <a href="inlamning.php">Inlämningar</a>
+							<?php
 						}
 						?>
                         <a href="http://www.novasoftware.se/webviewer/(S(kfzct0fzd3s4iy55e3xyz345))/design1.aspx?schoolid=53520">Schema</a>
@@ -53,7 +53,9 @@ $course = $_GET['course'];
                         <?php 
 						if($usertype == "teacher")
 						{
-							?><a href="create_handin.php">Skapa inlämning</a><a href="teacher_file_upload.php">Ladda upp fil</a><a href="add_news.php">Skriv nyhet</a><?php
+							?>
+                            <a href="create_handin.php">Skapa inlämning</a><a href="teacher_file_upload.php">Ladda upp fil</a><a href="add_news.php">Skriv nyhet</a>
+							<?php
 						}
 						?>
                         <a href="logout.php">Logga ut</a>
@@ -63,36 +65,38 @@ $course = $_GET['course'];
         <section>
         	<div id="navincourse">
             	<div id="centerincourse">
-                    <a id="navincourselink" href="<?php echo "material.php?course=" . $course ?>">Material</a>
-                    <a class="navincourseon" href=<?php echo "betakurs.php?course=" . $course ?>><?php echo $course ?></a>
+                    <a class="navincourseon" href="<?php echo "material.php?course=" . $course ?>">Material</a>
+                    <a id="navincourselink" href=<?php echo "betakurs.php?course=" . $course ?>><?php echo $course ?></a>
                     <a id="navincourselink" href=<?php echo "inlamningikurs.php?course=" . $course ?>>Inlämning</a>
             	</div>
             </div>
             <?php 
-				try
-				{
-					$sql = "SELECT * FROM teacherfiles WHERE Filecourse = :course";
-					$stmt = $dbh->prepare($sql);
-					$stmt->bindParam(":course", $course);
-					$stmt->execute();
-					$result = $stmt->fetchAll();
-				}
-				catch(Exception $e)
-				{
-					echo $e->getMessage();
-				}
+			try
+			{
+				$sql = "SELECT * FROM teacherfiles WHERE Filecourse = :course";
+				$stmt = $dbh->prepare($sql);
+				$stmt->bindParam(":course", $course);
+				$stmt->execute();
+				$result = $stmt->fetchAll();
+			}
+			catch(Exception $e)
+			{
+				echo $e->getMessage();
+			}
 			?>
             <div id="news">
             	<?php 
-					if(empty($result))
-					{
-						echo "Det finns inga uppladdade filer i den här kursen";
-					}
-					foreach($result as $row)
-					{
-						?><a id="materaillinksa" href=" <?php echo $row->Filefolder . $row->Filename ?>" download><?php echo $row->Nametoshow?></a><?php
-					}
+				if(empty($result))
+				{
+					echo "Det finns inga uppladdade filer i den här kursen";
+				}
+				foreach($result as $row)
+				{
 					?>
+                    <a id="materaillinksa" href=" <?php echo $row->Filefolder . $row->Filename ?>" download><?php echo $row->Nametoshow?></a>
+					<?php
+				}
+				?>
             </div>
         </section>
 	</div>
@@ -102,106 +106,120 @@ $course = $_GET['course'];
 		function myFunction() {
     		document.getElementById("myDropdown").classList.toggle("show");
 		}
-
 		// Close the dropdown if the user clicks outside of it
 		window.onclick = function(event) {
   			if (!event.target.matches('.dropbtn')) {
-
-  		    var dropdowns = document.getElementsByClassName("dropdown-content");
-    		var i;
-    		for (i = 0; i < dropdowns.length; i++) {
-     		var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  	}
-	}
+  		    	var dropdowns = document.getElementsByClassName("dropdown-content");
+    			var i;
+    			for (i = 0; i < dropdowns.length; i++) {
+     				var openDropdown = dropdowns[i];
+      				if (openDropdown.classList.contains('show')) {
+        				openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+		}
 	</script>
     <?php
-			if(isset($_SESSION['currentuser']))
-			{
-				$sql = "SELECT Backgroundid FROM users WHERE Username = :username";
-				$stmt = $dbh->prepare($sql);
-				$stmt->bindParam(':username', $_SESSION['currentuser']);
-				$stmt->execute();
-				$res = $stmt->fetchAll();
+	if(isset($_SESSION['currentuser']))
+	{
+		$sql = "SELECT Backgroundid FROM users WHERE Username = :username";
+		$stmt = $dbh->prepare($sql);
+		$stmt->bindParam(':username', $_SESSION['currentuser']);
+		$stmt->execute();
+		$res = $stmt->fetchAll();
 				
-				foreach($res as $row)
-				{
-					$_SESSION['bgid'] = $row->Backgroundid;
-				}
-				
-				if(empty($_SESSION['bgid']) or $_SESSION['bgid'] == 0)
-				{
-					$_SESSION['bgid'] = 2;
-				}	
-				
-				if($_SESSION['bgid'] == 1)
-					{
-						?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_1.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_1.jpg')";}
-                        </script><?php
-					}
-					else if($_SESSION['bgid'] == 2)
-					{
-						?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_2.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_2.jpg')";}
-                        </script><?php
-					}
-					else if($_SESSION['bgid'] == 3)
-					{
-						?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_3.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_3.jpg')";}
-                        </script><?php
-					}
-					else if($_SESSION['bgid'] == 4)
-					{
-						?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_4.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_4.jpg')";}
-                        </script><?php
-					}
-                    else if($_SESSION['bgid'] == 5)
-					{
-						?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_5.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_5.jpg')";}
-                        </script><?php
-					}
-					else if($_SESSION['bgid'] == 6)
-					{
-						?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_6.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_6.jpg')";}
-                        </script><?php
-					}
-					else if($_SESSION['bgid'] == 7)
-					{
-						?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_7.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_7.jpg')";}
-                        </script><?php
-					}
-					else if($_SESSION['bgid'] == 8)
-					{
-						?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_8.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_8.jpg')";}
-                        </script><?php
-					}
-					else if($_SESSION['bgid'] == 9)
-					{
-						?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_9.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_9.jpg')";}
-                        </script><?php
-					}
-			}
+		foreach($res as $row)
+		{
+			$_SESSION['bgid'] = $row->Backgroundid;
+		}	
+		if(empty($_SESSION['bgid']) or $_SESSION['bgid'] == 0)
+		{
+			$_SESSION['bgid'] = 2;
+		}	
+		if($_SESSION['bgid'] == 1)
+		{
 			?>
+			<script type="text/javascript">
+				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_1.jpg')";}
+				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_1.jpg')";}
+            </script>
+			<?php
+		}
+		else if($_SESSION['bgid'] == 2)
+		{
+			?>
+			<script type="text/javascript">
+				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_2.jpg')";}
+				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_2.jpg')";}
+            </script>
+			<?php
+		}
+		else if($_SESSION['bgid'] == 3)
+		{
+			?>
+			<script type="text/javascript">
+				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_3.jpg')";}
+				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_3.jpg')";}
+            </script>
+			<?php
+		}
+		else if($_SESSION['bgid'] == 4)
+		{
+			?>
+			<script type="text/javascript">
+				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_4.jpg')";}
+				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_4.jpg')";}
+            </script>
+			<?php
+		}
+        else if($_SESSION['bgid'] == 5)
+		{
+			?>
+			<script type="text/javascript">
+				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_5.jpg')";}
+				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_5.jpg')";}
+            </script>
+			<?php
+		}
+		else if($_SESSION['bgid'] == 6)
+		{
+			?>
+			<script type="text/javascript">
+				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_6.jpg')";}
+				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_6.jpg')";}
+            </script>
+			<?php
+		}
+		else if($_SESSION['bgid'] == 7)
+		{
+			?>
+			<script type="text/javascript">
+				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_7.jpg')";}
+				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_7.jpg')";}
+            </script>
+			<?php
+		}
+		else if($_SESSION['bgid'] == 8)
+		{
+			?>
+			<script type="text/javascript">
+				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_8.jpg')";}
+				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_8.jpg')";}
+            </script>
+			<?php
+		}
+		else if($_SESSION['bgid'] == 9)
+		{
+			?>
+			<script type="text/javascript">
+				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_9.jpg')";}
+				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_9.jpg')";}
+            </script>
+			<?php
+		}
+	}			
+	?>
 </body>
 </html>
 <?php

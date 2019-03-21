@@ -189,23 +189,19 @@ if(isset($_SESSION['currentuser']) or true)
 		function myFunction() {
     		document.getElementById("myDropdown").classList.toggle("show");
 		}
-
 		// Close the dropdown if the user clicks outside of it
 		window.onclick = function(event) {
   			if (!event.target.matches('.dropbtn')) {
-
-  		    var dropdowns = document.getElementsByClassName("dropdown-content");
-    		var i;
-    		for (i = 0; i < dropdowns.length; i++) {
-     		var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  	}
-	}
-	
-	
+  		    	var dropdowns = document.getElementsByClassName("dropdown-content");
+    			var i;
+    			for (i = 0; i < dropdowns.length; i++) {
+     				var openDropdown = dropdowns[i];
+      				if (openDropdown.classList.contains('show')) {
+        				openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+		}	
 	</script>
 </body>
 </html>
@@ -213,5 +209,5 @@ if(isset($_SESSION['currentuser']) or true)
 }
 else
 {
-	header("Location: Login.php");
+	header("Location: login.php");
 }

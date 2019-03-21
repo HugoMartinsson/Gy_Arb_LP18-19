@@ -1,6 +1,6 @@
 <?php
-	require("db.php");
-	session_start();
+require("db.php");
+session_start();
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -9,7 +9,6 @@
 <title>Login</title>
 <link rel="stylesheet" href="styler.css" type="text/css">
 </head>
-
 <body>
 	<div id="wrapperlogin">
     	<div id="headerlogin">
@@ -31,7 +30,7 @@
             </div>
         </div>
     </div>
-<?php
+	<?php
 	if(!empty($_POST))
 	{
 		$username = $_POST['username'];
@@ -49,7 +48,6 @@
 		{
 			echo $e->getMessage();
 		}
-		
 		foreach($result as $row)
 		{
 			if(password_verify($password, $row->Password))
@@ -64,19 +62,22 @@
 			}
 			else if(!password_verify($password, $row->Password))
 			{
-				?><p>Username or password is incorrect!</p><?php
+				?>
+                <p>Username or password is incorrect!</p>
+				<?php
 			}
 			else
 			{
-				?><p>An error occured, please try again!</p><?php
+				?>
+                <p>An error occured, please try again!</p>
+				<?php
 			}
 		}
 	}
-?>
-<?php
-			?><script type="text/javascript">
-						if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_1.jpg')";}
-						else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_1.jpg')";}
-                        </script>
+	?>
+	<script type="text/javascript">
+		if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_1.jpg')";}
+		else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_1.jpg')";}
+    </script>
 </body>
 </html>

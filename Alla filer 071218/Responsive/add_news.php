@@ -112,15 +112,15 @@ if(isset($_SESSION['currentuser']))
 		if(empty($_SESSION['bgid']) or $_SESSION['bgid'] == 0)
 		{
 			$_SESSION['bgid'] = 2;
-		}	
-				
+		}		
 		if($_SESSION['bgid'] == 1)
 		{
 			?>
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_1.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_1.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 2)
 		{
@@ -128,7 +128,8 @@ if(isset($_SESSION['currentuser']))
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_2.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_2.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 3)
 		{
@@ -136,7 +137,8 @@ if(isset($_SESSION['currentuser']))
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_3.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_3.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 4)
 		{
@@ -144,7 +146,8 @@ if(isset($_SESSION['currentuser']))
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_4.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_4.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
         else if($_SESSION['bgid'] == 5)
 		{
@@ -152,7 +155,8 @@ if(isset($_SESSION['currentuser']))
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_5.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_5.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 6)
 		{
@@ -160,7 +164,8 @@ if(isset($_SESSION['currentuser']))
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_6.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_6.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 7)
 		{
@@ -176,7 +181,8 @@ if(isset($_SESSION['currentuser']))
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_8.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_8.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 9)
 		{
@@ -184,7 +190,8 @@ if(isset($_SESSION['currentuser']))
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_9.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_9.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 	}	
 	?>
@@ -194,23 +201,19 @@ if(isset($_SESSION['currentuser']))
 		function myFunction() {
     		document.getElementById("myDropdown").classList.toggle("show");
 		}
-
 		// Close the dropdown if the user clicks outside of it
 		window.onclick = function(event) {
   			if (!event.target.matches('.dropbtn')) {
-
-  		    var dropdowns = document.getElementsByClassName("dropdown-content");
-    		var i;
-    		for (i = 0; i < dropdowns.length; i++) {
-     		var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  	}
-	}
-	
-	
+  		    	var dropdowns = document.getElementsByClassName("dropdown-content");
+    			var i;
+    			for (i = 0; i < dropdowns.length; i++) {
+     				var openDropdown = dropdowns[i];
+      				if (openDropdown.classList.contains('show')) {
+        				openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+		}
 	</script>
 </body>
 </html>
@@ -218,5 +221,5 @@ if(isset($_SESSION['currentuser']))
 }
 else
 {
-	header("Location: Login.php");
+	header("Location: login.php");
 }

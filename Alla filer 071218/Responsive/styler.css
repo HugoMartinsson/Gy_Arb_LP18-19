@@ -359,9 +359,10 @@ table {
 		position: relative;
 	}
 	#navincourselink{
-		width: 100px;
-		height: 30px;
-		padding-top: 15px;
+		width: fit-content;
+		min-width: 100px;
+		height: 25px;
+		padding: 10px 5px 0px 5px;
 		border: 1px solid;
 		border-color: #FFF;
 		border-radius: 10px;
@@ -379,9 +380,9 @@ table {
 	}
 	.navincourseon{
 		width: fit-content;
-		min-width: 150px;
-		height: 30px;
-		padding: 15px 10px 0px 10px;
+		min-width: 100px;
+		height: 25px;
+		padding: 10px 5px 0px 5px;
 		border: 1px solid;
 		border-color: #FFF;
 		border-radius: 10px;
@@ -816,9 +817,10 @@ table {
 		position: relative;
 	}
 	#navincourselink{
-		width: 200px;
+		width: fit-content;
+		min-width: 200px;
 		height: 30px;
-		padding-top: 15px;
+		padding: 15px 10px 0px 15px;
 		margin-right: 2px;
 		border: 1px solid;
 		border-color: #FFF;
@@ -838,7 +840,7 @@ table {
 		width: fit-content;
 		min-width: 200px;
 		height: 30px;
-		padding: 15px 10px 0px 10px;
+		padding: 15px 10px 0px 15px;
 		margin-right: 2px;
 		border: 1px solid;
 		border-color: #FFF;
