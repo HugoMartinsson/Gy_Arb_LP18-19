@@ -639,7 +639,7 @@ table {
 	}
 	#loginsectionborder{
 		width: 500px;
-		height: 220px;
+		height: 200px;
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
@@ -659,7 +659,6 @@ table {
 	#logonbuttondiv{
 		width: 250px;
 		height: 30px;
-		margin-top: 20px;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
