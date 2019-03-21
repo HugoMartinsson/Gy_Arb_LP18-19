@@ -1,15 +1,5 @@
 <?php
-	session_start();
-	session_destroy();
-	header("Location: Login.php");
+session_start();
+session_destroy();
+header("Location: login.php");
 ?>
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Namnlöst dokument</title>
-</head>
-
-<body>
-</body>
-</html>

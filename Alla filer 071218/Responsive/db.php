@@ -1,5 +1,4 @@
 <?php
-
 $dsn = "mysql:host=localhost;dbname=eclass;";//Host + Database
 $login = "root";//User
 $password = "";//Password
