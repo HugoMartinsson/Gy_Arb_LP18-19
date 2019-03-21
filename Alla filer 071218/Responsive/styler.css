@@ -359,9 +359,10 @@ table {
 		position: relative;
 	}
 	#navincourselink{
-		width: 100px;
-		height: 30px;
-		padding-top: 15px;
+		width: fit-content;
+		min-width: 100px;
+		height: 25px;
+		padding: 10px 5px 0px 5px;
 		border: 1px solid;
 		border-color: #FFF;
 		border-radius: 10px;
@@ -379,9 +380,9 @@ table {
 	}
 	.navincourseon{
 		width: fit-content;
-		min-width: 150px;
-		height: 30px;
-		padding: 15px 10px 0px 10px;
+		min-width: 100px;
+		height: 25px;
+		padding: 10px 5px 0px 5px;
 		border: 1px solid;
 		border-color: #FFF;
 		border-radius: 10px;
@@ -850,7 +851,7 @@ table {
 		font-family: "Arial Black", Gadget, sans-serif;
 		font-size: 18px;
 		text-decoration: none;
-		float: left;;
+		float: left;
 	}
 	
 	
