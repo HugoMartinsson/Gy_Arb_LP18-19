@@ -1,0 +1,1115 @@
+@charset "utf-8";
+	/* CSS Document */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	height:100%;
+	background-color:#666;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS för "mobil" */
+@media screen and (max-width: 480px)
+{
+/* Allmän CSS */
+	body{
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	#wrapper {
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		width: 480px;
+		height: 100vh;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	header{
+		width: 100%;
+		height: 70px;
+		padding-top: 30px;
+		text-align: center;
+		float: left;
+		position: relative;
+	}
+	nav{
+		width: 100%;
+		height: 35px;
+		padding-bottom: 5px;
+		float: left;
+	}
+	section{
+		width: 475px;
+		height: auto;
+		padding-left: 5px;
+		float: left;
+	}
+	#headerlogoh1{
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 24px;
+		font-weight: bold;
+		color: #FFF;
+	}
+	#date{
+		
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 14px;
+		color: #000;
+	}
+	
+	
+	
+/* CSS för login */
+	#wrapperlogin{
+		width: 480px;
+		height: 100vh;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#headerlogin{
+		width: 480px;
+		height: 50px;
+		text-align: center;
+		padding-top: 30px;
+	}
+	#sectionlogin{
+		width: 480px;
+		height: auto;
+		margin-top: 30px;
+	}
+	#loginsectionborder{
+		width: 300px;
+		height: 130px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 15px;
+		background-color: rgba(94, 94, 94, 0.4);
+	}
+	#logoncredentialsdiv{
+		width: 250px;
+		height: 50px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	#logonbuttondiv{
+		width: 250px;
+		height: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	#logoncredentialsp{
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		color: #FFF;
+	}
+	#inputlogin{
+		width: 100px;
+		height: 30px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		margin-bottom: 2px;
+		margin-top: 5px;
+		color: #FFF;
+	}
+	#inputlogin:hover{
+		background-color: rgb(128,128,128);
+	}
+	#logoncredentialsfillin{
+		width: 150px;
+		height: 25px;
+		padding: 0px; /* Vad är detta till? /Gabriel */ /* Bra fråga / Joakim*/
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+		text-align: center;
+	}
+
+
+/* CSS för form */
+	input[type=password]{
+		border-radius: 10px;
+		border-style: none;
+		text-align: center;
+	}
+	input[type=password]::placeholder{
+		font-size: 16px;
+	}
+	input[type=text]{
+		padding: 5px;
+		margin-bottom: 5px;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 16px;
+		border-radius: 10px;
+		border-style: none;
+		text-align: center;
+		border-radius: 5px;
+		border-style: none;
+		text-align: center;	
+		border-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169);
+		border: 2px solid;
+	}
+	input[type=submit]{
+		width: 105px;
+		height: 32px;
+		margin-top: 5px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		border-radius: 5px;
+		border-style: none;
+		text-align: center;	
+		border-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169);
+		border: 2px solid;
+	}
+	input[type=file]{
+		border-style: none;
+		width: 195px;
+		height: 22px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-left: 8px;
+		margin-bottom: 2px;
+	}
+	select{
+		border-style: none;
+		width: 180px;
+		height: 35px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		margin-bottom: 2px;
+		padding-left: 30px;
+		color: #FFF;
+	}
+/* fix med add_news */
+	#textareaaddnews{
+		border-style: none;
+		width: 250px;
+		height: 150px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 13px;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+		padding: 8px 8px 8px 8px;
+		margin-bottom: 5px;
+	}
+	#confirmnewsupploaddiv{
+		width: fit-content;
+		height: auto;
+		padding: 5px 10px 5px 10px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		margin-top: 10px;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		color: #FFF;
+	}
+	#confirmnewsuppload{
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 13px;
+		color: #FFF; 
+	}
+/* inputhandin fix */
+	#inputhandinname{
+		margin-top: 10px;
+		height: 20px;
+		padding-bottom: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 14px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+	}
+		
+	
+/* AKTUS COMPACTUS FÖR NEWS */	
+	#news
+	{
+		width: 448px;
+		height: auto;
+		padding: 10px;
+		margin-top: 5px;
+		float: left;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		text-align: center;
+		background-color: rgba(169,169,169,0.9);
+	}
+	#newsh1{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 20px;
+		font-weight: bold;
+		color: #FFF;
+		padding-bottom: 10px;
+	}
+	#newsp{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 18px;
+		color: #FFF;
+	}
+	#date{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 15px;
+		color: #FFF;
+		padding-bottom: 20px;
+	}
+	#newsa{
+		text-decoration: none;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 16px;
+		color: #FFF;
+		padding: 5px 10px 5px 10px;
+		background-color: rgb(128,128,128);
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		
+	}
+	#newsa:hover{
+		background-color: rgb(64, 64, 64);
+	}
+	
+	
+	
+	#navincourse{
+		width: 475px;
+		height: auto;
+		padding-bottom: 10px;
+		float: left;
+	}
+	#centerincourse{
+		width: fit-content;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	#navincourselink{
+		width: fit-content;
+		min-width: 100px;
+		height: 25px;
+		padding: 10px 5px 0px 5px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		background-color: rgba(169,169,169,0.9);	
+		color: white;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 14px;
+		text-decoration: none;
+		float: left;
+		margin-top: 5px;
+	}
+	#navincourselink:hover{
+		background-color: rgb(128,128,128); 
+	}
+	.navincourseon{
+		width: fit-content;
+		min-width: 100px;
+		height: 25px;
+		padding: 10px 5px 0px 5px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		background-color: rgb(128,128,128);
+		color: white;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 14px;
+		text-decoration: none;
+		float: left;
+		margin-top: 5px;
+	}
+	#divmyacc{
+		width: 470px;
+		height: 300px;
+		float: left;
+		background-color: #FFF;
+	}
+	
+/* Länk till kurser */	
+	#linktocourse{
+		width: fit-content;
+		min-width: 200px;
+		height: 30px;
+		padding: 10px 15px 0px 15px;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 5px;
+		display: list-item;
+		list-style-type: none;
+		text-decoration: none;
+		text-align: center;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;	
+	}
+	#linktocourse:hover{ 
+		background-color:rgb(128,128,128); 
+	}
+	#centerlinks{
+		width: 475px;
+		height: auto;
+	}
+	
+	
+	
+	#lanksamlinga{
+		display: list-item;
+		list-style-type: none;
+		width: fit-content;
+		min-width: 230px;
+		height: 23px;
+		padding: 5px 5px 0px 5px;
+		margin-top: 5px;
+		border-radius:10px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	#lanksamlinga:hover{ 
+		background-color: rgb(128,128,128); 
+	}
+	#materaillinksa{
+		display: list-item;
+		list-style-type: none;
+		width: 350px;
+		height: 30px;
+		padding-top: 10px;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 20px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		margin-bottom: 3px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	#materaillinksa:hover{ 
+		background-color:rgb(128,128,128); 
+	}
+
+
+
+/* Skapa inlämning */
+	#createhandindiv{
+		width: 480px;
+		height: auto;
+		padding: 10px;
+		margin-top: 10px;
+		float: left;
+		text-align: center;
+	}
+	#hanndinp{
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
+		color: #FFF;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	#inputhandin{
+		margin-bottom: 5px;
+		margin-top: 10px;
+		padding: 2px 0px 2px 0px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+	}
+	#centerfileupload{
+		width: 240px;
+		padding-left: 10px;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		text-align: center;
+	}
+	
+	
+
+	
+
+
+/* CSS för dropdown */
+	.dropbtn{
+		background-color: transparent;
+		background-image: url(img/menulogo.png);
+		background-repeat: no-repeat;
+		width: 35px;
+		height: 35px;
+		margin-left: 5px;
+		color: white;
+		border: none;
+		cursor: pointer;
+	}
+	.dropbtn:hover, .dropbtn:focus{
+		background-color: transparent;
+	}
+	.dropdown{
+		position: fixed;
+		display: inline;
+	}
+	.dropdown-content{    
+		display: none;
+		position: absolute;
+		background-color: rgba(169,169,169,0.9);
+		min-width: 470px;
+		min-height: 50px;
+		margin-left: 5px;
+		text-align: center;
+		border-radius: 10px;
+		overflow: auto;
+		z-index: 1;
+	}
+	.dropdown-content a{
+		color: #FFF;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
+	#dropdown a:hover{
+		background-color: rgb(128,128,128);
+	}
+	.show{
+		display: block;
+	}
+}
+@media screen and (min-width: 481px)
+{
+	body{
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	#wrapper{
+		width: 1900px;
+		height: 100vh;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	header{
+		width: 1900px;
+		height: 100px;
+		padding-top: 20px;
+		float: left;
+		text-align: center;
+	}
+	nav{
+		width: 300px;
+		height: 1000px;
+		padding-bottom: 10px;
+		float: left;
+	}
+	section{
+		width: 1500px;
+		height: auto;
+		float: left;
+		position: relative;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	#headerlogoh1{
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 36px;
+		font-weight: bold;
+		color: #FFF;
+	}
+	
+	
+	
+/* CSS för login*/	
+	#wrapperlogin{
+		width: 700px;
+		height: 100vh;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#headerlogin{
+		width: 700px;
+		height: 100px;
+		padding-top: 50px;
+		text-align: center;
+	}
+	#sectionlogin{
+		width: 700px;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	#loginsectionborder{
+		width: 500px;
+		height: 200px;
+		padding: 20px 0px 20px 0px;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 15px;
+		background-color: rgba(94, 94, 94, 0.4);
+	}
+	#logoncredentialsdiv{
+		width: 250px;
+		height: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	#logonbuttondiv{
+		width: 250px;
+		height: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	#logoncredentialsp{
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 20px;
+		font-weight: bold;
+		color: #FFF;
+	}	
+	#logoncredentialsfillin{
+		width: 250px;
+		height: 30px;
+		padding: 0px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+	}
+	#inputlogin{
+		width: 150px;
+		height: 30px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		margin-bottom: 2px;
+		color: #FFF;
+	}
+	#inputlogin:hover{
+		background-color: rgb(128,128,128);
+	}
+
+	
+	
+
+/* CSS för form */
+	input[type=password]{
+		border-radius: 10px;
+		border-style: none;
+		text-align: center;
+	}
+	input[type=password]::placeholder{
+		font-size: 18px;
+	}
+	input[type=text]{
+		padding: 10px;
+		margin-bottom: 10px;
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 18px;
+		border-radius: 10px;
+		border-style: none;
+		text-align: center;
+		border-radius: 5px;
+		border-style: none;
+		text-align: center;	
+		border-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169);
+		border: 2px solid;
+	}
+	input[type=submit]{
+		width: fit-content;
+		min-width: 105px;
+		height: 30px;
+		margin-top: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		border-radius: 10px;
+		border-style: none;
+		text-align: center;	
+		border-color: #FFF;
+		color: #FFF;
+		background-color: rgba(169,169,169);
+		border: 2px solid;
+	}
+	input[type=file]{
+		border-style: none;
+		width: 220px;
+		height: 22px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+		padding: 8px 8px 8px 8px;
+		margin-bottom: 8px;
+	}
+	select{
+		border-style: none;
+		width: 207px;
+		height: 40px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		margin-bottom: 2px;
+		padding-left: 30px;
+		color: #FFF;
+	}
+	/* fix med add_news */
+	#textareaaddnews{
+		border-style: none;
+		width: 300px;
+		height: 200px;
+		border-radius: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		color: #FFF;
+		padding: 8px 8px 8px 8px;
+		margin-bottom: 8px;
+	}
+	#confirmnewsupploaddiv{
+		width: fit-content;
+		height: auto;
+		padding: 10px 15px 10px 15px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		margin-top: 10px;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		color: #FFF;
+	}
+	#confirmnewsuppload{
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
+		color: #FFF; 
+	}
+		
+	
+	
+	#navincourse{
+		width: 1210px;
+		height: auto;
+		margin-bottom: 50px;
+		float: left;
+	}
+	#centerincourse{
+		width: fit-content;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	#navincourselink{
+		width: fit-content;
+		min-width: 200px;
+		height: 30px;
+		padding: 15px 10px 0px 15px;
+		margin-right: 2px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		background-color: rgba(169,169,169,0.9);
+		color: #FFF;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
+		text-decoration: none;
+		float: left;
+	}
+	#navincourselink:hover{ 
+		background-color: rgb(128,128,128); 
+	}
+	.navincourseon{ 
+		width: fit-content;
+		min-width: 200px;
+		height: 30px;
+		padding: 15px 10px 0px 15px;
+		margin-right: 2px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		background-color: rgb(128,128,128);
+		color: #FFF;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 18px;
+		text-decoration: none;
+		float: left;
+	}
+	
+	
+/* AKTUS COMPACTUS FÖR NEWS */ 	
+	#news{
+		width: 980px;
+		height: auto;
+		padding: 10px;
+		float: left;
+		margin-left: 110px;
+		margin-top: 10px;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		text-align: center;
+		background-color: rgba(169,169,169,0.9);
+	}
+	#newsh1{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 24px;
+		font-weight: bold;
+		color: #FFF;
+		padding-top: 20px;
+	}
+	#courseh1{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 24px;
+		font-weight: bold;
+		color: #FFF;
+		padding-bottom: 10px;
+	}
+	#newsp{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 18px;
+		color: #FFF;
+		padding-bottom: 5px;
+		padding-top: 5px;
+	}
+	#date{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 18px;
+		color: #FFF;
+		padding-bottom: 20px;
+	}
+	#newsa{
+		text-decoration: none;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 17px;
+		color: #FFF;
+		padding: 5px 10px 5px 10px;
+		background-color: rgb(128,128,128);
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		
+	}
+	#newsa:hover{
+		background-color: rgb(64, 64, 64);
+	}
+	
+	
+	
+	#divmyacc{
+		width: 1500px;
+		height: 300px;
+		float: left;
+		background-color: #FFF;
+	}
+	
+	
+/* länkar till kurser */	
+	#linktocourse{
+		width: fit-content;
+		min-width: 400px;
+		height: 40px;
+		padding: 10px 20px 0px 20px;
+		margin-top: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative; 
+		display: list-item;
+		list-style-type: none;
+		text-decoration: none;
+		text-align: center;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 24px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;	
+	}
+	#linktocourse:hover{ 
+		background-color:rgb(128,128,128); 
+	}
+	#centerlinks{
+		width: 1100px;
+		height: auto;
+		margin-left: 50px;
+	}
+	
+	
+/* CSS för länksamlingar*/	
+	#lanksamlinga{
+		display: list-item;
+		list-style-type: none;
+		width: fit-content;
+		min-width: 350px;
+		height: 35px;
+		padding: 6px 10px 0px 10px;
+		margin-bottom: 3px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 24px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+	}
+	#lanksamlinga:hover{
+		background-color: rgb(128,128,128); 
+	}
+	
+	
+	
+	#materaillinksa{
+		display: list-item;
+		list-style-type: none;
+		width: 610px;
+		height: auto;
+		padding: 6px 0px 6px 0px; 
+		margin-bottom: 4px;
+		margin-left: 185px;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 24px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+	}
+	#materaillinksa:hover{ 
+		background-color: rgb(128,128,128); 
+	}
+	
+	
+	
+/* Skapa inlämning */	
+	#createhandindiv{
+		width: 980px;
+		height: auto;
+		float: left;
+		margin-left: 110px;
+		margin-top: 10px;
+		text-align: center;
+	}
+	#hanndinp{
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 24px;
+		color: #FFF;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	#inputhandin{
+		margin-top: 0px;
+		height: 34px;
+		padding-bottom: 5px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+	}
+	#inputhandinname{
+		margin-top: 10px;
+		height: 20px;
+		padding-bottom: 10px;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+	}
+	#inputhandintwo{
+		margin-top: 10px;
+		height: 40px;
+		width: fit-content;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 16px;
+		color: #FFF;
+		background-color: rgba(169,169,169,0.9);
+		border: 2px solid;
+		border-color: #FFF;
+	}
+	#centerfileupload{
+		width: 240px;
+		padding-left: 10px;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		text-align: center;
+	}
+	
+	
+/* Bakgrundsbilder */	
+	#bgpics
+	{
+		width: 448px;
+		height: 600px;
+		padding: 10px;
+		margin-top: 5px;
+		float: left;
+		border-radius: 10px;
+		border: 1px solid;
+		border-color: #FFF;
+		text-align: center;
+		background-color: rgba(169,169,169,0.9);
+	}
+	
+	
+/* CSS för menysystem */		
+	.dropbtn{
+		display: none;
+	}
+	#myDropdown{
+		width: auto;
+		height: auto;
+		position: fixed;
+	}
+	.dropdown-content a{
+		display: list-item;
+		list-style-type: none;
+		text-align: center;
+		text-decoration: none;
+		font-family: "Arial Black", Gadget, sans-serif;
+		font-size: 24px;
+		color: #FFF;
+		padding: 6px 30px 6px 30px;
+		margin-bottom: 2px;
+		margin-left: 10px;
+		background-color: rgba(169,169,169,0.9);
+		border: 1px solid;
+		border-color: #FFF;
+		border-radius: 10px;
+	}
+	.dropdown-content a:hover{ 
+		background-color: rgb(128,128,128);
+	}
+}
