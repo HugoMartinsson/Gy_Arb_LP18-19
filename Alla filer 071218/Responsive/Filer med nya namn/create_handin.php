@@ -35,7 +35,7 @@ if(isset($_SESSION['currentuser']) or true)
                     <div id="myDropdown" class="dropdown-content">
                         <a href="start.php">Hem</a>
                         <a href="course_overview.php">Kurser/Klassrum</a>
-                        <a href="links.php">Länksamlingar</a>
+                        <a href="links.php">Länksamling</a>
                         <a href="http://www.novasoftware.se/webviewer/(S(kfzct0fzd3s4iy55e3xyz345))/design1.aspx?schoolid=53520">Schema</a>
                         <a href="account.php">Mitt Konto</a>
 						<a href="create_handin.php">Skapa inlämning</a>
