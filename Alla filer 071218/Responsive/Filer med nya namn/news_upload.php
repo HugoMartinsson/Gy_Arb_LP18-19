@@ -5,6 +5,24 @@ if(isset($_SESSION['currentuser']))
 {
 	try
 	{
+		$sql = "SELECT Type FROM users WHERE Username = :currentuser";
+		$stmt = $dbh->prepare($sql);
+		$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+	}
+	catch(Exception $e)
+	{
+		echo $e->getMessage();
+	}
+	foreach($result as $row)
+	{
+		$usertype = $row->Type;
+	}
+if($usertype == "teacher")
+{
+	try
+	{
 		//Hämtar alla kurser som den inloggade läraren undervisar i. 
 		$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
 		$stmt = $dbh->prepare($sql);
@@ -222,5 +240,11 @@ if(isset($_SESSION['currentuser']))
 }
 else
 {
-	header("Location: login.php");
+	header("Location: logout.php");
 }
+}
+else
+{
+	header("Location: logout.php");
+}
+?>
