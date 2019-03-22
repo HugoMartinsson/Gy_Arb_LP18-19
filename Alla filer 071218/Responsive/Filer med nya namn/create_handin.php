@@ -1,8 +1,26 @@
 <?php
 require("db.php");
 session_start();
-if(isset($_SESSION['currentuser']) or true)
-{		
+if(isset($_SESSION['currentuser']))
+{
+	try
+	{
+		$sql = "SELECT Type FROM users WHERE Username = :currentuser";
+		$stmt = $dbh->prepare($sql);
+		$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+	}
+	catch(Exception $e)
+	{
+		echo $e->getMessage();
+	}
+	foreach($result as $row)
+	{
+		$usertype = $row->Type;
+	}
+if($usertype == "teacher")
+{
 	try
 	{
 		//Hämtar alla kurser som den inloggade läraren undervisar i. 
@@ -215,5 +233,11 @@ if(isset($_SESSION['currentuser']) or true)
 }
 else
 {
-	header("Location: login.php");
+	header("Location: logout.php");
 }
+}
+else
+{
+	header("Location: logout.php");
+}
+?>
