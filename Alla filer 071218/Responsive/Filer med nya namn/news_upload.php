@@ -69,15 +69,16 @@ if($usertype == "teacher")
 					<input type="text" name="headline" placeholder="Rubrik"><br>
         			<textarea id="textareaaddnews" name="news" placeholder="Text" cols="50" rows="10"></textarea><br>
         			<select name="course">
-        			<?php
-					//Skriver ut kurserna den hämtat så läraren får välja i vilket kurs nyheten ska publiceras. 
-					foreach($result as $row)
-					{
-						?>
-						<option value="<?php echo $row->Name; ?>"><?php echo $row->Name; ?></option>
+                    	<option value="" disabled selected>Kurs</option>
 						<?php
-					}
-					?>
+                        //Skriver ut kurserna den hämtat så läraren får välja i vilket kurs nyheten ska publiceras. 
+                        foreach($result as $row)
+                        {
+                            ?>
+                            <option value="<?php echo $row->Name; ?>"><?php echo $row->Name; ?></option>
+                            <?php
+                        }
+                        ?>
         			</select><br>
         			<input type="submit" value="Lägg till">
         		</form>
