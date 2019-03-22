@@ -49,7 +49,7 @@ if(isset($_SESSION['currentuser']) or true)
         	<div id="createhandindiv">
 				<form action="" method="get">
 					<select name="course">
-                    	<option value="" disabled selected>Välj kurs</option>
+                    	<option value="" disabled selected>Kurs</option>
         				<?php
 						//Skriver ut alla kurser så läraren får välja vart filen ska publiceras
 						foreach($result as $row)
@@ -66,7 +66,13 @@ if(isset($_SESSION['currentuser']) or true)
 				<?php
 				if(empty($_GET['handInName']) && !empty($_GET))
 				{
-					echo "Var vänlig skriv ett namn och försök igen";
+					?>
+					<div id="confirmnewsupploaddiv">
+                    	<?php
+						echo "Var vänlig ange namn och försök igen";
+						?>
+					</div>
+                    <?php
 				}
 				if(!empty($_GET['handInName']))
 				{

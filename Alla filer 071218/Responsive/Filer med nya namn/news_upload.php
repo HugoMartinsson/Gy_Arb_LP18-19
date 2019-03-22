@@ -66,11 +66,23 @@ if(isset($_SESSION['currentuser']))
 				<?php
 				if(empty($_POST['headline']) && !empty($_POST))
 				{
-					echo "Var vänlig skriv ett namn och försök igen";
+					?>
+					<div id="confirmnewsupploaddiv">
+                    	<?php
+						echo "Var vänlig ange rubrik/nyhetstext och försök igen";
+						?>
+					</div>
+                    <?php
 				}
 				else if(empty($_POST['news']) && !empty($_POST))
 				{
-					echo "Var vänlig skriv en nyhetstext och försök igen";
+					?>
+                    <div id="confirmnewsupploaddiv">
+                    	<?php
+						echo "Var vänlig ange rubrik/nyhetstext och försök igen";
+						?>
+                    </div>
+                    <?php
 				}
 				if(!empty($_POST['headline']) && !empty($_POST['news']))
 				{
