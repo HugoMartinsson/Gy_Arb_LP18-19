@@ -66,7 +66,8 @@ if($usertype == "teacher")
         <section>
         	<div id="createhandindiv">
 				<form action="" method="get">
-					<select name="course">
+					<input id="inputhandinname" type="text" name="handInName" placeholder="Namn på inlämningen"><br>
+                    <select name="course">
                     	<option value="" disabled selected>Kurs</option>
         				<?php
 						//Skriver ut alla kurser så läraren får välja vart filen ska publiceras
@@ -78,7 +79,6 @@ if($usertype == "teacher")
 						}
 						?>
     				</select><br>
-					<input id="inputhandinname" type="text" name="handInName" placeholder="Namn på inlämningen"><br>
     				<input id="inputhandin" type="submit" value="Skapa">
 				</form>
 				<?php
