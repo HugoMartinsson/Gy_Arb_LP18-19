@@ -38,7 +38,7 @@ if(isset($_SESSION['currentuser']))
                     <div id="myDropdown" class="dropdown-content">
                         <a href="start.php">Hem</a>
                         <a href="course_overview.php">Kurser/Klassrum</a>
-                        <a href="links.php">Länksamlingar</a>
+                        <a href="links.php">Länksamling</a>
                         <?php 
 						if($usertype == "student")
 						{

@@ -55,7 +55,7 @@ if(isset($_SESSION['currentuser']))
 							?>
                             <a href="create_handin.php">Skapa inlämning</a>
                             <a href="file_upload.php">Ladda upp fil</a>
-                            <a href="add_news.php">Skriv nyhet</a>
+                            <a href="news_upload.php">Skriv nyhet</a>
 							<?php
 						}
 						?>
@@ -66,15 +66,15 @@ if(isset($_SESSION['currentuser']))
         <section>
         	<div id="news">
             	<h1 id="newsh1">Klicka på en bild för att byta bakgrundsbild</h1><br>
-                <a href="mittkonto.php?imageid=1"><img src="img/Backgrounds_desktop/Desktop_1.jpg" width="180px" height="100%"/></a>
-                <a href="mittkonto.php?imageid=2"><img src="img/Backgrounds_desktop/Desktop_2.jpg" width="180px" height="100%"/></a>
-                <a href="mittkonto.php?imageid=3"><img src="img/Backgrounds_desktop/Desktop_3.jpg" width="180px" height="100%"/></a>
-                <a href="mittkonto.php?imageid=4"><img src="img/Backgrounds_desktop/Desktop_4.jpg" width="180px" height="100%"/></a>
-                <a href="mittkonto.php?imageid=5"><img src="img/Backgrounds_desktop/Desktop_5.jpg" width="180px" height="100%"/></a>
-                <a href="mittkonto.php?imageid=6"><img src="img/Backgrounds_desktop/Desktop_6.jpg" width="180px" height="100%"/></a>
-                <a href="mittkonto.php?imageid=7"><img src="img/Backgrounds_desktop/Desktop_7.jpg" width="180px" height="100%"/></a>
-                <a href="mittkonto.php?imageid=8"><img src="img/Backgrounds_desktop/Desktop_8.jpg" width="180px" height="100%"/></a>
-                <a href="mittkonto.php?imageid=9"><img src="img/Backgrounds_desktop/Desktop_9.jpg" width="180px" height="100%"/></a>
+                <a href="account.php?imageid=1"><img src="img/Backgrounds_desktop/Desktop_1.jpg" width="180px" height="100%"/></a>
+                <a href="account.php?imageid=2"><img src="img/Backgrounds_desktop/Desktop_2.jpg" width="180px" height="100%"/></a>
+                <a href="account.php?imageid=3"><img src="img/Backgrounds_desktop/Desktop_3.jpg" width="180px" height="100%"/></a>
+                <a href="account.php?imageid=4"><img src="img/Backgrounds_desktop/Desktop_4.jpg" width="180px" height="100%"/></a>
+                <a href="account.php?imageid=5"><img src="img/Backgrounds_desktop/Desktop_5.jpg" width="180px" height="100%"/></a>
+                <a href="account.php?imageid=6"><img src="img/Backgrounds_desktop/Desktop_6.jpg" width="180px" height="100%"/></a>
+                <a href="account.php?imageid=7"><img src="img/Backgrounds_desktop/Desktop_7.jpg" width="180px" height="100%"/></a>
+                <a href="account.php?imageid=8"><img src="img/Backgrounds_desktop/Desktop_8.jpg" width="180px" height="100%"/></a>
+                <a href="account.php?imageid=9"><img src="img/Backgrounds_desktop/Desktop_9.jpg" width="180px" height="100%"/></a>
             </div>
         	<?php
 			if(!empty($_GET))
