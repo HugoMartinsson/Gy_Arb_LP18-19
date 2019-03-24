@@ -1,34 +1,7 @@
 <?php 
 session_start();
 require("db.php");
-class News
-{
-	public $headline;
-	private $news;
-	private $date;
-	private $course;
-	
-	function __construct($headline2, $news2, $date2, $course2)
-	{
-		$headline = $headline2;
-		$news = $news2;
-		$date = $date2;
-		$course = $course2;
-	}
-	function getHeadline() {
-		return $headline;
-	}
-	function getNews() {
-		return $news;
-	}
-	function getDate() {
-		return $this->date;
-	}
-	function getCourse() {
-		return $this->course;
-	}
-	
-}
+
 if(isset($_SESSION['currentuser']))
 {
 	try
@@ -47,9 +20,6 @@ if(isset($_SESSION['currentuser']))
 	{
 		$usertype = $row->Type;
 	}
-	$headlines = array();
-	$news = array();
-	$date = array();
 ?>
 <!DOCTYPE HTML>
 <html>
