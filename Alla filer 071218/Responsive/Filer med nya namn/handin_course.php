@@ -60,7 +60,9 @@ if(isset($_SESSION['currentuser']))
                         <?php 
 						if($usertype == "student")
 						{
-							?><a href="handin.php">Inlämningar</a><?php
+							?>
+                            <a href="handin.php">Inlämningar</a>
+							<?php
 						}
 						?>
                         <a href="http://www.novasoftware.se/webviewer/(S(kfzct0fzd3s4iy55e3xyz345))/design1.aspx?schoolid=53520">Schema</a>
@@ -84,7 +86,7 @@ if(isset($_SESSION['currentuser']))
             	<div id="centerincourse">
                     <a id="navincourselink" href=<?php echo "material.php?course=" . $course ?>>Material</a>
                     <a id="navincourselink" href=<?php echo "course.php?course=" . $course ?>><?php echo $course ?></a>
-                    <a class="navincourseon" href=<?php echo "handin_course.php?course=" . $course ?>>Inlämning</a>
+                    <a class="navincourseon" href=<?php echo "handin_course.php?course=" . $course ?>>Inlämningar</a>
             	</div>
             </div>
 			<div id="news">
