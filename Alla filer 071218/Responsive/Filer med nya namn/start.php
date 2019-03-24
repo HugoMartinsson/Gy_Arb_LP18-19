@@ -1,6 +1,34 @@
 <?php 
 session_start();
 require("db.php");
+class News
+{
+	public $headline;
+	private $news;
+	private $date;
+	private $course;
+	
+	function __construct($headline2, $news2, $date2, $course2)
+	{
+		$headline = $headline2;
+		$news = $news2;
+		$date = $date2;
+		$course = $course2;
+	}
+	function getHeadline() {
+		return $headline;
+	}
+	function getNews() {
+		return $news;
+	}
+	function getDate() {
+		return $this->date;
+	}
+	function getCourse() {
+		return $this->course;
+	}
+	
+}
 if(isset($_SESSION['currentuser']))
 {
 	try
@@ -19,6 +47,9 @@ if(isset($_SESSION['currentuser']))
 	{
 		$usertype = $row->Type;
 	}
+	$headlines = array();
+	$news = array();
+	$date = array();
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -66,44 +97,65 @@ if(isset($_SESSION['currentuser']))
         <section>
             <?php
 			$user = "%" . $_SESSION['currentuser'] . "%";
-			$count = 1;
-					
-			try
+			
+			if($usertype == "student")
 			{
-				//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
-				$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
-				$stmt = $dbh->prepare($sql);
-				$stmt->bindParam(":currentuser", $user);
-				$stmt->execute();
-				$result = $stmt->fetchAll();
+				try
+				{
+					//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
+					$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+					$stmt = $dbh->prepare($sql);
+					$stmt->bindParam(":currentuser", $user);
+					$stmt->execute();
+					$result = $stmt->fetchAll();
+				}
+				catch(Exception $e)
+				{
+					echo $e->getMessage();
+				}
 			}
-			catch(Exception $e)
+			else if($usertype == "teacher")
 			{
-				echo $e->getMessage();
+				try
+				{
+					//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
+					$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
+					$stmt = $dbh->prepare($sql);
+					$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+					$stmt->execute();
+					$result = $stmt->fetchAll();
+				}
+				catch(Exception $e)
+				{
+					echo $e->getMessage();
+				}
 			}
 			foreach($result as $row)
 			{
 				try
 				{
-					$sql = "SELECT * FROM news WHERE course = :course";
+					$sql = "SELECT * FROM news WHERE course = :course ORDER BY datetime";
 					$stmt = $dbh->prepare($sql);
 					$stmt->bindParam(":course", $row->Name);
 					$stmt->execute();
-					$result2 = $stmt->fetchAll();
+					$result2[] = $stmt->fetchAll(PDO::FETCH_OBJ);
 				}
 				catch(Exception $e)
 				{
 					echo $e->getMessage();
-				}			
-				foreach($result2 as $row)
+				}
+			}
+			foreach($result2 as $row)
+			{
+				foreach($row as $col)
 				{
 					?>
-                    <div id="news">
-                    	<h1 id="newsh1"><?php echo $row->headline ?></h1>
-						<p id="newsp"><?php echo $row->news ?></p><br>
-						<p id="date"> <?php echo $row->datetime  . " - ";?><a id="newsa" href="course.php?course=<?php echo $row->course; ?> "><?php echo $row->course; ?></a></p>        
-                    </div>
-                    <?php
+						<div id="news">
+						<h1 id="newsh1"><?php echo $col->headline; ?></h1>
+						<p id="newsp"><?php echo $col->news; ?></p><br>
+						<p id="date"> <?php echo $col->datetime  . " - ";?><a id="newsa" href="course.php?course=<?php echo $col->course; ?> "><?php echo $col->course; ?></a></p>        
+						</div>
+					<?php
 				}
 			}
 			?>
