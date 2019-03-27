@@ -1,6 +1,7 @@
 <?php
 require("db.php");
 session_start();
+
 if(isset($_SESSION['currentuser']))
 {
 	try
@@ -87,7 +88,7 @@ if($usertype == "teacher")
 					?>
 					<div id="confirmnewsupploaddiv">
                     	<?php
-						echo "Var vänlig ange namn och försök igen";
+						echo "Var vänlig ange namn och försök igen.";
 						?>
 					</div>
                     <?php
@@ -138,7 +139,8 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_1.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_1.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 2)
 		{
@@ -146,7 +148,8 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_2.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_2.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 3)
 		{
@@ -154,7 +157,8 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_3.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_3.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 4)
 		{
@@ -162,7 +166,8 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_4.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_4.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
         else if($_SESSION['bgid'] == 5)
 		{
@@ -170,7 +175,8 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_5.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_5.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 6)
 		{
@@ -178,7 +184,8 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_6.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_6.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 7)
 		{
@@ -186,7 +193,8 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_7.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_7.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 8)
 		{
@@ -194,7 +202,8 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_8.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_8.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 9)
 		{
@@ -202,11 +211,11 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_9.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_9.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 	}	
-/* dropdownscript */
-?>
+	?>
 	<script>
 		/* When the user clicks on the button, 
 		toggle between hiding and showing the dropdown content */

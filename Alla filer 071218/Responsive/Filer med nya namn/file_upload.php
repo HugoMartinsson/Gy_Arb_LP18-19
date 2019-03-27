@@ -162,11 +162,11 @@ if($usertype == "teacher")
                         }
                         if ($didUpload)
                         {
-                             echo "The file " . $FileNameToShow . " has been uploaded";
+                             echo $FileNameToShow . " har laddats upp.";
                         } 
                         else
                         {
-                             echo "An error occurred somewhere. Try again or contact the admin";
+                             echo "Ett fel inträffade. Försök igen eller kontakta administratören.";
                              ?>
                              <form action="file_upload.php">
                                 <input type="submit" value="Tillbaka">

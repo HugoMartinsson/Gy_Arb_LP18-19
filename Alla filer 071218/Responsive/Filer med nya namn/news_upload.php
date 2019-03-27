@@ -1,6 +1,7 @@
 <?php
 require("db.php");
 session_start();
+
 if(isset($_SESSION['currentuser']))
 {
 	try
@@ -19,21 +20,21 @@ if(isset($_SESSION['currentuser']))
 	{
 		$usertype = $row->Type;
 	}
-if($usertype == "teacher")
-{
-	try
+	if($usertype == "teacher")
 	{
-		//Hämtar alla kurser som den inloggade läraren undervisar i. 
-		$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
-		$stmt = $dbh->prepare($sql);
-		$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
-		$stmt->execute();
-		$result = $stmt->fetchAll();
-	}
-	catch(Exception $e)
-	{
-		echo $e->getMessage();
-	}
+		try
+		{
+			//Hämtar alla kurser som den inloggade läraren undervisar i. 
+			$sql = "SELECT Name FROM courses WHERE Teacher = :currentuser";
+			$stmt = $dbh->prepare($sql);
+			$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
+			$stmt->execute();
+			$result = $stmt->fetchAll();
+		}
+		catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -205,7 +206,8 @@ if($usertype == "teacher")
 			<script type="text/javascript">
 				if(window.innerWidth < 480){document.body.style.backgroundImage = "url('img/Backgrounds_mobile/Mobile_7.jpg')";}
 				else if(window.innerWidth > 480){document.body.style.backgroundImage = "url('img/Backgrounds_desktop/Desktop_7.jpg')";}
-            </script><?php
+            </script>
+			<?php
 		}
 		else if($_SESSION['bgid'] == 8)
 		{

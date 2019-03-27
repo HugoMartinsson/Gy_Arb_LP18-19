@@ -1,6 +1,6 @@
 <?php 
-session_start();
 require("db.php");
+session_start();
 
 if(isset($_SESSION['currentuser']))
 {
@@ -120,37 +120,17 @@ if(isset($_SESSION['currentuser']))
 				foreach($row as $col)
 				{
 					?>
-						<div id="news">
+					<div id="news">
 						<h1 id="newsh1"><?php echo $col->headline; ?></h1>
 						<p id="newsp"><?php echo $col->news; ?></p><br>
 						<p id="date"> <?php echo $col->datetime  . " - ";?><a id="newsa" href="course.php?course=<?php echo $col->course; ?> "><?php echo $col->course; ?></a></p>        
-						</div>
+					</div>
 					<?php
 				}
 			}
 			?>
         </section>
     </div>
-    <script>
-		/* When the user clicks on the button, 
-		toggle between hiding and showing the dropdown content */
-		function myFunction() {
-    		document.getElementById("myDropdown").classList.toggle("show");
-		}
-		// Close the dropdown if the user clicks outside of it
-		window.onclick = function(event) {
-  			if (!event.target.matches('.dropbtn')) {
-  		    	var dropdowns = document.getElementsByClassName("dropdown-content");
-    			var i;
-    			for (i = 0; i < dropdowns.length; i++) {
-     				var openDropdown = dropdowns[i];
-      				if (openDropdown.classList.contains('show')) {
-        				openDropdown.classList.remove('show');
-      				}
-    			}
-  			}
-		}
-	</script>
     <?php
 	if(isset($_SESSION['currentuser']))
 	{
@@ -251,6 +231,26 @@ if(isset($_SESSION['currentuser']))
 		}
 	}	
 	?>
+     <script>
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+    		document.getElementById("myDropdown").classList.toggle("show");
+		}
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+  			if (!event.target.matches('.dropbtn')) {
+  		    	var dropdowns = document.getElementsByClassName("dropdown-content");
+    			var i;
+    			for (i = 0; i < dropdowns.length; i++) {
+     				var openDropdown = dropdowns[i];
+      				if (openDropdown.classList.contains('show')) {
+        				openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+		}
+	</script>
 </body>
 </html>
 <?php

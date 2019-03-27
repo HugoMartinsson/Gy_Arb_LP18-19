@@ -1,6 +1,7 @@
 <?php
 require("db.php");
 session_start();
+
 if(isset($_SESSION['currentuser']))
 {
 	try
@@ -194,7 +195,7 @@ if(isset($_SESSION['currentuser']))
 						}
 						if ($didUpload)
 						{
-							 echo "The file " . $FileNameToShow . " has been uploaded";
+							 echo $FileNameToShow . " har laddats upp.";
 							 ?>
 							 <form action="handin.php" method="get">
 								<input type="submit" value="Tillbaka">
@@ -203,7 +204,7 @@ if(isset($_SESSION['currentuser']))
 						} 
 						else
 						{
-							 echo "An error occurred somewhere. Try again or contact the admin";
+							 echo "Ett fel inträffade. Försök igen eller kontakta administratören.";
 							 ?>
 							 <form action="handin.php" method="get">
 								<input type="submit" value="Tillbaka">
@@ -216,26 +217,6 @@ if(isset($_SESSION['currentuser']))
             </div>
         </section>
 	</div>
-    <script>
-		/* When the user clicks on the button, 
-		toggle between hiding and showing the dropdown content */
-		function myFunction() {
-    		document.getElementById("myDropdown").classList.toggle("show");
-		}
-		// Close the dropdown if the user clicks outside of it
-		window.onclick = function(event) {
-  			if (!event.target.matches('.dropbtn')) {
-				var dropdowns = document.getElementsByClassName("dropdown-content");
-				var i;
-				for (i = 0; i < dropdowns.length; i++) {
-					var openDropdown = dropdowns[i];
-					if (openDropdown.classList.contains('show')) {
-						openDropdown.classList.remove('show');
-      				}
-    			}
-  			}
-	}
-	</script>
 	<?php
 	if(isset($_SESSION['currentuser']))
 	{
@@ -337,6 +318,26 @@ if(isset($_SESSION['currentuser']))
 		}
 	}			
 	?>
+    <script>
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+		function myFunction() {
+    		document.getElementById("myDropdown").classList.toggle("show");
+		}
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(event) {
+  			if (!event.target.matches('.dropbtn')) {
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+	}
+	</script>
 </body>
 </html>
 <?php

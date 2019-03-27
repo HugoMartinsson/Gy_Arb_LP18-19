@@ -49,7 +49,8 @@ session_start();
                 $stmt->bindParam(":type", $type);
                 $stmt->execute();
                     
-                echo "User was succesfully created";?>
+                echo "Användaren ahr skapats.";
+				?>
                 <script>
                     window.history.pushState({}, document.title, "/" + "php/create_user.php");
                 </script>
@@ -57,11 +58,11 @@ session_start();
             }
             else if($password != $passwordcheck)
             {
-                echo "Password don´t match";
+                echo "Lösenorden överensstämmer ej!";
             }
             else
             {
-                echo "A problem occured, please try again";
+                echo "Ett fel inträffade, försök igen!";
             }
         }	
     }

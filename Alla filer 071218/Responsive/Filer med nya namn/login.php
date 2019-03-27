@@ -62,15 +62,13 @@ session_start();
 			}
 			else if(!password_verify($password, $row->Password))
 			{
-				?>
-                <p>Username or password is incorrect!</p>
-				<?php
+				echo "Användarnamn eller lösenord är felaktigt!";
+				//FUNGERAR EJ
 			}
 			else
 			{
-				?>
-                <p>An error occured, please try again!</p>
-				<?php
+				echo "Ett fel inträffade, försök igen!";
+				//FUNGERAR EJ
 			}
 		}
 	}
