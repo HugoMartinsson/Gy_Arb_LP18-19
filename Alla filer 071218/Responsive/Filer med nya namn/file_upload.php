@@ -67,11 +67,6 @@ if($usertype == "teacher")
                     echo $e->getMessage();
                 }
                 
-                //OBS, SKA SKICKAS MED NÄR LÄRARE SKAPAR INLÄMNING
-                $handInName = "PHP_MYSQL_LAB";
-                //OBS, SKA ERSÄTTAS MED RIKTIG "CURRENTUSER"
-                $_SESSION['currentuser'] = "Henrik";
-                
                 try
                 {
                     //Hämtar alla kurser som den inloggade läraren undervisar i. 
