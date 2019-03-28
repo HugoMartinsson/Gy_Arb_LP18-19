@@ -183,12 +183,22 @@ if(isset($_SESSION['currentuser']))
 						}
 						if ($didUpload)
 						{
-							 echo $FileNameToShow . " har laddats upp.";
+							?>
+                            <div id="confirmnewsupploaddiv">
+                            	<?php
+							 	echo $FileNameToShow . " har laddats upp.";
+								?>
+                            </div>
+                            <?php
 						} 
 						else
 						{
-							 echo "Ett fel inträffade. Försök igen eller kontakta administratören.";
-							 ?>
+							?>
+							<div id="confirmnewsupploaddiv">
+                            	<?php
+								 echo "Ett fel inträffade. Försök igen eller kontakta administratören.";
+								 ?>
+                             </div>
 							 <form action="" method="get">
 								<input type="submit" value="Tillbaka">
 								<input type="hidden" name="course" value="<?php echo $course ?>">

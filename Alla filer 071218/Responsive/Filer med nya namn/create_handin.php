@@ -93,7 +93,27 @@ if($usertype == "teacher")
 					</div>
                     <?php
 				}
-				if(!empty($_GET['handInName']))
+				else if(empty($_GET['course']) && !empty($_GET))
+				{
+					?>
+					<div id="confirmnewsupploaddiv">
+                    	<?php
+						echo "Var vänlig välj kurs och försök igen.";
+						?>
+					</div>
+                    <?php
+				}
+				else if(isset($_GET['submit']))
+				{
+					?>
+					<div id="confirmnewsupploaddiv">
+                    	<?php
+						echo "Var vänlig ange namn och välj kurs och försök igen.";
+						?>
+					</div>
+                    <?php
+				}
+				if(!empty($_GET['handInName']) && !empty($_GET['course']))
 				{
 					$course = $_GET['course'];
 					$handInName = $_GET['handInName'];
@@ -110,6 +130,13 @@ if($usertype == "teacher")
 					{
 						echo $e->getMessage();
 					}
+					?>
+					<div id="confirmnewsupploaddiv">
+                    	<?php
+						echo "Inlämningen har nu skapats!";
+						?>
+                    </div>
+                    <?php
 				}
 			?>
     		</div>

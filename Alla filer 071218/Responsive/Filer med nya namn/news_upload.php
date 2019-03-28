@@ -90,7 +90,7 @@ if(isset($_SESSION['currentuser']))
 					?>
 					<div id="confirmnewsupploaddiv">
                     	<?php
-						echo "Var vänlig ange rubrik/nyhetstext och försök igen";
+						echo "Se till att ange rubrik, nyhetstext och kurs och försök igen.";
 						?>
 					</div>
                     <?php
@@ -100,12 +100,22 @@ if(isset($_SESSION['currentuser']))
 					?>
                     <div id="confirmnewsupploaddiv">
                     	<?php
-						echo "Var vänlig ange rubrik/nyhetstext och försök igen";
+						echo "Se till att ange rubrik, nyhetstext och kurs och försök igen.";
 						?>
                     </div>
                     <?php
 				}
-				if(!empty($_POST['headline']) && !empty($_POST['news']))
+				else if(empty($_POST['course']) && !empty($_POST))
+				{
+					?>
+                    <div id="confirmnewsupploaddiv">
+                    	<?php
+						echo "Se till att ange rubrik, nyhetstext och kurs och försök igen.";
+						?>
+                    </div>
+                    <?php
+				}
+				if(!empty($_POST['headline']) && !empty($_POST['news']) && !empty($_POST['course']))
 				{
 					//Hämtar infon ang nyheten från GET.
 					$headline = $_POST['headline'];

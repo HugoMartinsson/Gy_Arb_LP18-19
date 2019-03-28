@@ -96,11 +96,10 @@ if($usertype == "teacher")
                             }
                             ?>
                         </select><br>
-                        <input id="inputhandintwo" type="submit" value="Ladda upp fil" name="submit">
-                	</div>
+                        <input id="inputhandintwo" type="submit" value="Ladda upp fil" name="submit"><br>
                 </form>
                 <?php
-                if(!empty($_POST))
+                if(!empty($_POST['course']) && isset($_POST['submit']))
                 {
                     try
                     {
@@ -133,13 +132,12 @@ if($usertype == "teacher")
                         $fileType = $_FILES['myfile']['type'];
                     
                         //Add file to database
-                        $sql = "INSERT INTO teacherfiles (Filename, Filefolder, Filecourse, FileHandinName, Uploader) VALUES (:fileName, :uploadDirectory, :course, :FileHandinName, :uploader)";
+                        $sql = "INSERT INTO teacherfiles (Filename, Filefolder, Filecourse, Uploader) VALUES (:fileName, :uploadDirectory, :course, :uploader)";
                         $stmt = $dbh->prepare($sql);
                         $stmt->bindParam(":fileName", $fileName);
                         $stmt->bindParam(":uploadDirectory", $uploadDirectory);
                         $stmt->bindParam(":course", $_POST['course']);
                         $stmt->bindParam(":uploader", $_SESSION['currentuser']);
-                        $stmt->bindParam(":FileHandinName", $handInName);
                         $stmt->execute();
                     }
                     catch(Exception $e)
@@ -157,7 +155,13 @@ if($usertype == "teacher")
                         }
                         if ($didUpload)
                         {
-                             echo $FileNameToShow . " har laddats upp.";
+							?>
+							<div id="confirmnewsupploaddiv">
+                            	<?php
+                             	echo $FileNameToShow . " har laddats upp.";
+								?>
+                            </div>
+                            <?php
                         } 
                         else
                         {
@@ -170,7 +174,21 @@ if($usertype == "teacher")
                         }
                     }
                 }
+				else if(isset($_POST['submit']))
+				{
+					?>
+					<div id="confirmnewsupploaddiv">
+                    	<?php
+						echo "Var vänlig välj fil och/eller kurs och försök igen.";
+						?>
+                    </div>
+					<form action="file_upload.php">
+						<input type="submit" value="Tillbaka">
+					</form>
+                    <?php
+				}
                 ?>
+                </div>
         	</div>
         </section>
     </div>

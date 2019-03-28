@@ -96,7 +96,13 @@ if(isset($_SESSION['currentuser']))
             	<?php 
 				if(empty($result))
 				{
-					echo "Det finns inga uppladdade filer i den här kursen";
+					?>
+					<div id="confirmnewsupploaddiv">
+						<?php
+                        echo "Det finns inga uppladdade filer i den här kursen";
+						?>
+                    </div>
+                    <?php
 				}
 				foreach($result as $row)
 				{
