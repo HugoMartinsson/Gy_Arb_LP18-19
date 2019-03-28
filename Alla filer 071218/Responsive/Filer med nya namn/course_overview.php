@@ -68,16 +68,13 @@ if(isset($_SESSION['currentuser']))
         	<div id="centerlinks">
 				<?php
                 if($usertype == "student")
-                {
-                    //SKA VARA KVAR ÄVEN NÄR CURRENTUSER ÄR IMPLEMENTERAD
-                    $user = "%" . $_SESSION['currentuser'] . "%";
-                    
+                {                    
                     try
                     {
                         //HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
-                        $sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
+                        $sql = "SELECT courses.Name as name FROM courses, users, connection WHERE users.Username = :currentuser AND users.UserID = connection.userid AND connection.courseid = courses.CourseID";
                         $stmt = $dbh->prepare($sql);
-                        $stmt->bindParam(":currentuser", $user);
+                        $stmt->bindParam(":currentuser", $_SESSION['currentuser']);
                         $stmt->execute();
                         $result2 = $stmt->fetchAll();
                     }
@@ -88,7 +85,7 @@ if(isset($_SESSION['currentuser']))
                     foreach($result2 as $row)
                     {
                         ?>
-                        <a id="linktocourse" href="<?php echo 'course.php?course=' . $row->Name?>"><p><?php echo $row->Name; ?></p></a>
+                        <a id="linktocourse" href="<?php echo 'course.php?course=' . $row->name?>"><p><?php echo $row->name; ?></p></a>
 						<?php
                     }
                 }

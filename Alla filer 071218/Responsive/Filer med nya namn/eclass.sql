@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 21 mars 2019 kl 12:30
--- Serverversion: 10.1.37-MariaDB
--- PHP-version: 7.3.0
+-- Tid vid skapande: 28 mars 2019 kl 11:41
+-- Serverversion: 10.1.38-MariaDB
+-- PHP-version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,6 +25,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Tabellstruktur `connection`
+--
+
+CREATE TABLE `connection` (
+  `userid` int(50) NOT NULL,
+  `courseid` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `connection`
+--
+
+INSERT INTO `connection` (`userid`, `courseid`) VALUES
+(11, '1'),
+(11, '4'),
+(11, '5'),
+(11, '6'),
+(11, '7'),
+(11, '8'),
+(11, '9'),
+(10, '1'),
+(10, '4'),
+(10, '5'),
+(10, '6'),
+(10, '7'),
+(10, '8'),
+(10, '9'),
+(12, '1'),
+(12, '4'),
+(12, '5'),
+(12, '6'),
+(12, '7'),
+(12, '8'),
+(12, '9');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellstruktur `courses`
 --
 
@@ -32,7 +70,7 @@ CREATE TABLE `courses` (
   `CourseID` int(10) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `Teacher` varchar(20) NOT NULL,
-  `Students` varchar(255) NOT NULL
+  `Students` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -40,13 +78,13 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`CourseID`, `Name`, `Teacher`, `Students`) VALUES
-(1, 'Programmering_2_TE3', 'Henrik', 'huma0130, Gabriel, Joakim'),
-(4, 'Nätverksteknologier_TE3', 'Henrik', 'Huma0130, Gabriel, Joakim'),
-(5, 'Webbserverprogrammering_TE3', 'Henrik', 'Huma0130, Joakim, Gabriel'),
-(6, 'Svenska_3_TE3B', 'Marja', 'Huma0130, Joakim, Gabriel'),
-(7, 'Engelska_7_Jst', 'Jenny', 'Huma0130, Joakim, Gabriel'),
-(8, 'Religion_1_TE3B', 'Marie', 'Huma0130, Gabriel, Joakim'),
-(9, 'Matematik_5_TE3', 'Conny', 'Huma0130, Joakim, Gabriel');
+(1, 'Programmering_2_TE3', 'Henrik', 0),
+(4, 'Nätverksteknologier_TE3', 'Henrik', 0),
+(5, 'Webbserverprogrammering_TE3', 'Henrik', 0),
+(6, 'Svenska_3_TE3B', 'Marja', 0),
+(7, 'Engelska_7_Jst', 'Jenny', 0),
+(8, 'Religion_1_TE3B', 'Marie', 0),
+(9, 'Matematik_5_TE3', 'Conny', 0);
 
 -- --------------------------------------------------------
 
@@ -89,6 +127,7 @@ CREATE TABLE `news` (
   `headline` varchar(30) NOT NULL,
   `news` text NOT NULL,
   `course` varchar(100) NOT NULL,
+  `courseid` int(50) DEFAULT NULL,
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -96,18 +135,13 @@ CREATE TABLE `news` (
 -- Dumpning av Data i tabell `news`
 --
 
-INSERT INTO `news` (`NewsID`, `headline`, `news`, `course`, `datetime`) VALUES
-(3, 'Fysik', 'Ingen mer fysik nu', 'Ingen mer fysik nu', '0000-00-00 00:00:00'),
-(4, 'WHAPPAPP', 'whafkawfkawhdawdmkaehfajfoakwiahwfi', 'test2', '0000-00-00 00:00:00'),
-(5, 'WHAPPAPP2', 'öoguoghpjh76t08pijhio', 'test2', '2018-12-17 12:39:05'),
-(6, 'Nyhet 3', 'jjawdjawkdjakwjdwkjdkawjdkawjdkjw', 'Prgrm_2_Te3b', '2018-12-23 17:45:49'),
-(7, 'Lektion inställd 1/1', 'Lektionen är inställd pga strög. Ha de!', 'Prgrm_2_Te3b', '2019-01-07 00:00:00'),
-(9, 'Prov', 'Prov idag!', 'Cisco', '2019-02-01 08:30:30'),
-(10, 'Ingen lektion', 'Ingen lektion idag hej!', 'Nätverksteknologier_TE3', '2019-03-18 15:33:03'),
-(11, 'Ingen lektion', 'WHAPPP', 'Programmering_2_TE3', '2019-03-18 15:51:26'),
-(12, 'Datorer 21/3', 'Glöm inte att ta med er datorerna till lektionen idag 21/3 :)', 'Matematik_5_TE3', '2019-03-21 08:23:53'),
-(13, 'Ingen lektion idag', 'Idag ska jag på studiebesök med tvåorna så lektionen är inställd! Ni läser texthäftet ni fick i torsdags!', 'Svenska_3_TE3B', '2019-03-21 08:36:42'),
-(14, 'Finish the book', 'Remember you are supposed to have finished the book by Monday! :)))', 'Engelska_7_Jst', '2019-03-21 09:15:40');
+INSERT INTO `news` (`NewsID`, `headline`, `news`, `course`, `courseid`, `datetime`) VALUES
+(10, 'Ingen lektion', 'Ingen lektion idag hej!', 'Nätverksteknologier_TE3', 4, '2019-03-18 15:33:03'),
+(11, 'Ingen lektion', 'WHAPPP', 'Programmering_2_TE3', 1, '2019-03-18 15:51:26'),
+(12, 'Datorer 21/3', 'Glöm inte att ta med er datorerna till lektionen idag 21/3 :)', 'Matematik_5_TE3', 9, '2019-03-21 08:23:53'),
+(13, 'Ingen lektion idag', 'Idag ska jag på studiebesök med tvåorna så lektionen är inställd! Ni läser texthäftet ni fick i torsdags!', 'Svenska_3_TE3B', 6, '2019-03-21 08:36:42'),
+(14, 'Finish the book', 'Remember you are supposed to have finished the book by Monday! :)))', 'Engelska_7_Jst', 7, '2019-03-21 09:15:40'),
+(15, 'Projekt', 'Jobba med projektet!', 'Webbserverprogrammering_TE3', 5, '2019-03-28 11:06:40');
 
 -- --------------------------------------------------------
 
@@ -194,7 +228,7 @@ INSERT INTO `users` (`UserID`, `Username`, `Password`, `Name`, `Type`, `Backgrou
 (6, 'admin', '$2y$10$hLhABKEESq8UtZXIPPlcb.D9GZhjvc2lx7utWlfNQt2enYMHH1sXq', 'Hugo', 'teacher', 0),
 (7, 'Henrik', '$2y$10$ApDrdKjXH94ricKRDoA.GuBrP5/FQEJN1sj1oMj.o30uL3ozDfGmm', 'Henrik', 'teacher', 7),
 (10, 'Jokim', '$2y$10$LoVRFqJGGIWzQ/c69re7f.4lSqgBTFeVNzEdmap3siIHaRCIdMpHm', 'Joakim Malmgren', 'student', 0),
-(11, 'huma0130', '$2y$10$Du0kXnsKchf3144CdJvSDuVmmoBEjYlAl2UhcVr8R6D5lAbuehWbW', 'Hugo Martinsson', 'student', 5),
+(11, 'huma0130', '$2y$10$Du0kXnsKchf3144CdJvSDuVmmoBEjYlAl2UhcVr8R6D5lAbuehWbW', 'Hugo Martinsson', 'student', 4),
 (12, 'Gabriel', '$2y$10$QvymILSwzcqtTZihfUQmv.VpIiZg71qtgPC2kg75cOPJ.qA6tg.UC', 'Gabriel Panarelii', 'student', 8),
 (13, 'Joakim', '$2y$10$5TIjigErkZVbCxXoweIFnOuJtGLb4MQXwvhW.ecADZ2/VldCa6Rt.', 'Joakim Malmgren', 'student', 0),
 (14, 'Jenny', '$2y$10$BrQwkTBI15pdSmZliSroy.j2XE8ncWkbRcygZdoVbxWXUjzD1c45O', 'Jenny Sundequist', 'teacher', 0),
@@ -262,7 +296,7 @@ ALTER TABLE `handin`
 -- AUTO_INCREMENT för tabell `news`
 --
 ALTER TABLE `news`
-  MODIFY `NewsID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `NewsID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT för tabell `studentfiles`
