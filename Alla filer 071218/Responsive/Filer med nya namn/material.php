@@ -70,7 +70,12 @@ if(isset($_SESSION['currentuser']))
             	<div id="centerincourse">
                     <a class="navincourseon" href="<?php echo "material.php?course=" . $course ?>">Material</a>
                     <a id="navincourselink" href=<?php echo "course.php?course=" . $course ?>><?php echo $course ?></a>
-                    <a id="navincourselink" href=<?php echo "handin_course.php?course=" . $course ?>>Inlämningar</a>
+                    <?php
+					if($usertype == "student")
+					{
+					 ?> <a id="navincourselink" href=<?php echo "handin_course.php?course=" . $course ?>>Inlämningar</a><?php 
+					}
+					?>
             	</div>
             </div>
             <?php 
