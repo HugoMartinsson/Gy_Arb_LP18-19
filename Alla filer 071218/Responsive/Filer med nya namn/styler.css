@@ -202,7 +202,7 @@ table {
 		border: 2px solid;
 	}
 	input[type=submit]{
-		width: 105px;
+		width: 120px;
 		height: 32px;
 		margin-top: 5px;
 		font-family: "Arial Black", Gadget, sans-serif;
@@ -453,7 +453,7 @@ table {
 		display: list-item;
 		list-style-type: none;
 		width: 350px;
-		height: 30px;
+		height: auto;
 		padding-top: 10px;
 		border-radius: 10px;
 		border: 1px solid;
