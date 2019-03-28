@@ -35,6 +35,7 @@ if(isset($_SESSION['currentuser']))
 		{
 			echo $e->getMessage();
 		}
+		
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -110,13 +111,32 @@ if(isset($_SESSION['currentuser']))
 					$headline = $_POST['headline'];
 					$news = $_POST['news'];
 					$course = $_POST['course'];
+					
+					try
+					{
+						//Hämtar alla kurser som den inloggade läraren undervisar i. 
+						$sql = "SELECT CourseID FROM courses WHERE Name = :name";
+						$stmt = $dbh->prepare($sql);
+						$stmt->bindParam(":name", $course);
+						$stmt->execute();
+						$result = $stmt->fetchAll();
+					}
+					catch(Exception $e)
+					{
+						echo $e->getMessage();
+					}
+					foreach($result as $row)
+					{
+						$courseid = $row->CourseID;
+					}
 						
 					//Placerar nyheten i databasen
-					$sql = "INSERT INTO news (news, headline, course, datetime) values (:news, :headline, :course, Now())";
+					$sql = "INSERT INTO news (news, headline, course, courseid, datetime) values (:news, :headline, :course, :courseid, Now())";
 					$stmt = $dbh->prepare($sql);
 					$stmt->bindParam(":news", $news);
 					$stmt->bindParam(":headline", $headline);
 					$stmt->bindParam(":course", $course);
+					$stmt->bindParam(":courseid", $courseid);
 					$stmt->execute();
 					
 					?>
