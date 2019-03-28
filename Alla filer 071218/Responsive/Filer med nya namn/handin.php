@@ -21,21 +21,18 @@ if(isset($_SESSION['currentuser']))
 		$usertype = $row->Type;
 	}
 	try
-	{
-		//Detta ska vara kvär även när riktig currentuser har implementerats
-		$user = "%" . $_SESSION['currentuser'] . "%";
-		
-		//Hämtar de kurser den inloggade eleven deltar i
-		$sql = "SELECT Name FROM courses WHERE Students LIKE :currentuser";
-		$stmt = $dbh->prepare($sql);
-		$stmt->bindParam(':currentuser', $user);
+    {
+		//HÄMTAR ALLA KURSER SOM ELEVEN DELTAR I
+		$sql = "SELECT courses.Name as name FROM courses, users, connection WHERE users.Username = :currentuser AND users.UserID = connection.userid AND connection.courseid = courses.CourseID";
+        $stmt = $dbh->prepare($sql);
+		$stmt->bindParam(":currentuser", $_SESSION['currentuser']);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 	}
-	catch(Exception $e)
-	{
+    catch(Exception $e)
+    {
 		echo $e->getMessage();
-	}
+    }
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -89,7 +86,7 @@ if(isset($_SESSION['currentuser']))
                         foreach($result as $row)
                         {
                             ?>
-                            <option value="<?php echo $row->Name; ?>"><?php echo $row->Name; ?></option>
+                            <option value="<?php echo $row->name; ?>"><?php echo $row->name; ?></option>
                             <?php
                         }
                         ?>
@@ -195,8 +192,12 @@ if(isset($_SESSION['currentuser']))
 						}
 						if ($didUpload)
 						{
-							 echo $FileNameToShow . " har laddats upp.";
-							 ?>
+							?>
+							<div id="confirmnewsupploaddiv">
+								<?php
+									echo $FileNameToShow . " har laddats upp.";
+								?>
+							</div>
 							 <form action="handin.php" method="get">
 								<input type="submit" value="Tillbaka">
 							 </form>
@@ -204,8 +205,12 @@ if(isset($_SESSION['currentuser']))
 						} 
 						else
 						{
-							 echo "Ett fel inträffade. Försök igen eller kontakta administratören.";
-							 ?>
+							?>
+							<div id="confirmnewsupploaddiv">
+								<?php
+									echo "Ett fel inträffade. Försök igen eller kontakta administratören.";
+								?>
+							</div>
 							 <form action="handin.php" method="get">
 								<input type="submit" value="Tillbaka">
 							 </form>

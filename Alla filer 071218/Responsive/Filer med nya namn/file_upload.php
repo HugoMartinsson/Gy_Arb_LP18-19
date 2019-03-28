@@ -127,17 +127,19 @@ if($usertype == "teacher")
                         //FILE UPLOAD
                         $currentDir = getcwd();
                         $uploadDirectory = "/Uploaded_Files/";
+						$uploadDirectory2 = "Uploaded_Files/";
                         $fileName = $FileID . "." . $_POST['course'] .  "_" .  $_FILES['myfile']['name'];
                         $fileTmpName  = $_FILES['myfile']['tmp_name'];
                         $fileType = $_FILES['myfile']['type'];
                     
                         //Add file to database
-                        $sql = "INSERT INTO teacherfiles (Filename, Filefolder, Filecourse, Uploader) VALUES (:fileName, :uploadDirectory, :course, :uploader)";
+                        $sql = "INSERT INTO teacherfiles (Filename, Filefolder, Filecourse, Uploader, Nametoshow) VALUES (:fileName, :uploadDirectory, :course, :uploader, :nametoshow)";
                         $stmt = $dbh->prepare($sql);
                         $stmt->bindParam(":fileName", $fileName);
-                        $stmt->bindParam(":uploadDirectory", $uploadDirectory);
+                        $stmt->bindParam(":uploadDirectory", $uploadDirectory2);
                         $stmt->bindParam(":course", $_POST['course']);
                         $stmt->bindParam(":uploader", $_SESSION['currentuser']);
+						$stmt->bindParam(":nametoshow", $FileNameToShow);
                         $stmt->execute();
                     }
                     catch(Exception $e)
